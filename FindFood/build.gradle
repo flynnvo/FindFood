@@ -25,10 +25,3 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-
-ext{
-    supportLibraryVersion = '26.1.0'
-    retrofitVersion = '2.4.0'
-    rxJavaVersion = '2.1.12'
-    androidLifeCycleVersion = '1.1.1'
-}
