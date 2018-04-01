@@ -6,9 +6,9 @@
     tools:context="nz.co.g1.a702.findfood.RestaurantListActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/main_restaurant_list"
+        android:id="@+id/main_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@android:layout/simple_list_item_1"/>
+        tools:listitem="@android:layout/two_line_list_item"/>
 
 </android.support.constraint.ConstraintLayout>
