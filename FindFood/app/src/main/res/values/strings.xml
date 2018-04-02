@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FindFood</string>
+    <string name="no_restaurants_available">No restaurants available</string>
 </resources>
