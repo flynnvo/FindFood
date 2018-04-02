@@ -89,6 +89,7 @@ public class RestaurantListActivity extends AppCompatActivity {
         } else {
             restaurantListView.setVisibility(View.VISIBLE);
             emptyView.setVisibility(View.GONE);
+            restaurantListAdapter.setDistanceLocation(viewModel.getCurrentLocation());
             restaurantListAdapter.setItems(restaurantList);
         }
     }

@@ -42,7 +42,7 @@ public final class PlacesService {
     }
 
     public interface GooglePlaces {
-        @GET("maps/api/place/nearbysearch/json?radius=5000&type=restaurant")
+        @GET("maps/api/place/nearbysearch/json?type=restaurant&rankby=distance")
         Single<List<Restaurant>> getNearbyRestaurants(
                 @Query("location") String latitude,
                 @Query("key") String apiKey

@@ -1,6 +1,8 @@
 package nz.co.g1.a702.findfood.placesapi;
 
-import com.google.gson.Gson;
+import android.location.Location;
+
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
@@ -19,6 +21,9 @@ public class GooglePlaceDeserializer implements JsonDeserializer<List<Restaurant
         JsonArray results = json.getAsJsonObject().getAsJsonArray("results");
         Type restaurantListType = new TypeToken<List<Restaurant>>() {
         }.getType();
-        return new Gson().fromJson(results, restaurantListType);
+
+        return new GsonBuilder()
+                .registerTypeAdapter(Location.class, new LocationDeserializer())
+                .create().fromJson(results, restaurantListType);
     }
 }

@@ -1,5 +1,7 @@
 package nz.co.g1.a702.findfood.placesapi;
 
+import android.location.Location;
+
 import com.google.gson.annotations.SerializedName;
 
 public class Restaurant {
@@ -74,26 +76,12 @@ public class Restaurant {
         }
     }
 
-    public class Location {
-        @SerializedName("lat")
-        private double latitude;
-        @SerializedName("lng")
-        private double longitude;
-
-        public double getLongitude() {
-            return longitude;
-        }
-
-        public void setLongitude(double longitude) {
-            this.longitude = longitude;
-        }
-
-        public double getLatitude() {
-            return latitude;
-        }
-
-        public void setLatitude(double latitude) {
-            this.latitude = latitude;
+    public String distanceFrom(Location location) {
+        int distance = (int) this.geometry.location.distanceTo(location);
+        if (distance >= 1000) {
+            return String.format("%dkm", distance / 1000);
+        } else {
+            return String.format("%dm", distance);
         }
     }
 }
