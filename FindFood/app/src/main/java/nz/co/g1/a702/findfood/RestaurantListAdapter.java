@@ -1,11 +1,14 @@
 package nz.co.g1.a702.findfood;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.location.Location;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -15,17 +18,19 @@ import nz.co.g1.a702.findfood.placesapi.Restaurant;
 
 
 public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAdapter.ViewHolder> {
+    private Context context;
     private List<Restaurant> dataset;
     private Location currentLocation;
 
-    RestaurantListAdapter() {
+    RestaurantListAdapter(Context context) {
+        this.context = context;
         dataset = new ArrayList<>();
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(android.R.layout.simple_list_item_2, parent, false);
+                .inflate(R.layout.restaurant_list_item, parent, false);
         return new ViewHolder(itemView);
     }
 
@@ -33,6 +38,7 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Restaurant restaurant = dataset.get(position);
+        holder.iconView.setImageDrawable(ContextCompat.getDrawable(context, restaurant.getType().getDrawableResId()));
         holder.nameView.setText(restaurant.getName());
         holder.distanceView.setText(restaurant.distanceFrom(currentLocation));
     }
@@ -52,13 +58,15 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
+        ImageView iconView;
         TextView nameView;
         TextView distanceView;
 
         ViewHolder(View view) {
             super(view);
-            nameView = view.findViewById(android.R.id.text1);
-            distanceView = view.findViewById(android.R.id.text2);
+            iconView = view.findViewById(R.id.restaurant_list_icon);
+            nameView = view.findViewById(R.id.restaurant_list_title);
+            distanceView = view.findViewById(R.id.restaurant_list_distance);
         }
     }
 }

@@ -9,7 +9,9 @@
         android:id="@+id/main_restaurant_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@android:layout/simple_list_item_2"/>
+        android:clipToPadding="false"
+        android:paddingTop="8dp"
+        tools:listitem="@layout/restaurant_list_item"/>
 
     <TextView
         android:id="@+id/main_empty_view"

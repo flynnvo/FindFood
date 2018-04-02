@@ -4,6 +4,10 @@ import android.location.Location;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
+import nz.co.g1.a702.findfood.R;
+
 public class Restaurant {
     private Geometry geometry;
     private String name;
@@ -15,6 +19,7 @@ public class Restaurant {
     private String address;
     @SerializedName("permanently_closed")
     private boolean closed;
+    private List<String> types;
 
     public Geometry getGeometry() {
         return geometry;
@@ -64,6 +69,24 @@ public class Restaurant {
         this.closed = closed;
     }
 
+    public List<String> getTypes() {
+        return types;
+    }
+
+    public void setTypes(List<String> types) {
+        this.types = types;
+    }
+
+    public Type getType() {
+        if (types.contains("bar")) {
+            return Type.BAR;
+        } else if (types.contains("cafe")) {
+            return Type.CAFE;
+        } else {
+            return Type.RESTAURANT;
+        }
+    }
+
     public class Geometry {
         private Location location;
 
@@ -82,6 +105,22 @@ public class Restaurant {
             return String.format("%dkm", distance / 1000);
         } else {
             return String.format("%dm", distance);
+        }
+    }
+
+    public enum Type {
+        BAR(R.drawable.ic_type_bar),
+        CAFE(R.drawable.ic_type_cafe),
+        RESTAURANT(R.drawable.ic_type_restaurant);
+
+        private int drawableResId;
+
+        Type(int drawableResId) {
+            this.drawableResId = drawableResId;
+        }
+
+        public int getDrawableResId() {
+            return drawableResId;
         }
     }
 }

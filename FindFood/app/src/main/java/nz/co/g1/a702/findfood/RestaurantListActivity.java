@@ -44,7 +44,7 @@ public class RestaurantListActivity extends AppCompatActivity {
         restaurantListView.setHasFixedSize(true);
         restaurantListView.setLayoutManager(new LinearLayoutManager(this));
 
-        restaurantListAdapter = new RestaurantListAdapter();
+        restaurantListAdapter = new RestaurantListAdapter(this);
         restaurantListView.setAdapter(restaurantListAdapter);
         viewModel = ViewModelProviders.of(this).get(RestaurantListViewModel.class);
 
