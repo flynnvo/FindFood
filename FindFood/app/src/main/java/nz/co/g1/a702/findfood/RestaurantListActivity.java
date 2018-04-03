@@ -4,6 +4,8 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -22,8 +24,12 @@ import java.util.List;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import nz.co.g1.a702.findfood.placesapi.Restaurant;
+import nz.co.g1.a702.findfood.restaurantdetail.RestaurantDetailActivity;
 
 public class RestaurantListActivity extends AppCompatActivity {
+    public static final String EXTRA_RESTAURANT_NAME = "name";
+    public static final String EXTRA_RESTAURANT_ADDRESS = "address";
+
     private static final int LOCATION_PERMISSION_REQUEST = 22;
 
     private RestaurantListAdapter restaurantListAdapter;
@@ -42,10 +48,11 @@ public class RestaurantListActivity extends AppCompatActivity {
         restaurantListView = findViewById(R.id.main_restaurant_list);
         emptyView = findViewById(R.id.main_empty_view);
         restaurantListView.setHasFixedSize(true);
-        restaurantListView.setLayoutManager(new LinearLayoutManager(this));
 
         restaurantListAdapter = new RestaurantListAdapter(this);
+        restaurantListAdapter.setOnItemClickListener(this::viewRestaurantDetail);
         restaurantListView.setAdapter(restaurantListAdapter);
+        restaurantListView.setLayoutManager(new FixedSizeLayoutManager(this));
         viewModel = ViewModelProviders.of(this).get(RestaurantListViewModel.class);
 
 
@@ -54,6 +61,13 @@ public class RestaurantListActivity extends AppCompatActivity {
         } else {
             loadRestaurants();
         }
+    }
+
+    private void viewRestaurantDetail(Restaurant restaurant) {
+        Intent intent = new Intent(this, RestaurantDetailActivity.class);
+        intent.putExtra(EXTRA_RESTAURANT_NAME, restaurant.getName());
+        intent.putExtra(EXTRA_RESTAURANT_ADDRESS, restaurant.getAddress());
+        startActivity(intent);
     }
 
     private void checkGooglePlayServices() {
@@ -91,6 +105,18 @@ public class RestaurantListActivity extends AppCompatActivity {
             emptyView.setVisibility(View.GONE);
             restaurantListAdapter.setDistanceLocation(viewModel.getCurrentLocation());
             restaurantListAdapter.setItems(restaurantList);
+        }
+    }
+
+    class FixedSizeLayoutManager extends LinearLayoutManager {
+
+        public FixedSizeLayoutManager(Context context) {
+            super(context);
+        }
+
+        @Override
+        public boolean isAutoMeasureEnabled() {
+            return false;
         }
     }
 }
