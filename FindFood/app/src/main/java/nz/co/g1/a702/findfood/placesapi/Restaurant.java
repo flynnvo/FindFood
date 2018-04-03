@@ -1,15 +1,20 @@
 package nz.co.g1.a702.findfood.placesapi;
 
 import android.location.Location;
+import android.support.annotation.Keep;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+import nz.co.g1.a702.findfood.BuildConfig;
 import nz.co.g1.a702.findfood.R;
 
+@Keep
 public class Restaurant {
+    @SerializedName("geometry")
     private Geometry geometry;
+    @SerializedName("name")
     private String name;
     @SerializedName("place_id")
     private String placeId;
@@ -17,9 +22,10 @@ public class Restaurant {
     private int priceLevel;
     @SerializedName("vicinity")
     private String address;
-    @SerializedName("permanently_closed")
-    private boolean closed;
+    @SerializedName("types")
     private List<String> types;
+    @SerializedName("photos")
+    private List<Photo> photos;
 
     public Geometry getGeometry() {
         return geometry;
@@ -61,14 +67,6 @@ public class Restaurant {
         this.address = address;
     }
 
-    public boolean isClosed() {
-        return closed;
-    }
-
-    public void setClosed(boolean closed) {
-        this.closed = closed;
-    }
-
     public List<String> getTypes() {
         return types;
     }
@@ -87,16 +85,12 @@ public class Restaurant {
         }
     }
 
-    public class Geometry {
-        private Location location;
-
-        public Location getLocation() {
-            return location;
+    public String getImageUrl(int width, int height) {
+        if (this.photos == null || this.photos.isEmpty()) {
+            return null;
         }
-
-        public void setLocation(Location location) {
-            this.location = location;
-        }
+        return String.format("https://maps.googleapis.com/maps/api/place/photo?maxwidth=%s&maxheight=%s&key=%s&photoreference=%s",
+                width, height, BuildConfig.GOOGLE_API_KEY, this.photos.get(0).getPhotoReference());
     }
 
     public String distanceFrom(Location location) {
@@ -108,6 +102,7 @@ public class Restaurant {
         }
     }
 
+    @Keep
     public enum Type {
         BAR(R.drawable.ic_type_bar),
         CAFE(R.drawable.ic_type_cafe),
@@ -121,6 +116,34 @@ public class Restaurant {
 
         public int getDrawableResId() {
             return drawableResId;
+        }
+    }
+
+    @Keep
+    public class Geometry {
+        @SerializedName("location")
+        private Location location;
+
+        public Location getLocation() {
+            return location;
+        }
+
+        public void setLocation(Location location) {
+            this.location = location;
+        }
+    }
+
+    @Keep
+    public class Photo {
+        @SerializedName("photo_reference")
+        private String photoReference;
+
+        public String getPhotoReference() {
+            return photoReference;
+        }
+
+        public void setPhotoReference(String photoReference) {
+            this.photoReference = photoReference;
         }
     }
 }
