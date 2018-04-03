@@ -3,10 +3,11 @@
     package="nz.co.g1.a702.findfood">
 
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <uses-feature android:name="android.hardware.location "/>
     <uses-feature android:name="android.hardware.location.network "/>
+    <uses-feature android:name="android.hardware.location.gps "/>
 
     <application
         android:allowBackup="true"
