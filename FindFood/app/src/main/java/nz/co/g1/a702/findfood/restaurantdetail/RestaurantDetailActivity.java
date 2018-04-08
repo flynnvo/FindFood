@@ -1,5 +1,6 @@
 package nz.co.g1.a702.findfood.restaurantdetail;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,27 +15,38 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 import nz.co.g1.a702.findfood.R;
 
 import static nz.co.g1.a702.findfood.RestaurantListActivity.EXTRA_RESTAURANT_ADDRESS;
+import static nz.co.g1.a702.findfood.RestaurantListActivity.EXTRA_RESTAURANT_ID;
 import static nz.co.g1.a702.findfood.RestaurantListActivity.EXTRA_RESTAURANT_NAME;
 import static nz.co.g1.a702.findfood.RestaurantListActivity.EXTRA_RESTAURANT_PHOTO_URL;
 
 public class RestaurantDetailActivity extends AppCompatActivity {
+    private RestaurantDetailViewModel viewModel;
+
     private ImageView appBarBackground;
     private View appBarScrim;
     private TextView notesView;
+
+    private Disposable disposable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_detail);
 
-        appBarBackground = findViewById(R.id.detail_app_bar_background);
-        appBarScrim = findViewById(R.id.detail_app_bar_scrim);
-        notesView = findViewById(R.id.detail_notes_view);
+        this.viewModel = ViewModelProviders.of(this).get(RestaurantDetailViewModel.class);
+
+        this.appBarBackground = findViewById(R.id.detail_app_bar_background);
+        this.appBarScrim = findViewById(R.id.detail_app_bar_scrim);
+        this.notesView = findViewById(R.id.detail_notes_view);
 
         String restaurantName = getIntent().getStringExtra(EXTRA_RESTAURANT_NAME);
+        String placeId = getIntent().getStringExtra(EXTRA_RESTAURANT_ID);
         String restaurantAddress = getIntent().getStringExtra(EXTRA_RESTAURANT_ADDRESS);
         String photoUrl = getIntent().getStringExtra(EXTRA_RESTAURANT_PHOTO_URL);
 
@@ -46,8 +58,16 @@ public class RestaurantDetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        viewModel.setPlaceId(placeId);
+
         loadAppbarImage(photoUrl);
         loadNotes();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (disposable != null && !disposable.isDisposed()) disposable.dispose();
+        super.onDestroy();
     }
 
     private void loadAppbarImage(String photoUrl) {
@@ -66,7 +86,11 @@ public class RestaurantDetailActivity extends AppCompatActivity {
     }
 
     private void loadNotes() {
-        // TODO: Implement
+        disposable = viewModel.getNotes()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(note -> notesView.setText(note),
+                        error -> notesView.setText(R.string.no_notes_entered));
     }
 
     public void editNotes(View view) {

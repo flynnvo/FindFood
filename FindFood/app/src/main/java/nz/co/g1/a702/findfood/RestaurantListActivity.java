@@ -28,6 +28,7 @@ import nz.co.g1.a702.findfood.restaurantdetail.RestaurantDetailActivity;
 
 public class RestaurantListActivity extends AppCompatActivity {
     public static final String EXTRA_RESTAURANT_NAME = "name";
+    public static final String EXTRA_RESTAURANT_ID = "id";
     public static final String EXTRA_RESTAURANT_ADDRESS = "address";
     public static final String EXTRA_RESTAURANT_PHOTO_URL = "photoUrl";
 
@@ -67,6 +68,7 @@ public class RestaurantListActivity extends AppCompatActivity {
     private void viewRestaurantDetail(Restaurant restaurant) {
         Intent intent = new Intent(this, RestaurantDetailActivity.class);
         intent.putExtra(EXTRA_RESTAURANT_NAME, restaurant.getName());
+        intent.putExtra(EXTRA_RESTAURANT_ID, restaurant.getPlaceId());
         intent.putExtra(EXTRA_RESTAURANT_ADDRESS, restaurant.getAddress());
         intent.putExtra(EXTRA_RESTAURANT_PHOTO_URL, restaurant.getImageUrl(1440, 1440));
         startActivity(intent);
