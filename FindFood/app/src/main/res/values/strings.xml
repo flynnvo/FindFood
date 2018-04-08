@@ -5,4 +5,6 @@
     <string name="action_settings">Settings</string>
     <string name="no_notes_entered">Press the button to add notes</string>
     <string name="notes">Notes</string>
+    <string name="done">Done</string>
+    <string name="cancel">Cancel</string>
 </resources>

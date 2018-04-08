@@ -26,6 +26,7 @@
             android:id="@+id/detail_notes_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="@string/no_notes_entered"/>
     </LinearLayout>
 

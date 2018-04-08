@@ -5,9 +5,11 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -89,11 +91,26 @@ public class RestaurantDetailActivity extends AppCompatActivity {
         disposable = viewModel.getNotes()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(note -> notesView.setText(note),
+                .subscribe(restaurantNote -> {
+                            notesView.setText(restaurantNote.getNote());
+                            viewModel.setCurrentNote(restaurantNote);
+                        },
                         error -> notesView.setText(R.string.no_notes_entered));
     }
 
     public void editNotes(View view) {
-        // TODO: Implement
+        showNoteInputDialog();
+    }
+
+    private void showNoteInputDialog() {
+        final View root = getLayoutInflater().inflate(R.layout.enter_note_dialog, null);
+        final EditText noteInput = root.findViewById(R.id.notes_dialog_text);
+        noteInput.setText(viewModel.getCurrentNoteText());
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.notes)
+                .setView(root)
+                .setPositiveButton(R.string.done, ((dialog, i) -> viewModel.editNote(noteInput.getText().toString())))
+                .setNegativeButton(R.string.cancel, (dialog, i) -> dialog.cancel())
+                .show();
     }
 }

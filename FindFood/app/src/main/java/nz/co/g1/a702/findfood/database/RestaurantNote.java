@@ -6,14 +6,24 @@ import android.arch.persistence.room.PrimaryKey;
 
 @Entity(tableName = "note")
 public class RestaurantNote {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int rnId;
 
     @ColumnInfo(name = "placesId")
-    private int restaurantId;
+    private String restaurantId;
 
     @ColumnInfo(name = "note")
     private String note;
+
+    public RestaurantNote() {
+
+    }
+
+    public RestaurantNote(int rnId, String placeId, String note) {
+        this.rnId = rnId;
+        this.restaurantId = placeId;
+        this.note = note;
+    }
 
     public int getRnId() {
         return rnId;
@@ -23,11 +33,11 @@ public class RestaurantNote {
         this.rnId = rnId;
     }
 
-    public int getRestaurantId() {
+    public String getRestaurantId() {
         return restaurantId;
     }
 
-    public void setRestaurantId(int restaurantId) {
+    public void setRestaurantId(String restaurantId) {
         this.restaurantId = restaurantId;
     }
 
