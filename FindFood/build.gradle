@@ -31,4 +31,5 @@ ext{
     retrofitVersion = '2.4.0'
     rxJavaVersion = '2.1.12'
     androidLifeCycleVersion = '1.1.1'
+    glideVersion = '4.6.1'
 }
