@@ -9,4 +9,24 @@
     tools:context=".restaurantdetail.RestaurantDetailActivity"
     tools:showIn="@layout/activity_restaurant_detail">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:paddingTop="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/notes"
+            android:textAppearance="@style/AppTheme.DetailHeader"/>
+
+        <TextView
+            android:id="@+id/detail_notes_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_notes_entered"/>
+    </LinearLayout>
+
 </android.support.v4.widget.NestedScrollView>

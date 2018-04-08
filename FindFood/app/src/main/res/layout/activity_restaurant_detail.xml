@@ -36,6 +36,13 @@
                 android:scaleType="centerCrop"
                 app:layout_collapseMode="parallax"/>
 
+            <View
+                android:id="@+id/detail_app_bar_scrim"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/scrim"
+                android:visibility="invisible"/>
+
             <TextView
                 android:id="@+id/detail_restaurant_address"
                 android:layout_width="wrap_content"
@@ -61,5 +68,15 @@
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_restaurant_detail"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/detail_edit_notes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:onClick="editNotes"
+        app:layout_anchor="@id/detail_app_bar"
+        app:layout_anchorGravity="bottom|end"
+        app:srcCompat="@drawable/ic_action_edit_notes"/>
 
 </android.support.design.widget.CoordinatorLayout>
