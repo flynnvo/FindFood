@@ -28,12 +28,29 @@ import static nz.co.g1.a702.findfood.RestaurantListActivity.EXTRA_RESTAURANT_NAM
 import static nz.co.g1.a702.findfood.RestaurantListActivity.EXTRA_RESTAURANT_PHOTO_URL;
 
 public class RestaurantDetailActivity extends AppCompatActivity {
+    /**
+     * ViewModel used for information related to the activity's views
+     */
     private RestaurantDetailViewModel viewModel;
 
+    /**
+     * Background ImageView for the expanded AppBar
+     */
     private ImageView appBarBackground;
+
+    /**
+     * Scrim overlay view for the expanded AppBar to increase legibility
+     */
     private View appBarScrim;
+
+    /**
+     * TextView in which to display the user's notes
+     */
     private TextView notesView;
 
+    /**
+     * Holds the database {@link io.reactivex.Flowable} to dispose of it on activity destroy
+     */
     private Disposable disposable;
 
     @Override
@@ -87,6 +104,9 @@ public class RestaurantDetailActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Loads the notes for this restaurant from the database or displays a message if none found
+     */
     private void loadNotes() {
         disposable = viewModel.getNotes()
                 .subscribeOn(Schedulers.io())
@@ -98,10 +118,18 @@ public class RestaurantDetailActivity extends AppCompatActivity {
                         error -> notesView.setText(R.string.no_notes_entered));
     }
 
+    /**
+     * The method called to launch the editing of notes
+     *
+     * @param view the view that has been clicked
+     */
     public void editNotes(View view) {
         showNoteInputDialog();
     }
 
+    /**
+     * Shows the dialog for entering a new note
+     */
     private void showNoteInputDialog() {
         final View root = getLayoutInflater().inflate(R.layout.enter_note_dialog, null);
         final EditText noteInput = root.findViewById(R.id.notes_dialog_text);

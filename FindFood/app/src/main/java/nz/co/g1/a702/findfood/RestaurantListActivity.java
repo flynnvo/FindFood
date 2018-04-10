@@ -27,18 +27,51 @@ import nz.co.g1.a702.findfood.placesapi.Restaurant;
 import nz.co.g1.a702.findfood.restaurantdetail.RestaurantDetailActivity;
 
 public class RestaurantListActivity extends AppCompatActivity {
+
+    /**
+     * Restaurant name intent extra
+     */
     public static final String EXTRA_RESTAURANT_NAME = "name";
+
+    /**
+     * Google Places Restaurant ID intent extra
+     */
     public static final String EXTRA_RESTAURANT_ID = "id";
+
+    /**
+     * Restaurant address intent extra
+     */
     public static final String EXTRA_RESTAURANT_ADDRESS = "address";
+
+    /**
+     * Restaurant photo URL intent extra
+     */
     public static final String EXTRA_RESTAURANT_PHOTO_URL = "photoUrl";
 
+    /**
+     * Location permission request code
+     */
     private static final int LOCATION_PERMISSION_REQUEST = 22;
 
+    /**
+     * Adapter to use for the restaurant list
+     */
     private RestaurantListAdapter restaurantListAdapter;
-    private RestaurantListViewModel viewModel;
-    private RecyclerView restaurantListView;
-    private TextView emptyView;
 
+    /**
+     * ViewModel to keep the restaurant list information in
+     */
+    private RestaurantListViewModel viewModel;
+
+    /**
+     * List to display restaurants in
+     */
+    private RecyclerView restaurantListView;
+
+    /**
+     * Text view to display when the restaurant list is empty
+     */
+    private TextView emptyView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +98,11 @@ public class RestaurantListActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Launches the restaurant detail view activity
+     *
+     * @param restaurant the restaurant whose details to display
+     */
     private void viewRestaurantDetail(Restaurant restaurant) {
         Intent intent = new Intent(this, RestaurantDetailActivity.class);
         intent.putExtra(EXTRA_RESTAURANT_NAME, restaurant.getName());
@@ -74,6 +112,10 @@ public class RestaurantListActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Check the availability of Google Play Services on the devices
+     * These are needed to retrieve the user's location
+     */
     private void checkGooglePlayServices() {
         int status = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(this);
         if (status != ConnectionResult.SUCCESS) {
@@ -83,6 +125,9 @@ public class RestaurantListActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Loads the restaurant list for the current location
+     */
     @SuppressLint("CheckResult")
     private void loadRestaurants() {
         viewModel.getRestaurants()
@@ -92,7 +137,9 @@ public class RestaurantListActivity extends AppCompatActivity {
                         Throwable::printStackTrace);
     }
 
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == LOCATION_PERMISSION_REQUEST && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -100,6 +147,11 @@ public class RestaurantListActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Sets the adapter's data if restaurants are found or displays a message
+     *
+     * @param restaurantList the list of restaurants to display
+     */
     private void setAdapterData(List<Restaurant> restaurantList) {
         if (restaurantList == null || restaurantList.isEmpty()) {
             restaurantListView.setVisibility(View.GONE);
@@ -112,6 +164,9 @@ public class RestaurantListActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * LayoutManager used to disable auto-measure for the list
+     */
     class FixedSizeLayoutManager extends LinearLayoutManager {
 
         public FixedSizeLayoutManager(Context context) {

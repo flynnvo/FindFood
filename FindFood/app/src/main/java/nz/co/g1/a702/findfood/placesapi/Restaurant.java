@@ -10,20 +10,51 @@ import java.util.List;
 import nz.co.g1.a702.findfood.BuildConfig;
 import nz.co.g1.a702.findfood.R;
 
+/**
+ * Model for a Google Places API response restaurant
+ */
 @Keep
 public class Restaurant {
+
+    /**
+     * The location information model
+     */
     @SerializedName("geometry")
     private Geometry geometry;
+
+    /**
+     * Restaurant name
+     */
     @SerializedName("name")
     private String name;
+
+    /**
+     * Unique Google Places API ID
+     */
     @SerializedName("place_id")
     private String placeId;
+
+    /**
+     * Restaurant's price level
+     */
     @SerializedName("price_level")
     private int priceLevel;
+
+    /**
+     * Address of the restaurant
+     */
     @SerializedName("vicinity")
     private String address;
+
+    /**
+     * Type of establishment (restaurant, cafe, bar)
+     */
     @SerializedName("types")
     private List<String> types;
+
+    /**
+     * Photo API references
+     */
     @SerializedName("photos")
     private List<Photo> photos;
 
@@ -102,6 +133,9 @@ public class Restaurant {
         }
     }
 
+    /**
+     * Establishment type model
+     */
     @Keep
     public enum Type {
         BAR(R.drawable.ic_type_bar),
@@ -119,6 +153,9 @@ public class Restaurant {
         }
     }
 
+    /**
+     * The location information model
+     */
     @Keep
     public class Geometry {
         @SerializedName("location")
@@ -133,6 +170,9 @@ public class Restaurant {
         }
     }
 
+    /**
+     * Google Photos information model
+     */
     @Keep
     public class Photo {
         @SerializedName("photo_reference")

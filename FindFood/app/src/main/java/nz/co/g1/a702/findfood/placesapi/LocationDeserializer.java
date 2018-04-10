@@ -10,7 +10,9 @@ import com.google.gson.JsonParseException;
 
 import java.lang.reflect.Type;
 
-
+/**
+ * Deserializer for the location part of a Google Places API response
+ */
 public class LocationDeserializer implements JsonDeserializer<Location> {
 
     @Override
