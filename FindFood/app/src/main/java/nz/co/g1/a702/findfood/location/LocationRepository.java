@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.location.Location;
 
+import com.google.android.gms.location.LocationRequest;
 import com.patloew.rxlocation.RxLocation;
 
 import io.reactivex.Maybe;
@@ -23,11 +24,15 @@ public class LocationRepository {
     }
 
     /**
-     * @return the last-known device location
+     * @return a {@link Maybe} with the device's current location
      */
     @SuppressLint("MissingPermission")
     public Maybe<Location> getLocation() {
-        return rxLocation.location().lastLocation();
+        LocationRequest request = LocationRequest.create()
+                .setNumUpdates(1)
+                .setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
+
+        return rxLocation.location().updates(request).firstElement();
     }
 
 }
