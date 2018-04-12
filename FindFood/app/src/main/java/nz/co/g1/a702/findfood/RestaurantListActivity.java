@@ -10,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -73,6 +74,11 @@ public class RestaurantListActivity extends AppCompatActivity {
      */
     private TextView emptyView;
 
+    /**
+     * Swipe to refresh layout to listen for refreshes on
+     */
+    private SwipeRefreshLayout swipeRefreshLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +88,7 @@ public class RestaurantListActivity extends AppCompatActivity {
 
         restaurantListView = findViewById(R.id.main_restaurant_list);
         emptyView = findViewById(R.id.main_empty_view);
+        swipeRefreshLayout = findViewById(R.id.main_swipe_refresh);
         restaurantListView.setHasFixedSize(true);
 
         restaurantListAdapter = new RestaurantListAdapter(this);
@@ -90,6 +97,7 @@ public class RestaurantListActivity extends AppCompatActivity {
         restaurantListView.setLayoutManager(new FixedSizeLayoutManager(this));
         viewModel = ViewModelProviders.of(this).get(RestaurantListViewModel.class);
 
+        swipeRefreshLayout.setOnRefreshListener(this::loadRestaurants);
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_PERMISSION_REQUEST);
@@ -153,6 +161,7 @@ public class RestaurantListActivity extends AppCompatActivity {
      * @param restaurantList the list of restaurants to display
      */
     private void setAdapterData(List<Restaurant> restaurantList) {
+        swipeRefreshLayout.setRefreshing(false);
         if (restaurantList == null || restaurantList.isEmpty()) {
             restaurantListView.setVisibility(View.GONE);
             emptyView.setVisibility(View.VISIBLE);
