@@ -6,7 +6,8 @@ import android.location.Location;
 
 import java.util.List;
 
-import io.reactivex.Maybe;
+import io.reactivex.Single;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import nz.co.g1.a702.findfood.location.LocationRepository;
 import nz.co.g1.a702.findfood.placesapi.PlacesService;
@@ -41,15 +42,16 @@ public class RestaurantListViewModel extends AndroidViewModel {
      * Retrieves a list of restaurants by retrieving the device location and using it to
      * call the Google Places API for restaurants near the location
      *
-     * @return a {@link Maybe} to retrieve the restaurants list from
+     * @return a {@link Single} to retrieve the restaurants list from
      */
-    public Maybe<List<Restaurant>> getRestaurants() {
+    public Single<List<Restaurant>> getRestaurants() {
         String apiKey = BuildConfig.GOOGLE_API_KEY;
 
         return locationRepository
                 .getLocation()
+                .subscribeOn(AndroidSchedulers.mainThread())
                 .observeOn(Schedulers.io())
-                .flatMapSingleElement(location -> {
+                .flatMap(location -> {
                     this.currentLocation = location;
                     return placesService.getRestaurants(location, apiKey);
                 });
