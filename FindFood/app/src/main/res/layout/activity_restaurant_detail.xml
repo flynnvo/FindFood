@@ -74,7 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
-        android:onClick="editNotes"
+        android:onClick="createNote"
         app:layout_anchor="@id/detail_app_bar"
         app:layout_anchorGravity="bottom|end"
         app:srcCompat="@drawable/ic_action_edit_notes"/>

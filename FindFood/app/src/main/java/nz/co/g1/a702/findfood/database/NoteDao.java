@@ -27,7 +27,7 @@ public interface NoteDao {
      * @return the note for this restaurant
      */
     @Query("SELECT * FROM note WHERE placesId = :restaurantId")
-    Flowable<RestaurantNote> getNoteById(String restaurantId);
+    Flowable<List<RestaurantNote>> getNoteById(String restaurantId);
 
     /**
      * Insert the specified note into the database

@@ -9,25 +9,25 @@
     tools:context=".restaurantdetail.RestaurantDetailActivity"
     tools:showIn="@layout/activity_restaurant_detail">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp"
-        android:paddingTop="24dp">
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/detail_notes_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingTop="8dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
         <TextView
+            android:id="@+id/detail_no_notes_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/notes"
-            android:textAppearance="@style/AppTheme.DetailHeader"/>
-
-        <TextView
-            android:id="@+id/detail_notes_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_centerInParent="true"
             android:text="@string/no_notes_entered"/>
-    </LinearLayout>
+
+    </RelativeLayout>
 
 </android.support.v4.widget.NestedScrollView>

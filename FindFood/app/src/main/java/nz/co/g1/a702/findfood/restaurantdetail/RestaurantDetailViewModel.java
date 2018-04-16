@@ -3,6 +3,7 @@ package nz.co.g1.a702.findfood.restaurantdetail;
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 
+import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
@@ -21,7 +22,7 @@ public class RestaurantDetailViewModel extends AndroidViewModel {
     /**
      * Notes for this restaurant
      */
-    private RestaurantNote currentNote;
+    private List<RestaurantNote> currentNotes;
 
     /**
      * Google Places Restaurant ID
@@ -41,8 +42,12 @@ public class RestaurantDetailViewModel extends AndroidViewModel {
     /**
      * @return the user's notes for this restaurant
      */
-    public Flowable<RestaurantNote> getNotes() {
+    public Flowable<List<RestaurantNote>> getNotes() {
         return notesDao.getNoteById(placeId);
+    }
+
+    public String getPlaceId() {
+        return placeId;
     }
 
     /**
@@ -53,27 +58,21 @@ public class RestaurantDetailViewModel extends AndroidViewModel {
     }
 
     /**
-     * Inserts or updates the notes for this restaurant
+     * Inserts a new note for this restaurant
      *
      * @param note the note to insert
      */
-    public void editNote(String note) {
-        int id = currentNote == null ? 0 : currentNote.getRnId();
-        RestaurantNote restaurantNote = new RestaurantNote(id, placeId, note);
+    public void insertNote(String note) {
+        RestaurantNote restaurantNote = new RestaurantNote(0, placeId, note);
         executor.execute(() -> notesDao.insert(restaurantNote));
     }
 
     /**
-     * @return the current restaurant's notes
+     * Updates the selected note for this restaurant
+     *
+     * @param note the note to update
      */
-    public String getCurrentNoteText() {
-        return currentNote == null ? "" : currentNote.getNote();
-    }
-
-    /**
-     * @param currentNote the note object for this detail view
-     */
-    public void setCurrentNote(RestaurantNote currentNote) {
-        this.currentNote = currentNote;
+    public void editNote(RestaurantNote note) {
+        executor.execute(() -> notesDao.insert(note));
     }
 }

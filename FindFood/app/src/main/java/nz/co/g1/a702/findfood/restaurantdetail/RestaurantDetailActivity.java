@@ -7,6 +7,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
@@ -17,10 +19,13 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 
+import java.util.List;
+
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import nz.co.g1.a702.findfood.R;
+import nz.co.g1.a702.findfood.database.RestaurantNote;
 
 import static nz.co.g1.a702.findfood.RestaurantListActivity.EXTRA_RESTAURANT_ADDRESS;
 import static nz.co.g1.a702.findfood.RestaurantListActivity.EXTRA_RESTAURANT_ID;
@@ -46,7 +51,17 @@ public class RestaurantDetailActivity extends AppCompatActivity {
     /**
      * TextView in which to display the user's notes
      */
-    private TextView notesView;
+    private TextView noNotesView;
+
+    /**
+     * View to display the list of notes in
+     */
+    private RecyclerView notesListView;
+
+    /**
+     * Adapter for the notes list view
+     */
+    private RestaurantNotesListAdapter listAdapter;
 
     /**
      * Holds the database {@link io.reactivex.Flowable} to dispose of it on activity destroy
@@ -62,7 +77,13 @@ public class RestaurantDetailActivity extends AppCompatActivity {
 
         this.appBarBackground = findViewById(R.id.detail_app_bar_background);
         this.appBarScrim = findViewById(R.id.detail_app_bar_scrim);
-        this.notesView = findViewById(R.id.detail_notes_view);
+        this.noNotesView = findViewById(R.id.detail_no_notes_view);
+        this.notesListView = findViewById(R.id.detail_notes_list);
+
+        listAdapter = new RestaurantNotesListAdapter();
+        listAdapter.setOnItemClickListener(this::showNoteInputDialog);
+        notesListView.setAdapter(listAdapter);
+        notesListView.setLayoutManager(new LinearLayoutManager(this));
 
         String restaurantName = getIntent().getStringExtra(EXTRA_RESTAURANT_NAME);
         String placeId = getIntent().getStringExtra(EXTRA_RESTAURANT_ID);
@@ -111,11 +132,24 @@ public class RestaurantDetailActivity extends AppCompatActivity {
         disposable = viewModel.getNotes()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(restaurantNote -> {
-                            notesView.setText(restaurantNote.getNote());
-                            viewModel.setCurrentNote(restaurantNote);
-                        },
-                        error -> notesView.setText(R.string.no_notes_entered));
+                .subscribe(this::setAdapterData,
+                        error -> noNotesView.setText(R.string.no_notes_entered));
+    }
+
+    /**
+     * Sets the adapter's data if notes are found or displays a message
+     *
+     * @param notes the list of notes to display
+     */
+    private void setAdapterData(List<RestaurantNote> notes) {
+        if (notes == null || notes.isEmpty()) {
+            notesListView.setVisibility(View.GONE);
+            noNotesView.setVisibility(View.VISIBLE);
+        } else {
+            notesListView.setVisibility(View.VISIBLE);
+            noNotesView.setVisibility(View.GONE);
+            listAdapter.setItems(notes);
+        }
     }
 
     /**
@@ -123,21 +157,25 @@ public class RestaurantDetailActivity extends AppCompatActivity {
      *
      * @param view the view that has been clicked
      */
-    public void editNotes(View view) {
-        showNoteInputDialog();
+    public void createNote(View view) {
+        showNoteInputDialog(new RestaurantNote(0, viewModel.getPlaceId(), ""));
     }
 
     /**
-     * Shows the dialog for entering a new note
+     * Shows the dialog for entering a new note or editing an existing note
      */
-    private void showNoteInputDialog() {
+    private void showNoteInputDialog(RestaurantNote note) {
         final View root = getLayoutInflater().inflate(R.layout.enter_note_dialog, null);
         final EditText noteInput = root.findViewById(R.id.notes_dialog_text);
-        noteInput.setText(viewModel.getCurrentNoteText());
+        noteInput.setText(note.getNote());
+
         new AlertDialog.Builder(this)
                 .setTitle(R.string.notes)
                 .setView(root)
-                .setPositiveButton(R.string.done, ((dialog, i) -> viewModel.editNote(noteInput.getText().toString())))
+                .setPositiveButton(R.string.done, ((dialog, i) -> {
+                    note.setNote(noteInput.getText().toString());
+                    viewModel.editNote(note);
+                }))
                 .setNegativeButton(R.string.cancel, (dialog, i) -> dialog.cancel())
                 .show();
     }
