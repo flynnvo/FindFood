@@ -59,8 +59,8 @@ dependencies {
     annotationProcessor "android.arch.persistence.room:compiler:$roomVersion"
 }
 
-static def getApiKey() {
+def getApiKey() {
     Properties props = new Properties()
-    props.load(new FileInputStream(new File('apikey.properties')))
+    props.load(new FileInputStream(file("apikey.properties")))
     return props['GOOGLE_API_KEY']
 }
