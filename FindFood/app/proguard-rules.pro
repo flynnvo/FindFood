@@ -36,7 +36,7 @@
 # A resource is loaded with a relative path so the package of this class must be preserved.
 -keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
 
--keep class android.support.v7.** { *; }
+# -keep class android.support.v7.** { *; }
 
 # Gson
 -keep class sun.misc.Unsafe { *; }
@@ -50,8 +50,8 @@
 }
 
 
--keepclassmembers class android.arch.** { *; }
--keep class android.arch.** { *; }
+## -keepclassmembers class android.arch.** { *; }
+## -keep class android.arch.** { *; }
 -dontwarn android.arch.**
 -keep class retrofit.http.** { *; }
 -keepclasseswithmembers interface * {
@@ -67,3 +67,6 @@
   public *;
 }
 
+-obfuscationdictionary obfuscationdictionary.txt
+-packageobfuscationdictionary packageobfuscationdictionary.txt
+-classobfuscationdictionary classobfuscationdictionary.txt

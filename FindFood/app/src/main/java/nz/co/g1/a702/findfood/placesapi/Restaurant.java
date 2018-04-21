@@ -1,7 +1,6 @@
 package nz.co.g1.a702.findfood.placesapi;
 
 import android.location.Location;
-import android.support.annotation.Keep;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -13,7 +12,6 @@ import nz.co.g1.a702.findfood.R;
 /**
  * Model for a Google Places API response restaurant
  */
-@Keep
 public class Restaurant {
 
     /**
@@ -136,7 +134,6 @@ public class Restaurant {
     /**
      * Establishment type model
      */
-    @Keep
     public enum Type {
         BAR(R.drawable.ic_type_bar),
         CAFE(R.drawable.ic_type_cafe),
@@ -156,7 +153,6 @@ public class Restaurant {
     /**
      * The location information model
      */
-    @Keep
     public class Geometry {
         @SerializedName("location")
         private Location location;
@@ -173,7 +169,6 @@ public class Restaurant {
     /**
      * Google Photos information model
      */
-    @Keep
     public class Photo {
         @SerializedName("photo_reference")
         private String photoReference;
