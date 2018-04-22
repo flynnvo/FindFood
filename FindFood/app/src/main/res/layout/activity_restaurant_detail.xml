@@ -31,7 +31,7 @@
             <ImageView
                 android:id="@+id/detail_app_bar_background"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="@dimen/app_bar_height"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
                 app:layout_collapseMode="parallax"/>
@@ -54,6 +54,8 @@
                 android:layout_marginRight="64dp"
                 android:layout_marginStart="72dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:maxLines="2"
+                app:autoSizeTextType="uniform"
                 app:layout_collapseMode="parallax"/>
 
             <android.support.v7.widget.Toolbar

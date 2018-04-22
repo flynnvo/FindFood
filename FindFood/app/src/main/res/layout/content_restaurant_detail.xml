@@ -25,7 +25,8 @@
             android:id="@+id/detail_no_notes_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="24dp"
             android:text="@string/no_notes_entered"/>
 
     </RelativeLayout>

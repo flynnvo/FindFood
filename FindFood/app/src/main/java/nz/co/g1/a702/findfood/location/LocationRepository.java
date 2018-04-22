@@ -43,7 +43,7 @@ public class LocationRepository {
      * Internal location query using RxLocation
      *
      * @param isAvailable if the user's location is available
-     * @return a {@link io.reactivex.Single} with the device's current location
+     * @return a {@link Single} with the device's current location
      * @throws Exception if the location is not available
      */
     @SuppressLint("MissingPermission")
