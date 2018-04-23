@@ -82,6 +82,7 @@ public class RestaurantDetailActivity extends AppCompatActivity {
 
         listAdapter = new RestaurantNotesListAdapter();
         listAdapter.setOnItemClickListener(this::showNoteInputDialog);
+        listAdapter.setOnItemLongClickListener(this::showNoteDeleteDialog);
         notesListView.setAdapter(listAdapter);
         notesListView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -176,6 +177,15 @@ public class RestaurantDetailActivity extends AppCompatActivity {
                     note.setNote(noteInput.getText().toString());
                     viewModel.editNote(note);
                 }))
+                .setNegativeButton(R.string.cancel, (dialog, i) -> dialog.cancel())
+                .show();
+    }
+
+    private void showNoteDeleteDialog(RestaurantNote note) {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.notes)
+                .setMessage(R.string.delete_item)
+                .setPositiveButton(R.string.remove, ((dialog, i) -> viewModel.deleteNote(note)))
                 .setNegativeButton(R.string.cancel, (dialog, i) -> dialog.cancel())
                 .show();
     }

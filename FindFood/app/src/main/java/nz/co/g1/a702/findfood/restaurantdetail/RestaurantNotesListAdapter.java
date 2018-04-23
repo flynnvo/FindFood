@@ -30,6 +30,11 @@ public class RestaurantNotesListAdapter extends RecyclerView.Adapter<RestaurantN
      */
     private ItemClickListener itemClickListener;
 
+    /**
+     * Listener for any items long-clicked in the list
+     */
+    private ItemClickListener itemLongClickListener;
+
     RestaurantNotesListAdapter() {
         dataset = new ArrayList<>();
     }
@@ -55,6 +60,14 @@ public class RestaurantNotesListAdapter extends RecyclerView.Adapter<RestaurantN
         holder.noteView.setText(note.getNote());
         if (itemClickListener != null) {
             holder.itemView.setOnClickListener(view -> itemClickListener.onItemClicked(note));
+        }
+        if (itemLongClickListener != null) {
+//            Log.d("LONG", "onBindViewHolder: LONG");
+//            holder.itemView.setLongClickable(true);
+            holder.itemView.setOnLongClickListener(view -> {
+                itemLongClickListener.onItemClicked(note);
+                return true;
+            });
         }
     }
 
@@ -82,6 +95,13 @@ public class RestaurantNotesListAdapter extends RecyclerView.Adapter<RestaurantN
      */
     public void setOnItemClickListener(ItemClickListener itemClickListener) {
         this.itemClickListener = itemClickListener;
+    }
+
+    /**
+     * @param itemLongClickListener the item click listener to set
+     */
+    public void setOnItemLongClickListener(ItemClickListener itemLongClickListener) {
+        this.itemLongClickListener = itemLongClickListener;
     }
 
     /**

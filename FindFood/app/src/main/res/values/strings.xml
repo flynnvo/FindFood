@@ -7,4 +7,6 @@
     <string name="notes">Notes</string>
     <string name="done">Done</string>
     <string name="cancel">Cancel</string>
+    <string name="delete_item">Remove note?</string>
+    <string name="remove">remove</string>
 </resources>

@@ -75,4 +75,8 @@ public class RestaurantDetailViewModel extends AndroidViewModel {
     public void editNote(RestaurantNote note) {
         executor.execute(() -> notesDao.insert(note));
     }
+
+    public void deleteNote(RestaurantNote note) {
+        executor.execute(() -> notesDao.delete(note));
+    }
 }
