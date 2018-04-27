@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -97,13 +98,9 @@ public class RestaurantListActivity extends AppCompatActivity {
         restaurantListView.setLayoutManager(new FixedSizeLayoutManager(this));
         viewModel = ViewModelProviders.of(this).get(RestaurantListViewModel.class);
 
-        swipeRefreshLayout.setOnRefreshListener(this::loadRestaurants);
+        swipeRefreshLayout.setOnRefreshListener(this::loadRestaurantsWithCheck);
 
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_PERMISSION_REQUEST);
-        } else {
-            loadRestaurants();
-        }
+        loadRestaurantsWithCheck();
     }
 
     /**
@@ -118,6 +115,26 @@ public class RestaurantListActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_RESTAURANT_ADDRESS, restaurant.getAddress());
         intent.putExtra(EXTRA_RESTAURANT_PHOTO_URL, restaurant.getImageUrl(1440, 1440));
         startActivity(intent);
+    }
+
+    /**
+     * Checks the location permission and loads the restaurant list for the current location if available
+     */
+    private void loadRestaurantsWithCheck() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            showPermissionExplanationDialog();
+        } else {
+            loadRestaurants();
+        }
+    }
+
+    private void showPermissionExplanationDialog() {
+        new AlertDialog.Builder(this)
+                .setMessage(R.string.permission_explanation)
+                .setPositiveButton(R.string.ok, ((dialog, i) ->
+                        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_PERMISSION_REQUEST)))
+                .setNegativeButton(R.string.cancel, (dialog, i) -> setAdapterData(null))
+                .show();
     }
 
     /**
@@ -141,8 +158,7 @@ public class RestaurantListActivity extends AppCompatActivity {
         viewModel.getRestaurants()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(this::setAdapterData,
-                        Throwable::printStackTrace);
+                .subscribe(this::setAdapterData, error -> this.setAdapterData(null));
     }
 
     /**
@@ -178,7 +194,7 @@ public class RestaurantListActivity extends AppCompatActivity {
      */
     class FixedSizeLayoutManager extends LinearLayoutManager {
 
-        public FixedSizeLayoutManager(Context context) {
+        FixedSizeLayoutManager(Context context) {
             super(context);
         }
 
