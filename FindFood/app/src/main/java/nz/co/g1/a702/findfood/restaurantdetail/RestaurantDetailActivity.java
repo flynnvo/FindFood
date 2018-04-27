@@ -118,7 +118,7 @@ public class RestaurantDetailActivity extends AppCompatActivity {
                     .into(new SimpleTarget<Drawable>() {
                         @Override
                         public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
-                            appBarBackground.setBackgroundDrawable(resource);
+                            appBarBackground.setImageDrawable(resource);
                             appBarScrim.setVisibility(View.VISIBLE);
                         }
                     });
