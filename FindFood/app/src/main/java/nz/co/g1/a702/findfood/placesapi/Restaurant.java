@@ -1,7 +1,6 @@
 package nz.co.g1.a702.findfood.placesapi;
 
 import android.location.Location;
-import android.support.annotation.Keep;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -10,20 +9,50 @@ import java.util.List;
 import nz.co.g1.a702.findfood.BuildConfig;
 import nz.co.g1.a702.findfood.R;
 
-@Keep
+/**
+ * Model for a Google Places API response restaurant
+ */
 public class Restaurant {
+
+    /**
+     * The location information model
+     */
     @SerializedName("geometry")
     private Geometry geometry;
+
+    /**
+     * Restaurant name
+     */
     @SerializedName("name")
     private String name;
+
+    /**
+     * Unique Google Places API ID
+     */
     @SerializedName("place_id")
     private String placeId;
+
+    /**
+     * Restaurant's price level
+     */
     @SerializedName("price_level")
     private int priceLevel;
+
+    /**
+     * Address of the restaurant
+     */
     @SerializedName("vicinity")
     private String address;
+
+    /**
+     * Type of establishment (restaurant, cafe, bar)
+     */
     @SerializedName("types")
     private List<String> types;
+
+    /**
+     * Photo API references
+     */
     @SerializedName("photos")
     private List<Photo> photos;
 
@@ -102,7 +131,9 @@ public class Restaurant {
         }
     }
 
-    @Keep
+    /**
+     * Establishment type model
+     */
     public enum Type {
         BAR(R.drawable.ic_type_bar),
         CAFE(R.drawable.ic_type_cafe),
@@ -119,7 +150,9 @@ public class Restaurant {
         }
     }
 
-    @Keep
+    /**
+     * The location information model
+     */
     public class Geometry {
         @SerializedName("location")
         private Location location;
@@ -133,7 +166,9 @@ public class Restaurant {
         }
     }
 
-    @Keep
+    /**
+     * Google Photos information model
+     */
     public class Photo {
         @SerializedName("photo_reference")
         private String photoReference;
