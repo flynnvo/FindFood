@@ -55,6 +55,9 @@ public class LocationRepository {
         }
     }
 
+    /**
+     * Exception class for if the location isn't found
+     */
     private class LocationNotAvailableException extends Exception {
     }
 }

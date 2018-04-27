@@ -111,6 +111,11 @@ public class RestaurantDetailActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
+    /**
+     * Load the image into the expanded appbar if one is found
+     *
+     * @param photoUrl the URL of the image to load
+     */
     private void loadAppbarImage(String photoUrl) {
         if (photoUrl != null && !photoUrl.isEmpty()) {
             Glide.with(this)
@@ -164,6 +169,8 @@ public class RestaurantDetailActivity extends AppCompatActivity {
 
     /**
      * Shows the dialog for entering a new note or editing an existing note
+     *
+     * @param note the note to update or null if creating a new note
      */
     private void showNoteInputDialog(RestaurantNote note) {
         final View root = getLayoutInflater().inflate(R.layout.enter_note_dialog, null);
@@ -181,6 +188,11 @@ public class RestaurantDetailActivity extends AppCompatActivity {
                 .show();
     }
 
+    /**
+     * Show the dialog to confirm deleting a note
+     *
+     * @param note the note to delete
+     */
     private void showNoteDeleteDialog(RestaurantNote note) {
         new AlertDialog.Builder(this)
                 .setTitle(R.string.notes)

@@ -128,6 +128,9 @@ public class RestaurantListActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Shows a dialog explaining why the app needs the Location permission
+     */
     private void showPermissionExplanationDialog() {
         new AlertDialog.Builder(this)
                 .setMessage(R.string.permission_explanation)
