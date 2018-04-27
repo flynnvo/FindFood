@@ -62,8 +62,6 @@ public class RestaurantNotesListAdapter extends RecyclerView.Adapter<RestaurantN
             holder.itemView.setOnClickListener(view -> itemClickListener.onItemClicked(note));
         }
         if (itemLongClickListener != null) {
-//            Log.d("LONG", "onBindViewHolder: LONG");
-//            holder.itemView.setLongClickable(true);
             holder.itemView.setOnLongClickListener(view -> {
                 itemLongClickListener.onItemClicked(note);
                 return true;
