@@ -3,11 +3,12 @@ package nz.co.g1.a702.findfood.location;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.location.Location;
-
-import com.google.android.gms.location.LocationRequest;
-import com.patloew.rxlocation.RxLocation;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Bundle;
 
 import io.reactivex.Single;
+import io.reactivex.SingleEmitter;
 
 /**
  * Repository for location-related information
@@ -15,49 +16,81 @@ import io.reactivex.Single;
 public class LocationRepository {
 
     /**
-     * The {@link RxLocation} instance to use for retrieving location information
+     * The {@link LocationManager} instance to use for retrieving location information
      */
-    private final RxLocation rxLocation;
-
-    /**
-     * The {@link LocationRequest} used for getting the user's location
-     */
-    private LocationRequest locationRequest = LocationRequest.create()
-            .setNumUpdates(1)
-            .setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
+    private final LocationManager locationManager;
 
     public LocationRepository(Context context) {
-        this.rxLocation = new RxLocation(context);
+        this.locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
     }
 
     /**
-     * @return a {@link io.reactivex.Single} with the device's current location
-     */
-    public Single<Location> getLocation() {
-        return rxLocation.settings()
-                .checkAndHandleResolution(locationRequest)
-                .flatMap(this::getLocation);
-    }
-
-    /**
-     * Internal location query using RxLocation
-     *
-     * @param isAvailable if the user's location is available
      * @return a {@link Single} with the device's current location
-     * @throws Exception if the location is not available
      */
     @SuppressLint("MissingPermission")
-    private Single<Location> getLocation(boolean isAvailable) throws Exception {
-        if (isAvailable) {
-            return rxLocation.location().updates(locationRequest).firstOrError();
-        } else {
-            throw new LocationNotAvailableException();
+    public Single<Location> getLocation() {
+        boolean gpsEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        boolean networkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+        return Single.create(emitter -> {
+            Location location;
+            if (gpsEnabled) {
+                location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                if (location == null) {
+                    locationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER, new EmitterLocationListener(emitter), null);
+                } else {
+                    emitter.onSuccess(location);
+                }
+            } else if (networkEnabled) {
+                location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+                if (location == null) {
+                    locationManager.requestSingleUpdate(LocationManager.NETWORK_PROVIDER, new EmitterLocationListener(emitter), null);
+                } else {
+                    emitter.onSuccess(location);
+                }
+            } else {
+                throw new LocationNotAvailableException();
+            }
+        });
+    }
+
+    /**
+     * Listener for location requests that emits the location
+     * to a given {@link SingleEmitter}
+     */
+    private class EmitterLocationListener implements LocationListener {
+
+        /**
+         * The {@link SingleEmitter} to emit location updates to
+         */
+        private final SingleEmitter<Location> locationEmitter;
+
+        EmitterLocationListener(SingleEmitter<Location> locationEmitter) {
+            this.locationEmitter = locationEmitter;
+        }
+
+        @Override
+        public void onLocationChanged(Location location) {
+            locationEmitter.onSuccess(location);
+        }
+
+        @Override
+        public void onStatusChanged(String s, int i, Bundle bundle) {
+
+        }
+
+        @Override
+        public void onProviderEnabled(String s) {
+
+        }
+
+        @Override
+        public void onProviderDisabled(String s) {
+
         }
     }
 
     /**
      * Exception class for if the location isn't found
      */
-    private class LocationNotAvailableException extends Exception {
-    }
+    private class LocationNotAvailableException extends Exception {}
 }

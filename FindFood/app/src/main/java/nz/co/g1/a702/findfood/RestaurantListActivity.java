@@ -2,7 +2,6 @@ package nz.co.g1.a702.findfood;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.app.Dialog;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.content.Intent;
@@ -17,9 +16,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
-
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GoogleApiAvailability;
 
 import java.util.List;
 
@@ -85,8 +81,6 @@ public class RestaurantListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_list);
 
-        checkGooglePlayServices();
-
         restaurantListView = findViewById(R.id.main_restaurant_list);
         emptyView = findViewById(R.id.main_empty_view);
         swipeRefreshLayout = findViewById(R.id.main_swipe_refresh);
@@ -138,19 +132,6 @@ public class RestaurantListActivity extends AppCompatActivity {
                         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_PERMISSION_REQUEST)))
                 .setNegativeButton(R.string.cancel, (dialog, i) -> setAdapterData(null))
                 .show();
-    }
-
-    /**
-     * Check the availability of Google Play Services on the devices
-     * These are needed to retrieve the user's location
-     */
-    private void checkGooglePlayServices() {
-        int status = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(this);
-        if (status != ConnectionResult.SUCCESS) {
-            Dialog errorDialog = GoogleApiAvailability.getInstance().getErrorDialog(this, status, 0);
-            errorDialog.setOnDismissListener(dialog -> finish());
-            errorDialog.show();
-        }
     }
 
     /**
