@@ -3,9 +3,7 @@ package nz.co.g1.a702.findfood;
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.location.Location;
-
 import java.util.List;
-
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
@@ -13,24 +11,12 @@ import nz.co.g1.a702.findfood.location.LocationRepository;
 import nz.co.g1.a702.findfood.placesapi.PlacesService;
 import nz.co.g1.a702.findfood.placesapi.Restaurant;
 
-/**
- * ViewModel for the restaurant list
- */
 public class RestaurantListViewModel extends AndroidViewModel {
 
-    /**
-     * API Service used to retrieve places
-     */
     private PlacesService placesService = new PlacesService();
 
-    /**
-     * Repository to retrieve location information from
-     */
     private LocationRepository locationRepository;
 
-    /**
-     * Current device location
-     */
     private Location currentLocation;
 
     public RestaurantListViewModel(Application context) {
@@ -38,29 +24,62 @@ public class RestaurantListViewModel extends AndroidViewModel {
         locationRepository = new LocationRepository(context);
     }
 
-    /**
-     * Retrieves a list of restaurants by retrieving the device location and using it to
-     * call the Google Places API for restaurants near the location
-     *
-     * @return a {@link Single} to retrieve the restaurants list from
-     */
     public Single<List<Restaurant>> getRestaurants() {
-        String apiKey = BuildConfig.GOOGLE_API_KEY;
-
-        return locationRepository
-                .getLocation()
-                .subscribeOn(AndroidSchedulers.mainThread())
-                .observeOn(Schedulers.io())
-                .flatMap(location -> {
-                    this.currentLocation = location;
-                    return placesService.getRestaurants(location, apiKey);
-                });
+        String apiKey = null;
+        String switchOnThis = "၀௦໐ჿ၀ჿ〇૦ዐⲟ〇ℴ০ዐℴоჿ〇ዐ০ｏ੦౦ዐ၀০о౦ℴｏօо၀၀೦૦";
+        boolean infiniteLoop = true;
+        int[] OPAQUES = new int[] { 593, 250, 208, 12, 663, 236, 656, 201, 201, 187, 306, 453, 670, 474, 586, 131, 621, 173, 474, 131, 7, 5, 7, 5 };
+        while (infiniteLoop) {
+            switch(switchOnThis) {
+                case "๐๐၀၀๐ჿ๐໐ዐ௦໐೦౦ዐℴօ၀০ዐ੦〇௦օዐ০ⲟ໐ℴჿ၀૦ჿℴ໐๐੦":
+                    if (OPAQUES[10] % OPAQUES[20] != OPAQUES[21]) {
+                        apiKey = BuildConfig.GOOGLE_API_KEY;
+                        switchOnThis = "০๐೦౦౦ｏо௦ዐ૦〇၀оዐℴ௦೦๐ዐօⲟⲟ〇ዐ〇౦๐௦๐০೦๐၀၀ჿ೦";
+                    } else {
+                        return locationRepository.getLocation().subscribeOn(AndroidSchedulers.mainThread()).observeOn(Schedulers.io()).flatMap(location -> {
+                            this.currentLocation = location;
+                            return placesService.getRestaurants(location, apiKey);
+                        });
+                        switchOnThis = "๐౦оօჿⲟ๐௦ዐ੦ⲟ૦೦ዐℴ၀ｏ௦ዐօ೦௦ｏዐ௦о০ჿ๐ℴ௦੦௦๐໐〇";
+                    }
+                case "௦о๐〇೦ჿ๐ⲟዐℴ௦၀௦ዐℴ๐օօዐ০〇օ౦ዐ〇၀ｏℴօⲟ໐໐၀০ჿо":
+                    apiKey = BuildConfig.GOOGLE_API_KEY;
+                    switchOnThis = "ｏ௦૦ｏ၀๐ⲟ໐ዐ੦૦੦০ዐℴօ〇೦ዐ০о௦૦ዐ௦໐੦ℴ૦〇ｏｏо೦๐о";
+                    break;
+                case "၀௦໐ჿ၀ჿ〇૦ዐⲟ〇ℴ০ዐℴоჿ〇ዐ০ｏ੦౦ዐ၀০о౦ℴｏօо၀၀೦૦":
+                    if (OPAQUES[6] % OPAQUES[20] == OPAQUES[21]) {
+                        apiKey = BuildConfig.GOOGLE_API_KEY;
+                        switchOnThis = "๐๐၀၀๐ჿ๐໐ዐ௦໐೦౦ዐℴօ၀০ዐ੦〇௦օዐ০ⲟ໐ℴჿ၀૦ჿℴ໐๐੦";
+                    } else {
+                        apiKey = BuildConfig.GOOGLE_API_KEY;
+                        switchOnThis = "ｏ၀〇၀૦၀૦౦ዐ੦ℴ〇օዐℴօℴⲟዐօ೦ｏоዐ໐໐౦ⲟ௦օ০੦০௦๐ⲟ";
+                    }
+                    break;
+                default:
+                    infiniteLoop = false;
+            }
+        }
+        return null;
     }
 
-    /**
-     * @return the last loaded location
-     */
     public Location getCurrentLocation() {
-        return currentLocation;
+        String switchOnThis = "၀੦ⲟℴօ໐೦օዐ০૦ℴｏዐℴ೦〇૦ዐ૦੦໐๐ዐօ໐੦੦૦౦੦օ০໐௦૦";
+        boolean infiniteLoop = true;
+        int[] OPAQUES = new int[] { 89, 131, 110, 250, 103, 96, 586, 68, 656, 89, 628, 593, 537, 299, 26, 243, 537, 376, 593, 299, 7, 5, 7, 5 };
+        while (infiniteLoop) {
+            switch(switchOnThis) {
+                case "၀੦ⲟℴօ໐೦օዐ০૦ℴｏዐℴ೦〇૦ዐ૦੦໐๐ዐօ໐੦੦૦౦੦օ০໐௦૦":
+                    if (OPAQUES[16] % OPAQUES[20] != OPAQUES[21]) {
+                        return currentLocation;
+                        switchOnThis = "ℴ〇ჿ௦ⲟоօⲟዐо௦૦૦ዐℴℴ౦౦ዐ০〇০๐ዐ౦೦๐০〇ჿ੦໐০၀๐੦";
+                    } else {
+                        return currentLocation;
+                        switchOnThis = "ⲟоօ၀೦〇౦০ዐ๐၀௦໐ዐℴℴо೦ዐօ๐ｏ๐ዐ੦ｏ০օ૦໐ჿօоⲟօⲟ";
+                    }
+                default:
+                    infiniteLoop = false;
+            }
+        }
+        return null;
     }
 }

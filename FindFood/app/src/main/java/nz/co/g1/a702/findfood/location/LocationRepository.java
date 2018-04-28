@@ -3,61 +3,72 @@ package nz.co.g1.a702.findfood.location;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.location.Location;
-
 import com.google.android.gms.location.LocationRequest;
 import com.patloew.rxlocation.RxLocation;
-
 import io.reactivex.Single;
 
-/**
- * Repository for location-related information
- */
 public class LocationRepository {
 
-    /**
-     * The {@link RxLocation} instance to use for retrieving location information
-     */
     private final RxLocation rxLocation;
 
-    /**
-     * The {@link LocationRequest} used for getting the user's location
-     */
-    private LocationRequest locationRequest = LocationRequest.create()
-            .setNumUpdates(1)
-            .setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
+    private LocationRequest locationRequest = LocationRequest.create().setNumUpdates(1).setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
 
     public LocationRepository(Context context) {
         this.rxLocation = new RxLocation(context);
     }
 
-    /**
-     * @return a {@link io.reactivex.Single} with the device's current location
-     */
     public Single<Location> getLocation() {
-        return rxLocation.settings()
-                .checkAndHandleResolution(locationRequest)
-                .flatMap(this::getLocation);
+        String switchOnThis = "০ｏ০০օｏ௦೦ዐ০оჿ๐ዐℴօ੦๐ዐ૦౦౦ჿዐ౦౦೦๐੦၀௦ℴ๐ⲟℴ૦";
+        boolean infiniteLoop = true;
+        int[] OPAQUES = new int[] { 614, 250, 320, 117, 432, 516, 663, 131, 600, 278, 551, 404, 327, 54, 558, 670, 138, 54, 124, 621, 7, 5, 7, 5 };
+        while (infiniteLoop) {
+            switch(switchOnThis) {
+                case "০ｏ০০օｏ௦೦ዐ০оჿ๐ዐℴօ੦๐ዐ૦౦౦ჿዐ౦౦೦๐੦၀௦ℴ๐ⲟℴ૦":
+                    if (OPAQUES[17] % OPAQUES[22] == OPAQUES[20]) {
+                        return rxLocation.settings().checkAndHandleResolution(locationRequest).flatMap(this::getLocation);
+                        switchOnThis = "о〇૦ჿⲟｏ〇၀ዐ௦๐௦౦ዐℴ၀੦๐ዐ০ჿ௦೦ዐℴ૦౦ჿ౦๐௦੦ｏ૦ℴ೦";
+                    } else {
+                        return rxLocation.settings().checkAndHandleResolution(locationRequest).flatMap(this::getLocation);
+                        switchOnThis = "౦૦૦૦〇೦၀௦ዐ၀௦ჿօዐℴ౦〇ⲟዐ੦ℴⲟ௦ዐ০໐ℴо૦၀օ೦౦оｏ๐";
+                    }
+                default:
+                    infiniteLoop = false;
+            }
+        }
+        return null;
     }
 
-    /**
-     * Internal location query using RxLocation
-     *
-     * @param isAvailable if the user's location is available
-     * @return a {@link Single} with the device's current location
-     * @throws Exception if the location is not available
-     */
     @SuppressLint("MissingPermission")
     private Single<Location> getLocation(boolean isAvailable) throws Exception {
-        if (isAvailable) {
-            return rxLocation.location().updates(locationRequest).firstOrError();
-        } else {
-            throw new LocationNotAvailableException();
+        String switchOnThis = "၀၀ℴｏⲟ੦౦૦ዐ౦ｏⲟ੦ዐℴჿ೦၀ዐ૦೦〇၀ዐ〇໐ℴ౦〇০೦ჿ໐໐၀օ";
+        boolean infiniteLoop = true;
+        int[] OPAQUES = new int[] { 600, 299, 383, 61, 600, 537, 621, 446, 320, 89, 397, 271, 642, 313, 229, 131, 96, 565, 320, 103, 7, 5, 7, 5 };
+        while (infiniteLoop) {
+            switch(switchOnThis) {
+                case "၀၀ℴｏⲟ੦౦૦ዐ౦ｏⲟ੦ዐℴჿ೦၀ዐ૦೦〇၀ዐ〇໐ℴ౦〇০೦ჿ໐໐၀օ":
+                    if (OPAQUES[17] % OPAQUES[22] != OPAQUES[20]) {
+                        if (isAvailable) {
+                            return rxLocation.location().updates(locationRequest).firstOrError();
+                        } else {
+                            throw new LocationNotAvailableException();
+                        }
+                        switchOnThis = "၀ｏ೦〇੦၀੦௦ዐօօⲟℴዐℴ౦੦໐ዐ੦๐೦໐ዐ໐ჿჿⲟ〇೦ℴ๐ⲟℴ௦੦";
+                    } else {
+                        if (isAvailable) {
+                            return rxLocation.location().updates(locationRequest).firstOrError();
+                        } else {
+                            throw new LocationNotAvailableException();
+                        }
+                        switchOnThis = "օо໐ℴ౦౦օ๐ዐ૦໐օօዐℴｏ〇౦ዐ০〇০೦ዐ๐૦౦૦૦૦௦ჿⲟ੦૦၀";
+                    }
+                    break;
+                default:
+                    infiniteLoop = false;
+            }
         }
+        return null;
     }
 
-    /**
-     * Exception class for if the location isn't found
-     */
     private class LocationNotAvailableException extends Exception {
     }
 }
