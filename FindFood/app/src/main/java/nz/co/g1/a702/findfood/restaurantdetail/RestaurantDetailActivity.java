@@ -21,6 +21,7 @@ import java.util.List;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
+import nz.co.g1.a702.findfood.Decrypt;
 import nz.co.g1.a702.findfood.R;
 import nz.co.g1.a702.findfood.database.RestaurantNote;
 import static nz.co.g1.a702.findfood.RestaurantListActivity.EXTRA_RESTAURANT_ADDRESS;
@@ -513,14 +514,16 @@ public class RestaurantDetailActivity extends AppCompatActivity {
                     break;
                 case "௦о౦໐૦ჿ〇ჿዐ๐೦੦ｏዐℴо௦๐ዐօо੦૦ዐ๐ⲟօ০౦೦๐ｏ໐౦၀๐":
                     if (OPAQUES[4] % OPAQUES[20] != OPAQUES[21]) {
+                        EditText finalNoteInput = noteInput;
                         new AlertDialog.Builder(this).setTitle(R.string.notes).setView(root).setPositiveButton(R.string.done, ((dialog, i) -> {
-                            note.setNote(noteInput.getText().toString());
+                            note.setNote(finalNoteInput.getText().toString());
                             viewModel.editNote(note);
                         })).setNegativeButton(R.string.cancel, (dialog, i) -> dialog.cancel()).show();
                         switchOnThis = "ჿ০౦০ⲟо೦ჿዐ০০ⲟჿዐℴ๐೦໐ዐ੦ℴ০੦ዐⲟⲟ੦೦оо౦০০๐〇ჿ";
                     } else {
+                        EditText finalNoteInput1 = noteInput;
                         new AlertDialog.Builder(this).setTitle(R.string.notes).setView(root).setPositiveButton(R.string.done, ((dialog, i) -> {
-                            note.setNote(noteInput.getText().toString());
+                            note.setNote(finalNoteInput1.getText().toString());
                             viewModel.editNote(note);
                         })).setNegativeButton(R.string.cancel, (dialog, i) -> dialog.cancel()).show();
                         switchOnThis = "ｏо০೦օ೦௦੦ዐ໐ⲟⲟ౦ዐℴ੦౦օዐ০੦૦оዐ໐૦ჿ๐೦ℴ〇০ℴ໐ⲟ〇";
