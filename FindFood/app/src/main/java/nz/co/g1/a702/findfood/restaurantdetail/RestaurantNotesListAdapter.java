@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
+
+import nz.co.g1.a702.findfood.Decrypt;
 import nz.co.g1.a702.findfood.R;
 import nz.co.g1.a702.findfood.database.RestaurantNote;
 
@@ -29,30 +31,28 @@ public class RestaurantNotesListAdapter extends RecyclerView.Adapter<RestaurantN
     @Override
     public RestaurantViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = null;
-        String switchOnThis = "૦၀੦௦೦໐ℴჿዐ౦ⲟ০౦ዐℴ০০ჿዐօоⲟｏዐ০௦ⲟℴℴ૦௦೦௦໐၀໐";
+        String switchOnThis = "〇໐๐౦໐໐੦౦ዐօ૦〇೦ዐℴ੦ჿ〇ዐօჿ௦੦ዐ໐૦ⲟｏ၀ℴｏ૦ℴჿ๐ⲟ";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 621, 544, 411, 110, 628, 285, 663, 26, 551, 600, 586, 614, 208, 369, 586, 257, 166, 600, 131, 404, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 607, 166, 82, 467, 222, 117, 12, 355, 558, 460, 131, 418, 677, 117, 509, 670, 257, 404, 544, 82, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "૦၀੦௦೦໐ℴჿዐ౦ⲟ০౦ዐℴ০০ჿዐօоⲟｏዐ০௦ⲟℴℴ૦௦೦௦໐၀໐":
-                    if (OPAQUES[8] % OPAQUES[20] != OPAQUES[21]) {
+                case "౦๐ℴо๐оо௦ዐ੦๐〇ℴዐℴჿ๐ℴዐօｏ໐〇ዐⲟ੦౦০๐օо၀ⲟ〇੦౦":
+                    if (OPAQUES[14] % OPAQUES[20] != OPAQUES[21]) {
                         itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.note_list_item, parent, false);
-                        switchOnThis = "೦ｏჿ০〇௦օ၀ዐ૦〇໐০ዐℴоօⲟዐ੦໐০૦ዐ๐ⲟ০೦೦໐ⲟ೦໐௦౦〇";
-                    } else {
-                        itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.note_list_item, parent, false);
-                        switchOnThis = "ⲟⲟ໐੦০ჿｏ໐ዐօ౦੦௦ዐℴⲟｏօዐ੦௦໐๐ዐ௦๐೦౦ｏ๐о๐〇ｏ౦౦";
-                    }
-                    break;
-                case "ℴ੦੦౦〇౦၀০ዐ၀౦໐ⲟዐℴｏ੦౦ዐ੦೦ℴ౦ዐ〇ⲟ၀੦օⲟჿ০૦〇օ০":
-                    return new RestaurantViewHolder(itemView);
-                case "ⲟⲟ໐੦০ჿｏ໐ዐօ౦੦௦ዐℴⲟｏօዐ੦௦໐๐ዐ௦๐೦౦ｏ๐о๐〇ｏ౦౦":
-                    if (OPAQUES[3] % OPAQUES[22] == OPAQUES[20]) {
-                        itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.note_list_item, parent, false);
-                        switchOnThis = "၀০၀ჿჿℴ੦౦ዐ০૦ⲟℴዐℴ౦๐ｏዐօ೦੦০ዐℴ໐০௦੦౦౦੦о໐〇೦";
+                        switchOnThis = "૦ｏ〇〇໐௦౦ჿዐ০௦೦௦ዐℴჿ૦໐ዐ૦૦੦૦ዐ๐౦௦௦໐๐๐оჿ໐〇೦";
                     } else {
                         return new RestaurantViewHolder(itemView);
-                        switchOnThis = "೦౦౦০၀௦оℴዐჿ〇੦ℴዐℴჿоℴዐ૦о০๐ዐ০оჿⲟо૦੦о௦௦౦০";
                     }
+                case "〇໐๐౦໐໐੦౦ዐօ૦〇೦ዐℴ੦ჿ〇ዐօჿ௦੦ዐ໐૦ⲟｏ၀ℴｏ૦ℴჿ๐ⲟ":
+                    if (OPAQUES[19] % OPAQUES[22] != OPAQUES[20]) {
+                        itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.note_list_item, parent, false);
+                        switchOnThis = "౦๐ℴо๐оо௦ዐ੦๐〇ℴዐℴჿ๐ℴዐօｏ໐〇ዐⲟ੦౦০๐օо၀ⲟ〇੦౦";
+                    } else {
+                        return new RestaurantViewHolder(itemView);
+                    }
+                    break;
+                case "၀〇ｏｏ๐໐〇௦ዐ০੦о〇ዐℴ௦௦૦ዐօ၀০౦ዐ০೦ｏ০ℴℴ௦ℴ〇о௦௦":
+                    return new RestaurantViewHolder(itemView);
                 default:
                     infiniteLoop = false;
             }
@@ -64,68 +64,66 @@ public class RestaurantNotesListAdapter extends RecyclerView.Adapter<RestaurantN
     @Override
     public void onBindViewHolder(@NonNull RestaurantViewHolder holder, int position) {
         RestaurantNote note = null;
-        String switchOnThis = "௦оჿჿℴⲟჿ੦ዐჿ๐〇၀ዐℴ૦૦оዐ০〇೦〇ዐ೦၀၀ｏ೦๐օ၀๐০၀໐";
+        String switchOnThis = "օ೦ｏ௦੦૦ℴ੦ዐ০૦౦ჿዐℴჿ௦௦ዐօ০〇੦ዐ೦໐౦౦ⲟ౦০೦ⲟ੦౦ⲟ";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 397, 509, 187, 495, 292, 54, 320, 327, 117, 425, 110, 551, 677, 670, 33, 208, 194, 439, 411, 47, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 446, 61, 635, 327, 215, 432, 201, 677, 586, 68, 677, 180, 82, 313, 152, 243, 47, 649, 621, 474, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "௦оჿჿℴⲟჿ੦ዐჿ๐〇၀ዐℴ૦૦оዐ০〇೦〇ዐ೦၀၀ｏ೦๐օ၀๐০၀໐":
-                    if (OPAQUES[3] % OPAQUES[22] == OPAQUES[20]) {
-                        note = dataset.get(position);
-                        switchOnThis = "೦੦੦օ๐௦ｏ๐ዐ౦౦౦၀ዐℴ〇〇௦ዐ০ⲟ০оዐ০օ၀օ೦๐੦օ၀০ჿ၀";
-                    } else {
-                        note = dataset.get(position);
-                        switchOnThis = "੦๐օ੦ჿօ၀੦ዐ๐ℴ໐ⲟዐℴ੦ჿ੦ዐ੦੦௦๐ዐ๐၀ⲟℴ೦০о௦౦௦〇๐";
-                    }
-                    break;
-                case "๐໐ℴ๐о০ｏօዐ౦੦๐๐ዐℴჿ૦оዐօℴ၀ჿዐ໐૦օ೦օჿⲟօｏჿ౦০":
-                    if (OPAQUES[17] % OPAQUES[22] != OPAQUES[20]) {
-                        if (itemClickListener != null) {
-                            holder.itemView.setOnClickListener(view -> itemClickListener.onItemClicked(note));
-                        }
-                        switchOnThis = "೦০ⲟⲟ೦০о〇ዐჿⲟ೦օዐℴ૦〇૦ዐ੦ℴ০〇ዐ੦о〇૦੦၀оｏ૦૦૦ｏ";
-                    } else {
-                        holder.noteView.setText(note.getNote());
-                        switchOnThis = "оℴⲟо૦೦౦၀ዐ૦ⲟ೦ｏዐℴ૦೦૦ዐ੦օ૦๐ዐ০௦ｏⲟ௦၀о໐ℴ০໐๐";
-                    }
-                    break;
-                case "૦ჿ౦੦ℴℴ੦೦ዐ௦੦ჿ০ዐℴօⲟ੦ዐ০〇օ〇ዐ੦੦০໐〇〇ⲟⲟ๐օ〇ⲟ":
-                    note = dataset.get(position);
-                    switchOnThis = "೦০ჿⲟ〇౦໐〇ዐо೦૦໐ዐℴ౦๐ℴዐ૦౦ｏჿዐ૦ⲟ০๐๐օ๐೦օ໐၀໐";
-                    break;
-                case "೦০ⲟⲟ೦০о〇ዐჿⲟ೦օዐℴ૦〇૦ዐ੦ℴ০〇ዐ੦о〇૦੦၀оｏ૦૦૦ｏ":
+                case "ⲟ০օ໐ⲟ௦၀оዐ૦о၀ჿዐℴ੦੦ⲟዐօ໐ჿ೦ዐօℴ০ჿ૦ჿჿоｏ၀০о":
                     if (OPAQUES[19] % OPAQUES[22] == OPAQUES[20]) {
-                        holder.noteView.setText(note.getNote());
-                        switchOnThis = "০ჿℴ౦౦ⲟ౦ℴዐ〇օ๐ｏዐℴ੦၀೦ዐօｏⲟｏዐ๐໐о೦০ｏჿ೦೦௦о၀";
+                        note = dataset.get(position);
+                        switchOnThis = "ჿ〇໐ℴჿоօ၀ዐｏ௦ｏჿዐℴ๐౦೦ዐօⲟⲟ၀ዐ၀օ၀ℴｏо໐௦ჿ౦౦০";
                     } else {
+                        if (itemClickListener != null) {
+                            RestaurantNote finalNote = note;
+                            holder.itemView.setOnClickListener(view -> itemClickListener.onItemClicked(finalNote));
+                        }
+                        switchOnThis = "ჿ૦໐о၀౦೦〇ዐჿ๐০೦ዐℴ၀౦೦ዐ੦၀〇ℴዐ๐໐ｏ၀૦੦о๐೦о০〇";
+                    }
+                    break;
+                case "ｏⲟоℴｏ໐๐૦ዐо໐০၀ዐℴ೦ｏჿዐօ๐੦০ዐℴ੦ჿ௦оⲟ০໐૦๐ℴ೦":
+                    if (OPAQUES[5] % OPAQUES[22] == OPAQUES[20]) {
+                        note = dataset.get(position);
+                        switchOnThis = "ℴ๐օℴｏｏ๐၀ዐⲟ౦๐໐ዐℴ໐੦೦ዐ০ჿоｏዐ౦૦໐໐о૦๐ｏ೦ｏｏ௦";
+                    } else {
+                        holder.noteView.setText(note.getNote());
+                        switchOnThis = "ⲟ০օ໐ⲟ௦၀оዐ૦о၀ჿዐℴ੦੦ⲟዐօ໐ჿ೦ዐօℴ০ჿ૦ჿჿоｏ၀০о";
+                    }
+                    break;
+                case "օ೦ｏ௦੦૦ℴ੦ዐ০૦౦ჿዐℴჿ௦௦ዐօ০〇੦ዐ೦໐౦౦ⲟ౦০೦ⲟ੦౦ⲟ":
+                    if (OPAQUES[8] % OPAQUES[20] == OPAQUES[21]) {
+                        note = dataset.get(position);
+                        switchOnThis = "ｏⲟоℴｏ໐๐૦ዐо໐০၀ዐℴ೦ｏჿዐօ๐੦০ዐℴ੦ჿ௦оⲟ০໐૦๐ℴ೦";
+                    } else {
+                        if (itemClickListener != null) {
+                            RestaurantNote finalNote1 = note;
+                            holder.itemView.setOnClickListener(view -> itemClickListener.onItemClicked(finalNote1));
+                        }
+                        switchOnThis = "ჿ૦੦о௦о೦ℴዐჿ〇оჿዐℴჿօ௦ዐ০ℴо০ዐ໐〇೦ჿℴ〇ჿ๐໐〇೦၀";
+                    }
+                    break;
+                case "໐ⲟ௦০০೦〇๐ዐ௦੦௦๐ዐℴｏ੦〇ዐ੦੦ⲟ૦ዐⲟ೦೦੦௦ⲟօ੦ℴօ౦೦":
+                    note = dataset.get(position);
+                    switchOnThis = "ჿоℴ০ჿ૦օ౦ዐℴｏ੦ｏዐℴ೦օ໐ዐ੦〇о౦ዐ೦ჿ၀๐০၀๐௦௦ℴ〇౦";
+                    break;
+                case "ჿ૦໐о၀౦೦〇ዐჿ๐০೦ዐℴ၀౦೦ዐ੦၀〇ℴዐ๐໐ｏ၀૦੦о๐೦о০〇":
+                    if (OPAQUES[12] % OPAQUES[20] == OPAQUES[21]) {
                         if (itemLongClickListener != null) {
+                            RestaurantNote finalNote2 = note;
                             holder.itemView.setOnLongClickListener(view -> {
-                                itemLongClickListener.onItemClicked(note);
+                                itemLongClickListener.onItemClicked(finalNote2);
                                 return true;
                             });
                         }
-                        switchOnThis = "੦౦〇೦〇օ૦౦ዐჿ໐੦ჿዐℴо০ჿዐ૦০օⲟዐ੦๐੦๐૦๐ℴօ০০օ૦";
-                    }
-                    break;
-                case "੦๐օ੦ჿօ၀੦ዐ๐ℴ໐ⲟዐℴ੦ჿ੦ዐ੦੦௦๐ዐ๐၀ⲟℴ೦০о௦౦௦〇๐":
-                    if (OPAQUES[18] % OPAQUES[20] != OPAQUES[21]) {
-                        if (itemClickListener != null) {
-                            holder.itemView.setOnClickListener(view -> itemClickListener.onItemClicked(note));
-                        }
-                        switchOnThis = "௦੦օⲟ௦〇੦০ዐ೦ｏ၀၀ዐℴ๐௦੦ዐօօ〇օዐ๐๐೦౦੦௦օｏ๐૦௦ｏ";
+                        switchOnThis = "๐੦ｏօ੦౦๐ｏዐ౦ℴｏօዐℴ௦૦ჿዐ੦ⲟ೦໐ዐ〇௦օօჿჿ၀໐০ჿ౦〇";
                     } else {
                         holder.noteView.setText(note.getNote());
-                        switchOnThis = "๐໐ℴ๐о০ｏօዐ౦੦๐๐ዐℴჿ૦оዐօℴ၀ჿዐ໐૦օ೦օჿⲟօｏჿ౦০";
+                        switchOnThis = "၀ｏ੦໐໐૦օоዐ〇〇ℴ೦ዐℴ૦౦௦ዐ૦૦૦০ዐｏ໐௦੦ჿ〇〇〇၀๐օ௦";
                     }
                     break;
-                case "໐〇օℴо〇ჿօዐ๐๐၀૦ዐℴ໐૦೦ዐ০ჿ੦оዐ໐০ჿ০౦ℴօо၀೦೦೦":
-                    if (itemLongClickListener != null) {
-                        holder.itemView.setOnLongClickListener(view -> {
-                            itemLongClickListener.onItemClicked(note);
-                            return true;
-                        });
-                    }
-                    switchOnThis = "ⲟ๐ჿ໐၀০০၀ዐ໐੦ｏｏዐℴ౦౦໐ዐ૦ⲟ௦௦ዐｏ໐ჿ௦௦ｏ໐೦০օჿ౦";
+                case "ｏⲟօ೦ｏⲟｏ૦ዐ๐օⲟ໐ዐℴ೦ჿ౦ዐ০ჿ૦оዐ၀๐੦օ౦೦౦๐໐੦໐ｏ":
+                    note = dataset.get(position);
+                    switchOnThis = "๐ｏ໐〇օ౦၀౦ዐჿ০੦೦ዐℴℴ೦๐ዐօ૦૦௦ዐ๐〇〇૦๐০ｏо૦၀౦ჿ";
                     break;
                 default:
                     infiniteLoop = false;
@@ -135,18 +133,16 @@ public class RestaurantNotesListAdapter extends RecyclerView.Adapter<RestaurantN
 
     @Override
     public int getItemCount() {
-        String switchOnThis = "೦௦ｏ〇၀೦ℴｏዐоо૦໐ዐℴօ০ｏዐ੦ⲟℴｏዐⲟ໐ჿ౦၀၀๐օ๐ℴ০օ";
+        String switchOnThis = "ჿｏℴℴоⲟ૦〇ዐ૦ℴ૦௦ዐℴ੦໐੦ዐ૦௦໐၀ዐօ၀౦໐ｏℴ௦੦օ໐၀ⲟ";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 565, 355, 159, 432, 425, 19, 26, 103, 257, 194, 124, 481, 320, 544, 47, 341, 257, 663, 635, 404, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 656, 544, 418, 159, 334, 152, 12, 418, 33, 215, 502, 523, 537, 222, 145, 607, 222, 348, 467, 663, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "೦௦ｏ〇၀೦ℴｏዐоо૦໐ዐℴօ০ｏዐ੦ⲟℴｏዐⲟ໐ჿ౦၀၀๐օ๐ℴ০օ":
-                    if (OPAQUES[3] % OPAQUES[22] != OPAQUES[20]) {
+                case "ჿｏℴℴоⲟ૦〇ዐ૦ℴ૦௦ዐℴ੦໐੦ዐ૦௦໐၀ዐօ၀౦໐ｏℴ௦੦օ໐၀ⲟ":
+                    if (OPAQUES[12] % OPAQUES[20] == OPAQUES[21]) {
                         return dataset.size();
-                        switchOnThis = "૦௦о૦о੦೦〇ዐ၀օ၀〇ዐℴ০၀౦ዐ૦০௦օዐ௦๐օ০০оｏჿо૦၀о";
                     } else {
                         return dataset.size();
-                        switchOnThis = "ჿ〇〇௦օჿ〇〇ዐ০੦౦оዐℴ૦ⲟ໐ዐօⲟ໐໐ዐ〇೦౦օℴ๐௦օ௦૦၀ჿ";
                     }
                 default:
                     infiniteLoop = false;
@@ -156,40 +152,40 @@ public class RestaurantNotesListAdapter extends RecyclerView.Adapter<RestaurantN
     }
 
     void setItems(List<RestaurantNote> notes) {
-        String switchOnThis = "о೦๐ｏ௦০〇੦ዐօ০օ౦ዐℴⲟჿ০ዐօ੦ｏ〇ዐ௦๐௦๐໐໐օ০оℴ໐໐";
+        String switchOnThis = "ｏ๐ℴ೦၀੦ⲟ๐ዐ੦౦〇оዐℴ੦၀оዐ૦၀օօዐⲟ໐〇໐ｏｏⲟооℴ૦օ";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 278, 425, 187, 236, 670, 628, 313, 61, 481, 271, 376, 152, 327, 656, 257, 110, 404, 537, 341, 425, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 187, 432, 551, 236, 243, 152, 376, 222, 425, 124, 474, 446, 481, 215, 649, 635, 187, 586, 138, 138, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "о೦๐ｏ௦০〇੦ዐօ০օ౦ዐℴⲟჿ০ዐօ੦ｏ〇ዐ௦๐௦๐໐໐օ০оℴ໐໐":
-                    if (OPAQUES[14] % OPAQUES[20] != OPAQUES[21]) {
-                        this.dataset = notes;
-                        switchOnThis = "໐ⲟ၀օ໐੦ⲟоዐჿ০௦໐ዐℴօ๐໐ዐ૦ⲟｏ૦ዐ໐੦๐০๐օօჿｏ໐ｏ໐";
-                    } else {
-                        Log.d(Decrypt.decrypt("MzBjaGNncCBka2xoc3JucmhhdnF1amNtbXhtZ29lbHZlc2xoeG5mZHphYnpzcW1ibW1scnZybWh6cmlwdGlheg=="), Decrypt.decrypt("NDVoeGNLcXdpZDogbnJoYXZxdWpjbW14bWdvZWx2ZXNsaHhuZmR6YWJ6c3FtYm1tbHJ2cm1oenJpcHRpYXo=") + notes.size());
-                        switchOnThis = "௦૦ⲟ໐໐๐၀օዐо০၀၀ዐℴоℴ၀ዐօ๐ｏօዐ੦ჿ၀੦о০ｏℴ๐೦ｏｏ";
-                    }
-                    break;
-                case "೦౦໐օо๐౦ｏዐⲟ၀೦౦ዐℴⲟⲟ๐ዐ૦ⲟ੦૦ዐ౦௦๐ｏ໐๐၀૦০๐ჿ০":
-                    Log.d(Decrypt.decrypt("MzBjaGNncCBka2xoc3JucmhhdnF1amNtbXhtZ29lbHZlc2xoeG5mZHphYnpzcW1ibW1scnZybWh6cmlwdGlheg=="), Decrypt.decrypt("NDVoeGNLcXdpZDogbnJoYXZxdWpjbW14bWdvZWx2ZXNsaHhuZmR6YWJ6c3FtYm1tbHJ2cm1oenJpcHRpYXo=") + notes.size());
-                    switchOnThis = "оჿ೦օⲟ౦੦оዐ໐ℴ০੦ዐℴჿ௦૦ዐօ౦໐၀ዐ౦੦၀оօ၀౦оօ௦оօ";
-                    break;
-                case "௦૦ⲟ໐໐๐၀օዐо০၀၀ዐℴоℴ၀ዐօ๐ｏօዐ੦ჿ၀੦о০ｏℴ๐೦ｏｏ":
-                    if (OPAQUES[8] % OPAQUES[20] != OPAQUES[21]) {
-                        notifyDataSetChanged();
-                        switchOnThis = "౦੦၀ჿօ၀೦၀ዐ౦օ๐ℴዐℴооℴዐ૦๐೦௦ዐ੦ℴ೦၀૦౦໐ჿ೦໐〇օ";
+                case "ｏ๐ℴ೦၀੦ⲟ๐ዐ੦౦〇оዐℴ੦၀оዐ૦၀օօዐⲟ໐〇໐ｏｏⲟооℴ૦օ":
+                    if (OPAQUES[15] % OPAQUES[22] != OPAQUES[20]) {
+                        Log.d(Decrypt.decrypt("NjdUVVpLWWVSVUdKS0pzZmpseGVhbXVndHF2eXZwZWp5YnhzaHBpeXl6Z21xbGhweXpzbmVtdG95dmx0YWNxaQ=="), Decrypt.decrypt("MTF2d2hCeXNjZTogZHNvdGZvcW15b293dmVicnRocm5menNzbnFpZmZhd2JsYWZnc3B0dGNoaWRtbGhocWk=") + notes.size());
+                        switchOnThis = "౦๐〇ჿ౦౦օ೦ዐ၀ⲟ௦ჿዐℴ〇૦ℴዐ૦о๐〇ዐ౦〇໐ⲟ০ⲟ೦૦೦၀ℴ〇";
                     } else {
                         this.dataset = notes;
-                        switchOnThis = "〇ℴｏ〇ℴⲟ౦০ዐჿ௦ⲟჿዐℴօօ౦ዐ૦๐໐ｏዐℴ૦ⲟ๐໐ℴօ০ⲟჿօ೦";
+                        switchOnThis = "օօ௦оօ౦၀оዐ౦๐ⲟ๐ዐℴ〇၀๐ዐ૦੦ℴ౦ዐ੦၀௦ჿ၀೦օ૦௦໐օ০";
                     }
                     break;
-                case "〇ℴｏ〇ℴⲟ౦০ዐჿ௦ⲟჿዐℴօօ౦ዐ૦๐໐ｏዐℴ૦ⲟ๐໐ℴօ০ⲟჿօ೦":
-                    if (OPAQUES[5] % OPAQUES[22] != OPAQUES[20]) {
+                case "〇੦օ০၀ჿⲟⲟዐ๐ｏ૦০ዐℴ໐౦০ዐօ੦౦௦ዐ૦о௦ჿｏｏｏ೦੦〇੦〇":
+                    this.dataset = notes;
+                    switchOnThis = "௦ⲟ੦౦๐௦૦ჿዐօ০၀၀ዐℴ၀ⲟоዐ০౦ｏჿዐℴ૦ჿօо૦೦о௦౦ⲟ၀";
+                    break;
+                case "ⲟℴօ੦੦໐௦ჿዐ೦௦೦๐ዐℴ၀੦ⲟዐօ௦౦௦ዐⲟ၀օⲟ౦௦о௦੦〇০〇":
+                    if (OPAQUES[3] % OPAQUES[22] != OPAQUES[20]) {
                         notifyDataSetChanged();
-                        switchOnThis = "〇೦ｏ໐௦໐〇ⲟዐ০౦໐০ዐℴℴ௦օዐ૦օо೦ዐ၀๐๐ⲟｏօⲟ૦ჿℴ၀๐";
+                        switchOnThis = "௦оо໐ℴ໐ℴоዐ૦૦໐౦ዐℴｏ௦ჿዐօⲟօℴዐ௦໐૦೦ｏ౦೦೦ℴჿｏⲟ";
                     } else {
                         notifyDataSetChanged();
-                        switchOnThis = "๐о০၀ⲟ౦໐੦ዐ໐ⲟ၀〇ዐℴօℴჿዐ੦೦ℴ૦ዐ〇ｏℴоℴ௦օ၀ⲟ౦௦ｏ";
+                        switchOnThis = "〇оо๐૦о౦оዐ૦೦໐೦ዐℴ၀ⲟ੦ዐ૦ℴｏⲟዐｏ০〇оօ੦໐০၀੦໐〇";
+                    }
+                    break;
+                case "౦๐〇ჿ౦౦օ೦ዐ၀ⲟ௦ჿዐℴ〇૦ℴዐ૦о๐〇ዐ౦〇໐ⲟ০ⲟ೦૦೦၀ℴ〇":
+                    if (OPAQUES[12] % OPAQUES[20] != OPAQUES[21]) {
+                        Log.d(Decrypt.decrypt("NjdUVVpLWWVSVUdKS0pzZmpseGVhbXVndHF2eXZwZWp5YnhzaHBpeXl6Z21xbGhweXpzbmVtdG95dmx0YWNxaQ=="), Decrypt.decrypt("MTF2d2hCeXNjZTogZHNvdGZvcW15b293dmVicnRocm5menNzbnFpZmZhd2JsYWZnc3B0dGNoaWRtbGhocWk=") + notes.size());
+                        switchOnThis = "೦օⲟⲟ౦๐ⲟ၀ዐ௦໐௦օዐℴ০օ੦ዐ੦၀၀օዐ௦о౦೦೦ⲟ௦௦੦০ⲟ০";
+                    } else {
+                        this.dataset = notes;
+                        switchOnThis = "ⲟℴօ੦੦໐௦ჿዐ೦௦೦๐ዐℴ၀੦ⲟዐօ௦౦௦ዐⲟ၀օⲟ౦௦о௦੦〇০〇";
                     }
                     break;
                 default:
@@ -199,18 +195,18 @@ public class RestaurantNotesListAdapter extends RecyclerView.Adapter<RestaurantN
     }
 
     public void setOnItemClickListener(ItemClickListener itemClickListener) {
-        String switchOnThis = "ჿ૦০౦〇๐〇๐ዐо〇օօዐℴօ੦ⲟዐ০ℴ๐օዐｏჿ๐ℴ၀ℴｏ၀၀੦ⲟ০";
+        String switchOnThis = "౦၀օօ၀〇ჿоዐⲟჿօ০ዐℴℴ၀௦ዐ૦೦၀օዐ〇໐ｏ೦ℴ೦ℴℴ೦〇ｏ〇";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 271, 89, 509, 306, 572, 481, 425, 236, 593, 474, 201, 180, 26, 320, 243, 89, 138, 208, 26, 19, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 558, 271, 89, 516, 89, 488, 257, 502, 362, 614, 453, 572, 390, 19, 544, 54, 82, 537, 152, 313, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "ჿ૦০౦〇๐〇๐ዐо〇օօዐℴօ੦ⲟዐ০ℴ๐օዐｏჿ๐ℴ၀ℴｏ၀၀੦ⲟ০":
-                    if (OPAQUES[6] % OPAQUES[20] != OPAQUES[21]) {
+                case "౦၀օօ၀〇ჿоዐⲟჿօ০ዐℴℴ၀௦ዐ૦೦၀օዐ〇໐ｏ೦ℴ೦ℴℴ೦〇ｏ〇":
+                    if (OPAQUES[0] % OPAQUES[20] != OPAQUES[21]) {
                         this.itemClickListener = itemClickListener;
-                        switchOnThis = "໐ｏօ໐օ౦๐೦ዐ੦၀ⲟ૦ዐℴօ੦ⲟዐ০౦〇੦ዐо〇๐о੦๐੦௦ℴ๐оⲟ";
+                        switchOnThis = "໐၀໐၀০໐ჿ၀ዐ๐ⲟჿ૦ዐℴℴ০౦ዐօ〇౦၀ዐ௦оօⲟ๐၀০௦ⲟ૦০၀";
                     } else {
                         this.itemClickListener = itemClickListener;
-                        switchOnThis = "օօℴ੦ｏჿ੦໐ዐоօ೦〇ዐℴ০〇೦ዐ૦օჿ೦ዐ০ℴ০ℴ০օ〇ჿ၀ჿｏ໐";
+                        switchOnThis = "໐૦ⲟо੦ℴℴ૦ዐ௦၀օ೦ዐℴ〇๐ჿዐ૦੦ჿℴዐｏ๐ｏｏｏℴⲟⲟ೦౦๐၀";
                     }
                     break;
                 default:
@@ -220,18 +216,18 @@ public class RestaurantNotesListAdapter extends RecyclerView.Adapter<RestaurantN
     }
 
     public void setOnItemLongClickListener(ItemClickListener itemLongClickListener) {
-        String switchOnThis = "੦๐ჿჿ૦၀ｏ੦ዐօｏ౦ｏዐℴ౦ｏ௦ዐ૦օ๐၀ዐｏօｏℴоｏ〇ｏ௦ℴ໐౦";
+        String switchOnThis = "௦০০੦੦໐〇੦ዐℴ௦௦օዐℴℴ੦၀ዐ੦౦໐௦ዐ໐໐၀о০ⲟ೦оօо೦๐";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 278, 54, 474, 677, 138, 523, 54, 131, 96, 432, 495, 369, 61, 26, 530, 285, 236, 131, 432, 411, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 47, 145, 600, 404, 117, 502, 635, 82, 327, 278, 404, 544, 152, 152, 229, 96, 474, 404, 40, 593, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "੦๐ჿჿ૦၀ｏ੦ዐօｏ౦ｏዐℴ౦ｏ௦ዐ૦օ๐၀ዐｏօｏℴоｏ〇ｏ௦ℴ໐౦":
+                case "௦০০੦੦໐〇੦ዐℴ௦௦օዐℴℴ੦၀ዐ੦౦໐௦ዐ໐໐၀о০ⲟ೦оօо೦๐":
                     if (OPAQUES[9] % OPAQUES[22] == OPAQUES[20]) {
                         this.itemLongClickListener = itemLongClickListener;
-                        switchOnThis = "ℴ๐๐၀೦໐০ℴዐ೦೦໐੦ዐℴ௦೦೦ዐ০ооℴዐჿ೦૦০੦௦੦೦০օ౦੦";
+                        switchOnThis = "੦০ℴо໐၀௦౦ዐｏℴօｏዐℴ๐౦໐ዐ੦૦೦໐ዐооⲟ૦оⲟо௦〇๐௦๐";
                     } else {
                         this.itemLongClickListener = itemLongClickListener;
-                        switchOnThis = "০౦၀௦о၀օоዐ૦〇੦օዐℴℴ౦੦ዐ੦〇ⲟоዐⲟ౦ｏ੦ⲟ๐௦௦০օ௦օ";
+                        switchOnThis = "ｏჿ૦ⲟ၀〇೦ｏዐօ௦〇ℴዐℴ၀੦ｏዐ૦ⲟ০ℴዐօ০〇〇੦๐௦о〇೦๐օ";
                     }
                     break;
                 default:
@@ -242,17 +238,7 @@ public class RestaurantNotesListAdapter extends RecyclerView.Adapter<RestaurantN
 
     interface ItemClickListener {
 
-        void onItemClicked(RestaurantNote note) {
-            String switchOnThis = "੦໐ჿ০໐о੦੦ዐｏ૦ℴоዐℴⲟ੦౦ዐ੦о౦ℴዐｏ૦ჿ০ℴ၀о໐օ૦о〇";
-            boolean infiniteLoop = true;
-            int[] OPAQUES = new int[] { 474, 180, 26, 19, 565, 152, 677, 306, 229, 607, 124, 502, 586, 229, 222, 75, 229, 110, 264, 467, 7, 5, 7, 5 };
-            while (infiniteLoop) {
-                switch(switchOnThis) {
-                    default:
-                        infiniteLoop = false;
-                }
-            }
-        }
+        void onItemClicked(RestaurantNote note);
     }
 
     static class RestaurantViewHolder extends RecyclerView.ViewHolder {

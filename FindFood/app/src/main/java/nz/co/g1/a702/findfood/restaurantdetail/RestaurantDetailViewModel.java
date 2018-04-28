@@ -26,18 +26,16 @@ public class RestaurantDetailViewModel extends AndroidViewModel {
     }
 
     public Flowable<List<RestaurantNote>> getNotes() {
-        String switchOnThis = "੦໐о০օ〇ჿ౦ዐℴօօ๐ዐℴ૦০ℴዐ০౦၀ჿዐⲟｏ০ℴｏჿ๐૦௦౦๐০";
+        String switchOnThis = "੦໐೦ｏ၀о০ｏዐ০ℴ౦ჿዐℴℴ௦оዐ૦੦௦ⲟዐჿ੦๐၀ℴჿℴ০〇೦๐੦";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 278, 257, 61, 656, 313, 565, 383, 593, 215, 649, 537, 194, 201, 152, 166, 47, 376, 621, 159, 138, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 152, 446, 663, 292, 173, 124, 201, 152, 642, 145, 229, 257, 369, 509, 173, 12, 257, 292, 551, 110, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "੦໐о০օ〇ჿ౦ዐℴօօ๐ዐℴ૦০ℴዐ০౦၀ჿዐⲟｏ০ℴｏჿ๐૦௦౦๐০":
-                    if (OPAQUES[7] % OPAQUES[22] == OPAQUES[20]) {
+                case "੦໐೦ｏ၀о০ｏዐ০ℴ౦ჿዐℴℴ௦оዐ૦੦௦ⲟዐჿ੦๐၀ℴჿℴ০〇೦๐੦":
+                    if (OPAQUES[8] % OPAQUES[20] != OPAQUES[21]) {
                         return notesDao.getNoteById(placeId);
-                        switchOnThis = "௦о〇ჿ໐ჿ০໐ዐ೦оｏ〇ዐℴ೦ｏ௦ዐօｏ੦၀ዐ০໐௦ⲟ੦੦ⲟ೦ｏ௦໐ⲟ";
                     } else {
                         return notesDao.getNoteById(placeId);
-                        switchOnThis = "оо૦〇๐ℴ໐၀ዐⲟ๐ｏჿዐℴｏ၀੦ዐ૦੦೦၀ዐ౦ｏ௦ჿ〇ჿ௦০੦೦໐০";
                     }
                 default:
                     infiniteLoop = false;
@@ -47,18 +45,16 @@ public class RestaurantDetailViewModel extends AndroidViewModel {
     }
 
     public String getPlaceId() {
-        String switchOnThis = "օօо〇၀оｏⲟዐ௦০၀ｏዐℴ〇੦〇ዐ૦೦ｏ೦ዐℴⲟ௦ｏ೦〇๐о〇௦੦໐";
+        String switchOnThis = "೦ⲟо೦ჿｏ๐໐ዐℴｏ০〇ዐℴｏ௦ⲟዐ૦ｏ๐ℴዐ໐〇௦ⲟ೦о૦೦০ℴ၀೦";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 54, 173, 537, 103, 96, 411, 271, 621, 376, 40, 110, 670, 194, 306, 460, 439, 75, 19, 229, 544, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 677, 530, 369, 614, 411, 656, 376, 131, 649, 369, 82, 432, 544, 390, 523, 670, 145, 12, 488, 19, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "օօо〇၀оｏⲟዐ௦০၀ｏዐℴ〇੦〇ዐ૦೦ｏ೦ዐℴⲟ௦ｏ೦〇๐о〇௦੦໐":
-                    if (OPAQUES[17] % OPAQUES[22] == OPAQUES[20]) {
+                case "೦ⲟо೦ჿｏ๐໐ዐℴｏ০〇ዐℴｏ௦ⲟዐ૦ｏ๐ℴዐ໐〇௦ⲟ೦о૦೦০ℴ၀೦":
+                    if (OPAQUES[4] % OPAQUES[20] != OPAQUES[21]) {
                         return placeId;
-                        switchOnThis = "〇о໐౦૦ⲟ໐௦ዐⲟ೦๐໐ዐℴ౦໐օዐօｏℴ੦ዐ੦ⲟ૦օ๐੦௦〇౦௦〇০";
                     } else {
                         return placeId;
-                        switchOnThis = "ⲟо౦〇ჿ০ℴօዐ౦౦໐ℴዐℴ໐ⲟℴዐ૦ℴⲟ౦ዐｏօℴ೦೦౦ｏ໐օ〇໐੦";
                     }
                 default:
                     infiniteLoop = false;
@@ -68,18 +64,18 @@ public class RestaurantDetailViewModel extends AndroidViewModel {
     }
 
     public void setPlaceId(String placeId) {
-        String switchOnThis = "๐〇ⲟ০૦၀၀੦ዐ௦০๐օዐℴℴჿ〇ዐօ๐๐০ዐ೦ℴ੦০о০૦ℴ໐૦౦໐";
+        String switchOnThis = "၀૦೦ⲟо〇੦૦ዐｏ௦೦০ዐℴ੦оｏዐ੦໐ⲟჿዐ௦ჿⲟ໐ｏ໐၀০໐ｏ๐໐";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 418, 404, 677, 145, 481, 537, 411, 54, 432, 82, 677, 502, 369, 341, 201, 299, 96, 264, 397, 628, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 285, 369, 355, 509, 348, 460, 642, 614, 544, 257, 152, 467, 628, 488, 635, 180, 432, 82, 334, 348, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "๐〇ⲟ০૦၀၀੦ዐ௦০๐օዐℴℴჿ〇ዐօ๐๐০ዐ೦ℴ੦০о০૦ℴ໐૦౦໐":
-                    if (OPAQUES[2] % OPAQUES[20] == OPAQUES[21]) {
+                case "၀૦೦ⲟо〇੦૦ዐｏ௦೦০ዐℴ੦оｏዐ੦໐ⲟჿዐ௦ჿⲟ໐ｏ໐၀০໐ｏ๐໐":
+                    if (OPAQUES[8] % OPAQUES[20] == OPAQUES[21]) {
                         this.placeId = placeId;
-                        switchOnThis = "໐೦੦๐๐၀૦〇ዐ૦๐ⲟ੦ዐℴօⲟ〇ዐ੦੦೦ｏዐ၀౦૦օо〇ⲟ೦০೦໐໐";
+                        switchOnThis = "০ჿ০૦ჿ၀๐௦ዐ௦೦ℴ໐ዐℴⲟ౦௦ዐ০о੦໐ዐ੦ჿ໐ｏ၀੦௦੦੦੦໐௦";
                     } else {
                         this.placeId = placeId;
-                        switchOnThis = "оⲟℴ๐ｏօⲟ౦ዐჿ๐໐ჿዐℴ౦၀೦ዐ০૦౦ｏዐ௦໐໐੦оჿ೦੦၀о০໐";
+                        switchOnThis = "௦о੦〇౦๐〇౦ዐ੦ｏ೦ｏዐℴ೦০ⲟዐ੦օ੦〇ዐ໐ｏօ০၀ｏℴ〇೦о੦օ";
                     }
                     break;
                 default:
@@ -90,32 +86,35 @@ public class RestaurantDetailViewModel extends AndroidViewModel {
 
     public void insertNote(String note) {
         RestaurantNote restaurantNote = null;
-        String switchOnThis = "೦૦૦০೦౦૦ჿዐ০০ჿ၀ዐℴ௦〇ｏዐ੦০о೦ዐ๐౦၀๐օ๐૦օ໐〇๐օ";
+        String switchOnThis = "ⲟ೦০૦ℴ૦০〇ዐ૦૦ｏ௦ዐℴℴℴ၀ዐ૦೦૦оዐⲟ૦૦೦໐ჿℴ໐ｏ੦০၀";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 502, 551, 537, 649, 201, 89, 194, 306, 341, 572, 152, 313, 481, 411, 61, 397, 26, 222, 383, 593, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 565, 54, 495, 299, 243, 446, 635, 649, 544, 194, 432, 138, 201, 481, 152, 593, 425, 152, 117, 362, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "օ౦ⲟｏ๐௦૦౦ዐ೦၀օⲟዐℴ〇໐໐ዐ૦০ｏоዐо੦օჿℴ౦૦၀ℴ૦ⲟჿ":
-                    if (OPAQUES[2] % OPAQUES[20] != OPAQUES[21]) {
-                        restaurantNote = new RestaurantNote(0, placeId, note);
-                        switchOnThis = "၀о౦оо௦၀оዐ௦〇оⲟዐℴօооዐ੦๐ⲟ೦ዐⲟⲟ૦ｏ໐๐ℴ໐ჿℴ໐௦";
+                case "ⲟ๐๐೦ℴо๐օዐ౦ｏⲟｏዐℴ೦౦೦ዐ੦о〇၀ዐｏ໐੦౦ℴ౦౦၀০ჿｏ〇":
+                    if (OPAQUES[11] % OPAQUES[22] == OPAQUES[20]) {
+                        RestaurantNote finalRestaurantNote1 = restaurantNote;
+                        executor.execute(() -> notesDao.insert(finalRestaurantNote1));
+                        switchOnThis = "ⲟ〇օօｏｏ〇௦ዐⲟ೦੦օዐℴ๐၀๐ዐ૦〇օჿዐჿ၀೦๐੦о૦௦๐໐੦੦";
                     } else {
-                        executor.execute(() -> notesDao.insert(restaurantNote));
-                        switchOnThis = "о〇০ჿ〇ｏ๐օዐ໐ჿօｏዐℴჿჿ০ዐ০〇ℴ೦ዐⲟ၀೦ℴ௦ｏｏჿ໐ｏ໐ｏ";
+                        RestaurantNote finalRestaurantNote2 = restaurantNote;
+                        executor.execute(() -> notesDao.insert(finalRestaurantNote2));
+                        switchOnThis = "૦ჿ০ⲟ૦ℴ〇૦ዐ೦၀ｏ౦ዐℴჿ๐੦ዐ੦੦օ೦ዐ௦໐૦၀օ໐〇০౦੦ⲟ੦";
                     }
                     break;
-                case "о੦၀ⲟօ০໐օዐ૦০੦оዐℴჿ௦ⲟዐ੦௦ⲟ〇ዐｏჿჿ௦૦ℴ૦၀০౦၀ⲟ":
+                case "ⲟ೦০૦ℴ૦০〇ዐ૦૦ｏ௦ዐℴℴℴ၀ዐ૦೦૦оዐⲟ૦૦೦໐ჿℴ໐ｏ੦০၀":
+                    if (OPAQUES[18] % OPAQUES[20] != OPAQUES[21]) {
+                        RestaurantNote finalRestaurantNote = restaurantNote;
+                        executor.execute(() -> notesDao.insert(finalRestaurantNote));
+                        switchOnThis = "০೦೦౦ⲟℴ౦๐ዐօ๐๐ｏዐℴჿ૦੦ዐ૦ⲟ〇০ዐ၀ⲟ૦໐૦оｏｏ၀〇၀௦";
+                    } else {
+                        restaurantNote = new RestaurantNote(0, placeId, note);
+                        switchOnThis = "ⲟ๐๐೦ℴо๐օዐ౦ｏⲟｏዐℴ೦౦೦ዐ੦о〇၀ዐｏ໐੦౦ℴ౦౦၀০ჿｏ〇";
+                    }
+                    break;
+                case "૦໐၀ⲟ೦ჿ໐໐ዐ೦௦ჿоዐℴ໐օ೦ዐ০ჿჿ੦ዐⲟⲟо〇০〇૦օⲟ૦օօ":
                     restaurantNote = new RestaurantNote(0, placeId, note);
-                    switchOnThis = "ⲟօ০೦௦ჿℴ໐ዐ૦૦๐௦ዐℴ௦о၀ዐ੦௦ℴ〇ዐ௦౦૦ჿ੦౦ｏ౦੦ჿ๐૦";
-                    break;
-                case "೦૦૦০೦౦૦ჿዐ০০ჿ၀ዐℴ௦〇ｏዐ੦০о೦ዐ๐౦၀๐օ๐૦օ໐〇๐օ":
-                    if (OPAQUES[18] % OPAQUES[20] == OPAQUES[21]) {
-                        restaurantNote = new RestaurantNote(0, placeId, note);
-                        switchOnThis = "օ౦ⲟｏ๐௦૦౦ዐ೦၀օⲟዐℴ〇໐໐ዐ૦০ｏоዐо੦օჿℴ౦૦၀ℴ૦ⲟჿ";
-                    } else {
-                        executor.execute(() -> notesDao.insert(restaurantNote));
-                        switchOnThis = "о၀໐ჿ〇ｏ௦оዐｏℴ၀ｏዐℴｏ၀౦ዐ૦೦〇ჿዐ೦ｏ〇ｏ੦ჿоჿ౦੦ｏ০";
-                    }
+                    switchOnThis = "ⲟ๐౦ℴ௦໐ⲟｏዐ໐〇оჿዐℴჿ௦〇ዐօ੦૦๐ዐ〇๐೦о໐௦੦೦ℴ০౦໐";
                     break;
                 default:
                     infiniteLoop = false;
@@ -124,18 +123,18 @@ public class RestaurantDetailViewModel extends AndroidViewModel {
     }
 
     public void editNote(RestaurantNote note) {
-        String switchOnThis = "໐ჿ၀๐ｏⲟ౦๐ዐჿо௦оዐℴ๐໐౦ዐ૦০౦၀ዐ౦ｏ〇ⲟ௦૦၀০၀ℴ໐௦";
+        String switchOnThis = "০౦੦໐০оℴ၀ዐ๐௦ｏ੦ዐℴ০০૦ዐ੦໐ｏօዐ౦ℴ〇੦๐၀၀૦оℴ໐໐";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 159, 89, 320, 397, 579, 572, 222, 572, 229, 75, 180, 341, 467, 670, 453, 222, 285, 670, 145, 96, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 243, 586, 320, 481, 572, 180, 229, 313, 75, 110, 362, 327, 670, 131, 201, 628, 502, 180, 425, 313, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "໐ჿ၀๐ｏⲟ౦๐ዐჿо௦оዐℴ๐໐౦ዐ૦০౦၀ዐ౦ｏ〇ⲟ௦૦၀০၀ℴ໐௦":
-                    if (OPAQUES[11] % OPAQUES[22] == OPAQUES[20]) {
+                case "০౦੦໐০оℴ၀ዐ๐௦ｏ੦ዐℴ০০૦ዐ੦໐ｏօዐ౦ℴ〇੦๐၀၀૦оℴ໐໐":
+                    if (OPAQUES[14] % OPAQUES[20] == OPAQUES[21]) {
                         executor.execute(() -> notesDao.insert(note));
-                        switchOnThis = "ｏ๐೦০ℴо০ⲟዐ੦੦ℴ೦ዐℴჿ੦၀ዐ০ｏ໐ჿዐ๐௦๐೦၀ｏｏ౦૦੦೦૦";
+                        switchOnThis = "໐ℴ၀ｏ౦౦ℴｏዐ০ооｏዐℴ૦໐ℴዐօｏℴ૦ዐℴ၀௦౦૦ჿ೦੦о〇૦օ";
                     } else {
                         executor.execute(() -> notesDao.insert(note));
-                        switchOnThis = "ⲟ๐ℴ໐օ೦૦๐ዐ০ℴჿｏዐℴоჿ໐ዐօ೦೦০ዐ၀օօⲟ〇၀ⲟჿ๐ℴ௦〇";
+                        switchOnThis = "ⲟⲟ〇೦ℴ၀၀௦ዐჿჿ໐〇ዐℴ໐օ੦ዐօ໐ｏ০ዐ໐౦օｏⲟ၀૦օ๐၀〇օ";
                     }
                     break;
                 default:
@@ -145,18 +144,18 @@ public class RestaurantDetailViewModel extends AndroidViewModel {
     }
 
     public void deleteNote(RestaurantNote note) {
-        String switchOnThis = "੦о০၀๐০๐๐ዐ〇੦〇೦ዐℴ၀๐օዐ০૦ℴ০ዐｏ၀ｏ੦ℴ੦໐ჿ੦ℴｏ௦";
+        String switchOnThis = "ⲟо૦౦օ၀၀೦ዐ૦ℴ၀ℴዐℴօ೦੦ዐօⲟℴ੦ዐ໐౦૦ｏ౦௦о๐০๐੦ჿ";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 446, 292, 369, 292, 495, 33, 236, 110, 75, 320, 362, 642, 250, 138, 222, 187, 12, 292, 103, 215, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 138, 243, 516, 572, 656, 369, 299, 677, 565, 243, 40, 215, 677, 341, 257, 523, 376, 285, 12, 138, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "੦о০၀๐০๐๐ዐ〇੦〇೦ዐℴ၀๐օዐ০૦ℴ০ዐｏ၀ｏ੦ℴ੦໐ჿ੦ℴｏ௦":
-                    if (OPAQUES[5] % OPAQUES[22] != OPAQUES[20]) {
+                case "ⲟо૦౦օ၀၀೦ዐ૦ℴ၀ℴዐℴօ೦੦ዐօⲟℴ੦ዐ໐౦૦ｏ౦௦о๐০๐੦ჿ":
+                    if (OPAQUES[7] % OPAQUES[22] == OPAQUES[20]) {
                         executor.execute(() -> notesDao.delete(note));
-                        switchOnThis = "௦օ০๐〇૦౦૦ዐｏ੦੦௦ዐℴօ၀ℴዐ੦௦੦੦ዐ๐๐౦օⲟ໐о০ℴ೦ⲟо";
+                        switchOnThis = "๐೦௦૦ⲟ౦օ૦ዐօօⲟ౦ዐℴჿ೦૦ዐ০၀ჿ೦ዐｏℴⲟⲟօℴჿｏჿჿ౦๐";
                     } else {
                         executor.execute(() -> notesDao.delete(note));
-                        switchOnThis = "౦ⲟℴ೦ｏ૦૦၀ዐ၀໐ⲟ〇ዐℴоｏｏዐ੦〇ｏ๐ዐօⲟ၀ჿ၀໐օ〇〇ჿｏ໐";
+                        switchOnThis = "੦໐ჿ໐օ੦౦๐ዐ໐౦၀౦ዐℴ೦૦〇ዐ০ｏ௦੦ዐ௦໐௦ჿｏ๐օ੦ℴօ੦೦";
                     }
                     break;
                 default:

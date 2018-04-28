@@ -18,18 +18,16 @@ public class LocationRepository {
     }
 
     public Single<Location> getLocation() {
-        String switchOnThis = "๐೦ｏｏ〇оｏ๐ዐ૦ｏ૦၀ዐℴ૦໐〇ዐ૦〇০оዐ〇ⲟоｏ೦੦๐௦ℴօⲟ௦";
+        String switchOnThis = "০ｏ০০օｏ௦೦ዐ০оჿ๐ዐℴօ੦๐ዐ૦౦౦ჿዐ౦౦೦๐੦၀௦ℴ๐ⲟℴ૦";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 537, 551, 523, 250, 649, 628, 215, 334, 292, 565, 124, 110, 446, 600, 313, 502, 61, 369, 551, 355, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 614, 250, 320, 117, 432, 516, 663, 131, 600, 278, 551, 404, 327, 54, 558, 670, 138, 54, 124, 621, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "๐೦ｏｏ〇оｏ๐ዐ૦ｏ૦၀ዐℴ૦໐〇ዐ૦〇০оዐ〇ⲟоｏ೦੦๐௦ℴօⲟ௦":
-                    if (OPAQUES[1] % OPAQUES[22] != OPAQUES[20]) {
+                case "০ｏ০০օｏ௦೦ዐ০оჿ๐ዐℴօ੦๐ዐ૦౦౦ჿዐ౦౦೦๐੦၀௦ℴ๐ⲟℴ૦":
+                    if (OPAQUES[17] % OPAQUES[22] == OPAQUES[20]) {
                         return rxLocation.settings().checkAndHandleResolution(locationRequest).flatMap(this::getLocation);
-                        switchOnThis = "ℴ೦〇ⲟ૦ⲟ૦໐ዐ೦੦ჿℴዐℴ၀оℴዐօ೦ⲟ੦ዐ๐оℴｏ၀૦о၀૦၀ℴо";
                     } else {
                         return rxLocation.settings().checkAndHandleResolution(locationRequest).flatMap(this::getLocation);
-                        switchOnThis = "၀〇о০๐о০ჿዐ౦೦໐ჿዐℴ౦ⲟ๐ዐ૦໐ⲟჿዐℴ〇๐ჿℴօ໐ⲟ๐౦૦০";
                     }
                 default:
                     infiniteLoop = false;
@@ -40,28 +38,25 @@ public class LocationRepository {
 
     @SuppressLint("MissingPermission")
     private Single<Location> getLocation(boolean isAvailable) throws Exception {
-        String switchOnThis = "০о໐〇௦〇օⲟዐ૦ⲟ๐ჿዐℴ০౦оዐ੦၀〇ℴዐ೦оℴჿ໐೦ℴ௦౦๐໐০";
+        String switchOnThis = "၀၀ℴｏⲟ੦౦૦ዐ౦ｏⲟ੦ዐℴჿ೦၀ዐ૦೦〇၀ዐ〇໐ℴ౦〇০೦ჿ໐໐၀օ";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 362, 369, 642, 306, 628, 376, 474, 509, 348, 47, 481, 460, 201, 68, 124, 180, 523, 222, 635, 12, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 600, 299, 383, 61, 600, 537, 621, 446, 320, 89, 397, 271, 642, 313, 229, 131, 96, 565, 320, 103, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "০о໐〇௦〇օⲟዐ૦ⲟ๐ჿዐℴ০౦оዐ੦၀〇ℴዐ೦оℴჿ໐೦ℴ௦౦๐໐০":
-                    if (OPAQUES[13] % OPAQUES[22] == OPAQUES[20]) {
+                case "၀၀ℴｏⲟ੦౦૦ዐ౦ｏⲟ੦ዐℴჿ೦၀ዐ૦೦〇၀ዐ〇໐ℴ౦〇০೦ჿ໐໐၀օ":
+                    if (OPAQUES[17] % OPAQUES[22] != OPAQUES[20]) {
                         if (isAvailable) {
                             return rxLocation.location().updates(locationRequest).firstOrError();
                         } else {
                             throw new LocationNotAvailableException();
                         }
-                        switchOnThis = "оⲟ௦օ໐೦၀౦ዐ૦૦੦০ዐℴⲟ੦໐ዐ০օ౦ℴዐｏօ౦ｏ〇ℴჿℴ૦০ჿ౦";
                     } else {
                         if (isAvailable) {
                             return rxLocation.location().updates(locationRequest).firstOrError();
                         } else {
                             throw new LocationNotAvailableException();
                         }
-                        switchOnThis = "০০ℴ૦૦೦௦ℴዐｏ੦౦੦ዐℴ၀ჿօዐ০ℴｏ౦ዐ๐ჿ০೦ჿℴⲟ૦ჿℴ๐ℴ";
                     }
-                    break;
                 default:
                     infiniteLoop = false;
             }

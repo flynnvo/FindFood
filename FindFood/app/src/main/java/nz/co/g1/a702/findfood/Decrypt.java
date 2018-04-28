@@ -1,6 +1,7 @@
-package rotacsufbo.encrypt;
+package nz.co.g1.a702.findfood;
 
 import java.util.*;
+import android.util.Base64;
 
 public class Decrypt {
 
@@ -11,98 +12,32 @@ public class Decrypt {
         int encryptorUsed = 0;
         String decryptedString = null;
         String key = null;
-        String switchOnThis = "੦ℴ๐௦ⲟ੦ჿ੦ዐ੦௦౦ｏዐℴ௦о๐ዐ૦০০ჿዐ੦օ௦〇೦о೦ჿℴჿⲟо";
+        String switchOnThis = "оⲟ੦੦ℴⲟо໐ዐჿ૦օ೦ዐℴ౦௦๐ዐ੦໐օоዐ၀၀о೦໐੦০օօℴ০૦";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 166, 40, 418, 68, 502, 180, 89, 152, 635, 194, 411, 334, 502, 61, 243, 579, 439, 187, 348, 96, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 593, 26, 285, 376, 635, 194, 649, 96, 68, 355, 103, 663, 642, 376, 236, 299, 355, 271, 124, 26, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "೦оⲟჿ૦೦౦௦ዐｏ૦০౦ዐℴｏօ౦ዐօ๐ℴ౦ዐჿჿ૦օⲟ੦੦ｏ౦౦௦օ":
-                    if (OPAQUES[5] % OPAQUES[22] == OPAQUES[20]) {
-                        return decryptedString;
-                        switchOnThis = "೦〇ｏ〇௦໐о௦ዐ౦੦ｏօዐℴ੦੦౦ዐ০ｏ௦օዐ௦౦౦օ໐ℴჿ๐౦๐੦০";
-                    } else {
-                        if (encryptorUsed == 0) {
-                            decryptedString = dec05(decryptedString, key);
-                        } else if (encryptorUsed == 1) {
-                            decryptedString = dec01(decryptedString, key);
-                        } else if (encryptorUsed == 2) {
-                            decryptedString = dec02(decryptedString, key);
-                        } else if (encryptorUsed == 3) {
-                            decryptedString = dec03(decryptedString, 10);
-                        } else if (encryptorUsed == 4) {
-                            decryptedString = dec04(decryptedString, key);
-                        }
-                        switchOnThis = "౦૦ⲟ০௦ⲟ〇ｏዐ೦ℴ౦૦ዐℴօ০ｏዐ০ｏ૦ჿዐо০೦ℴо੦օჿо〇ｏօ";
-                    }
-                    break;
-                case "০૦ℴ౦ℴօ౦০ዐо૦໐੦ዐℴⲟ০ℴዐ੦ⲟ০໐ዐ౦〇໐оｏℴ၀੦౦о〇ｏ":
-                    if (OPAQUES[17] % OPAQUES[22] == OPAQUES[20]) {
-                        encryptorUsed %= ENCRYPTION_ALGORITHMS;
-                        switchOnThis = "ℴ๐০૦໐ⲟ〇๐ዐჿ〇೦૦ዐℴ௦ℴｏዐ૦օ੦〇ዐ๐๐੦๐၀໐೦੦〇๐๐౦";
-                    } else {
-                        encryptorUsed %= ENCRYPTION_ALGORITHMS;
-                        switchOnThis = "๐၀օℴ౦௦о০ዐℴℴ੦૦ዐℴჿ໐ⲟዐ૦ｏⲟ০ዐ૦໐૦੦၀၀๐၀၀๐০૦";
-                    }
-                    break;
-                case "௦ⲟⲟօ໐০ჿⲟዐ໐օ໐оዐℴ๐ჿ๐ዐ০〇໐๐ዐ໐ჿⲟо೦ჿⲟ〇၀೦௦੦":
-                    if (OPAQUES[0] % OPAQUES[20] != OPAQUES[21]) {
-                        decodedStr = new String(decoded);
-                        switchOnThis = "౦০оօ૦೦၀၀ዐ໐௦օ૦ዐℴ໐օ૦ዐ૦௦੦оዐ೦૦௦ჿⲟ౦〇੦౦ｏ૦໐";
-                    } else {
-                        decoded = Base64.getDecoder().decode(encrypted);
-                        switchOnThis = "๐оⲟ೦૦ｏ໐ჿዐℴℴჿ૦ዐℴ০໐၀ዐ੦๐ⲟ০ዐо੦೦੦໐ｏ೦օ໐૦օ০";
-                    }
-                    break;
-                case "๐оⲟ೦૦ｏ໐ჿዐℴℴჿ૦ዐℴ০໐၀ዐ੦๐ⲟ০ዐо੦೦੦໐ｏ೦օ໐૦օ০":
-                    if (OPAQUES[0] % OPAQUES[20] != OPAQUES[21]) {
-                        return decryptedString;
-                        switchOnThis = "ℴ૦০ℴ੦၀օоዐℴ໐๐оዐℴօ೦оዐօ૦๐௦ዐ၀ⲟ೦໐ｏ੦૦০໐ჿⲟⲟ";
+                case "౦ℴｏоօ౦ჿоዐ〇੦ჿ೦ዐℴ౦〇௦ዐ੦໐೦૦ዐ๐〇о௦〇೦௦૦໐౦၀〇":
+                    if (OPAQUES[11] % OPAQUES[22] == OPAQUES[20]) {
+                        encryptorUsed = 10 * Character.getNumericValue(decodedStr.charAt(0)) + Character.getNumericValue(decodedStr.charAt(1));
+                        switchOnThis = "оо০〇ჿ௦૦ｏዐ௦০೦ℴዐℴ౦〇౦ዐ੦০ჿ๐ዐｏℴ૦০੦օ〇௦௦౦၀ｏ";
                     } else {
                         decodedStr = new String(decoded);
-                        switchOnThis = "೦౦੦ℴｏօｏ೦ዐ௦ⲟ০ｏዐℴჿ੦ⲟዐօⲟℴоዐ০૦ｏоⲟｏｏ౦০௦ჿ೦";
+                        switchOnThis = "ⲟ০೦ｏｏⲟⲟ〇ዐ௦ℴօ౦ዐℴჿ๐౦ዐ૦〇о๐ዐ〇๐ℴ๐оჿ੦೦ⲟ૦ℴⲟ";
                     }
                     break;
-                case "ⲟ໐౦ℴⲟ০ℴ౦ዐ๐૦೦оዐℴ໐օℴዐ૦ｏⲟ๐ዐ၀ℴօ௦ℴℴ໐〇၀ｏⲟⲟ":
-                    encryptorUsed %= ENCRYPTION_ALGORITHMS;
-                    switchOnThis = "໐၀໐ｏ੦೦օჿዐ๐௦ｏ๐ዐℴоℴ๐ዐ૦ｏ၀໐ዐоℴ೦၀ⲟ໐о๐о၀໐〇";
-                    break;
-                case "໐๐ჿ〇০০〇೦ዐ〇оჿ〇ዐℴ๐〇੦ዐօ૦о〇ዐ〇ｏჿ๐օ০૦ℴⲟ〇ℴ০":
-                    decodedStr = new String(decoded);
-                    switchOnThis = "ჿօⲟｏℴ౦၀૦ዐ௦੦ჿ০ዐℴօ๐ⲟዐ૦০օ੦ዐℴ੦೦ⲟ೦੦૦ჿ౦০௦о";
-                    break;
-                case "ℴ၀ⲟօ၀੦〇ｏዐ໐೦௦೦ዐℴ௦૦ჿዐ੦๐೦໐ዐ૦૦໐౦໐௦૦ჿօօℴ၀":
-                    if (encryptorUsed == 0) {
-                        decryptedString = dec05(decryptedString, key);
-                    } else if (encryptorUsed == 1) {
-                        decryptedString = dec01(decryptedString, key);
-                    } else if (encryptorUsed == 2) {
-                        decryptedString = dec02(decryptedString, key);
-                    } else if (encryptorUsed == 3) {
-                        decryptedString = dec03(decryptedString, 10);
-                    } else if (encryptorUsed == 4) {
-                        decryptedString = dec04(decryptedString, key);
-                    }
-                    switchOnThis = "੦౦೦૦ℴ௦ჿоዐ໐ℴ໐ⲟዐℴ௦০〇ዐօ௦௦၀ዐօ௦о๐ℴ૦๐ｏ௦০օ੦";
-                    break;
-                case "౦૦ⲟ০௦ⲟ〇ｏዐ೦ℴ౦૦ዐℴօ০ｏዐ০ｏ૦ჿዐо০೦ℴо੦օჿо〇ｏօ":
-                    if (OPAQUES[3] % OPAQUES[22] != OPAQUES[20]) {
-                        return decryptedString;
-                        switchOnThis = "૦໐০〇૦೦օоዐօ໐ℴℴዐℴ໐оⲟዐ੦〇〇ｏዐ໐၀о௦о໐੦๐ჿ೦๐ℴ";
-                    } else {
-                        decodedStr = new String(decoded);
-                        switchOnThis = "ⲟо၀о໐၀о౦ዐ໐੦օ೦ዐℴ૦੦೦ዐ੦ｏ၀օዐ੦੦੦০၀๐〇೦౦௦ჿ૦";
-                    }
-                case "੦ℴ๐௦ⲟ੦ჿ੦ዐ੦௦౦ｏዐℴ௦о๐ዐ૦০০ჿዐ੦օ௦〇೦о೦ჿℴჿⲟо":
-                    if (OPAQUES[15] % OPAQUES[22] == OPAQUES[20]) {
-                        encryptorUsed %= ENCRYPTION_ALGORITHMS;
-                        switchOnThis = "০೦ჿ௦௦ℴｏჿዐⲟⲟ૦๐ዐℴｏ๐໐ዐ০໐ℴｏዐ০૦〇օօⲟ૦ⲟ০၀௦໐";
-                    } else {
+                case "оⲟ੦੦ℴⲟо໐ዐჿ૦օ೦ዐℴ౦௦๐ዐ੦໐օоዐ၀၀о೦໐੦০օօℴ০૦":
+                    if (OPAQUES[9] % OPAQUES[22] != OPAQUES[20]) {
                         ENCRYPTION_ALGORITHMS = 5;
-                        switchOnThis = "௦ⲟⲟօ໐০ჿⲟዐ໐օ໐оዐℴ๐ჿ๐ዐ০〇໐๐ዐ໐ჿⲟо೦ჿⲟ〇၀೦௦੦";
+                        switchOnThis = "೦၀໐੦໐௦၀౦ዐ၀੦੦೦ዐℴჿ๐〇ዐ૦০၀၀ዐℴჿ໐௦၀೦օ੦ჿℴℴ໐";
+                    } else {
+                        return decryptedString;
                     }
                     break;
-                case "၀〇೦๐೦〇၀๐ዐჿ၀௦оዐℴ௦ⲟ౦ዐ০௦ⲟоዐ౦౦೦௦〇౦ⲟօｏ໐೦օ":
-                    if (OPAQUES[10] % OPAQUES[20] != OPAQUES[21]) {
+                case "૦০ⲟ০ⲟ૦੦〇ዐ໐၀ჿ໐ዐℴ௦౦೦ዐ০૦о૦ዐℴ೦੦০оօⲟ೦౦੦૦೦":
+                    if (OPAQUES[13] % OPAQUES[22] == OPAQUES[20]) {
+                        return decryptedString;
+                    } else {
                         if (encryptorUsed == 0) {
                             decryptedString = dec05(decryptedString, key);
                         } else if (encryptorUsed == 1) {
@@ -114,34 +49,86 @@ public class Decrypt {
                         } else if (encryptorUsed == 4) {
                             decryptedString = dec04(decryptedString, key);
                         }
-                        switchOnThis = "০০ℴ౦ჿⲟ၀ｏዐ〇ჿ౦໐ዐℴ၀૦੦ዐ૦૦౦೦ዐⲟ০၀оჿо၀໐੦੦௦ℴ";
-                    } else {
-                        key = decodedStr.substring(decodedStr.length() - 50);
-                        switchOnThis = "೦оⲟჿ૦೦౦௦ዐｏ૦০౦ዐℴｏօ౦ዐօ๐ℴ౦ዐჿჿ૦օⲟ੦੦ｏ౦౦௦օ";
+                        switchOnThis = "૦ⲟ੦օ໐ⲟ໐၀ዐ๐೦ｏօዐℴ೦၀๐ዐ০౦੦၀ዐ〇০ℴ০о〇௦০օ੦ⲟⲟ";
                     }
                     break;
-                case "օℴ০оჿ૦໐၀ዐ౦ℴ೦оዐℴ๐ℴⲟዐ੦౦օⲟዐｏօ໐ｏ〇〇౦〇০ｏ০օ":
-                    encryptorUsed %= ENCRYPTION_ALGORITHMS;
-                    switchOnThis = "๐੦০໐ℴ๐о〇ዐⲟℴ০оዐℴ૦〇ｏዐ૦ⲟ໐ⲟዐ௦০ｏ๐ჿ໐೦ｏ૦ｏօ০";
+                case "௦〇০၀օо೦๐ዐჿօօ૦ዐℴ၀౦๐ዐ૦о၀੦ዐ০о၀೦օ੦໐ℴⲟ〇ｏ੦":
+                    ENCRYPTION_ALGORITHMS = 5;
+                    switchOnThis = "ｏ໐೦೦၀௦ｏ૦ዐℴ၀๐০ዐℴо౦ჿዐ০ⲟ௦௦ዐ౦೦၀ჿ๐о೦оօｏ໐ჿ";
                     break;
-                case "೦౦੦ℴｏօｏ೦ዐ௦ⲟ০ｏዐℴჿ੦ⲟዐօⲟℴоዐ০૦ｏоⲟｏｏ౦০௦ჿ೦":
-                    if (OPAQUES[1] % OPAQUES[22] == OPAQUES[20]) {
-                        decryptedString = decodedStr.substring(2, decodedStr.length() - 50);
-                        switchOnThis = "օ〇౦ⲟｏ೦੦೦ዐｏｏ໐૦ዐℴ೦〇ℴዐ૦੦օօዐ໐௦੦๐೦໐ჿℴ੦௦০૦";
+                case "оօօ๐〇ｏ၀〇ዐ০૦〇௦ዐℴ૦໐ｏዐ੦০੦૦ዐｏ໐ჿ০໐օⲟ૦о౦оჿ":
+                    decoded = Base64.decode(encrypted, Base64.DEFAULT);
+                    switchOnThis = "੦০ⲟ೦๐౦௦௦ዐ๐౦০૦ዐℴ〇೦օዐ੦੦о໐ዐ໐ჿℴ੦੦੦〇੦໐ℴ๐ℴ";
+                    break;
+                case "〇оⲟօ໐օ၀оዐｏоо০ዐℴоօｏዐօ೦੦০ዐ೦੦౦ⲟо೦ℴ၀೦օｏ௦":
+                    decoded = Base64.decode(encrypted, Base64.DEFAULT);
+                    switchOnThis = "ⲟ〇〇〇೦ჿ০ｏዐ౦ⲟ০໐ዐℴоⲟ〇ዐ૦օօჿዐ੦๐௦০੦౦оо၀૦໐೦";
+                    break;
+                case "о೦๐〇౦໐ⲟ೦ዐ೦ｏｏℴዐℴ౦๐೦ዐ੦೦૦੦ዐ၀௦૦໐੦ｏ೦০〇੦ｏ၀":
+                    encryptorUsed %= ENCRYPTION_ALGORITHMS;
+                    switchOnThis = "௦օоօ০໐໐০ዐ૦ℴ০૦ዐℴօ೦ⲟዐ০੦૦౦ዐ੦૦๐੦೦၀০ჿｏ〇օ໐";
+                    break;
+                case "௦೦໐೦೦૦օ૦ዐℴօ໐౦ዐℴ〇໐০ዐ૦੦о੦ዐօｏ০ℴ౦౦০ჿｏｏ၀౦":
+                    if (OPAQUES[14] % OPAQUES[20] == OPAQUES[21]) {
+                        encryptorUsed %= ENCRYPTION_ALGORITHMS;
+                        switchOnThis = "૦оо౦၀о〇೦ዐ০ⲟჿ๐ዐℴⲟ੦ℴዐ૦౦੦ჿዐ௦၀๐੦০๐օ၀၀ℴ၀๐";
+                    } else {
+                        decoded = Base64.decode(encrypted, Base64.DEFAULT);
+                        switchOnThis = "౦ℴⲟ〇ℴ௦〇೦ዐ௦০௦๐ዐℴ〇ｏ๐ዐօ௦౦၀ዐ೦૦ℴօ๐ⲟօ੦๐օ೦о";
+                    }
+                    break;
+                case "೦၀໐੦໐௦၀౦ዐ၀੦੦೦ዐℴჿ๐〇ዐ૦০၀၀ዐℴჿ໐௦၀೦օ੦ჿℴℴ໐":
+                    if (OPAQUES[10] % OPAQUES[20] == OPAQUES[21]) {
+                        decoded = Base64.decode(encrypted, Base64.DEFAULT);
+                        switchOnThis = "౦ℴｏоօ౦ჿоዐ〇੦ჿ೦ዐℴ౦〇௦ዐ੦໐೦૦ዐ๐〇о௦〇೦௦૦໐౦၀〇";
+                    } else {
+                        return decryptedString;
+                    }
+                    break;
+                case "ⲟ০೦ｏｏⲟⲟ〇ዐ௦ℴօ౦ዐℴჿ๐౦ዐ૦〇о๐ዐ〇๐ℴ๐оჿ੦೦ⲟ૦ℴⲟ":
+                    if (OPAQUES[11] % OPAQUES[22] == OPAQUES[20]) {
+                        ENCRYPTION_ALGORITHMS = 5;
+                        switchOnThis = "੦ｏ〇೦௦౦၀๐ዐ໐၀౦ｏዐℴ၀၀օዐ০〇၀௦ዐօ੦ｏ೦০૦ჿ๐օℴ੦౦";
                     } else {
                         encryptorUsed = 10 * Character.getNumericValue(decodedStr.charAt(0)) + Character.getNumericValue(decodedStr.charAt(1));
-                        switchOnThis = "০૦ℴ౦ℴօ౦০ዐо૦໐੦ዐℴⲟ০ℴዐ੦ⲟ০໐ዐ౦〇໐оｏℴ၀੦౦о〇ｏ";
+                        switchOnThis = "௦೦໐೦೦૦օ૦ዐℴօ໐౦ዐℴ〇໐০ዐ૦੦о੦ዐօｏ০ℴ౦౦০ჿｏｏ၀౦";
                     }
                     break;
-                case "๐၀օℴ౦௦о০ዐℴℴ੦૦ዐℴჿ໐ⲟዐ૦ｏⲟ০ዐ૦໐૦੦၀၀๐၀၀๐০૦":
-                    if (OPAQUES[17] % OPAQUES[22] != OPAQUES[20]) {
-                        decryptedString = decodedStr.substring(2, decodedStr.length() - 50);
-                        switchOnThis = "၀〇೦๐೦〇၀๐ዐჿ၀௦оዐℴ௦ⲟ౦ዐ০௦ⲟоዐ౦౦೦௦〇౦ⲟօｏ໐೦օ";
+                case "௦о೦ℴօⲟჿ౦ዐо૦০оዐℴ໐ｏ૦ዐ০ⲟ௦〇ዐо௦о೦၀ℴｏ௦ჿ๐၀௦":
+                    if (OPAQUES[12] % OPAQUES[20] == OPAQUES[21]) {
+                        key = decodedStr.substring(decodedStr.length() - 50);
+                        switchOnThis = "૦০ⲟ০ⲟ૦੦〇ዐ໐၀ჿ໐ዐℴ௦౦೦ዐ০૦о૦ዐℴ೦੦০оօⲟ೦౦੦૦೦";
                     } else {
-                        encryptorUsed %= ENCRYPTION_ALGORITHMS;
-                        switchOnThis = "ℴℴ〇০௦௦ⲟ౦ዐ〇೦೦੦ዐℴ໐ჿ೦ዐօ০౦೦ዐ૦๐ⲟо၀〇໐೦օоჿо";
+                        if (encryptorUsed == 0) {
+                            decryptedString = dec05(decryptedString, key);
+                        } else if (encryptorUsed == 1) {
+                            decryptedString = dec01(decryptedString, key);
+                        } else if (encryptorUsed == 2) {
+                            decryptedString = dec02(decryptedString, key);
+                        } else if (encryptorUsed == 3) {
+                            decryptedString = dec03(decryptedString, 10);
+                        } else if (encryptorUsed == 4) {
+                            decryptedString = dec04(decryptedString, key);
+                        }
+                        switchOnThis = "၀໐օｏ০೦๐೦ዐ๐о໐ჿዐℴօⲟ๐ዐ੦๐๐օዐօ೦૦ℴ૦оｏ〇໐ჿ၀၀";
                     }
                     break;
+                case "૦оо౦၀о〇೦ዐ০ⲟჿ๐ዐℴⲟ੦ℴዐ૦౦੦ჿዐ௦၀๐੦০๐օ၀၀ℴ၀๐":
+                    if (OPAQUES[18] % OPAQUES[20] == OPAQUES[21]) {
+                        decryptedString = decodedStr.substring(2, decodedStr.length() - 50);
+                        switchOnThis = "௦о೦ℴօⲟჿ౦ዐо૦০оዐℴ໐ｏ૦ዐ০ⲟ௦〇ዐо௦о೦၀ℴｏ௦ჿ๐၀௦";
+                    } else {
+                        decoded = Base64.decode(encrypted, Base64.DEFAULT);
+                        switchOnThis = "〇ჿ੦ⲟ౦૦օ௦ዐ๐૦ჿｏዐℴℴ௦〇ዐօ໐ჿоዐ౦੦〇ჿｏ၀౦໐ჿ੦ｏ০";
+                    }
+                    break;
+                case "૦ⲟ੦օ໐ⲟ໐၀ዐ๐೦ｏօዐℴ೦၀๐ዐ০౦੦၀ዐ〇০ℴ০о〇௦০օ੦ⲟⲟ":
+                    if (OPAQUES[15] % OPAQUES[22] != OPAQUES[20]) {
+                        return decryptedString;
+                    } else {
+                        ENCRYPTION_ALGORITHMS = 5;
+                        switchOnThis = "ⲟоｏｏ๐๐੦օዐ೦ℴ੦೦ዐℴօ၀оዐ০о〇๐ዐ〇೦ⲟ၀օ〇〇ⲟ௦೦օ૦";
+                    }
                 default:
                     infiniteLoop = false;
             }
@@ -151,32 +138,27 @@ public class Decrypt {
 
     public static List generateNumberList() {
         List<String> places = null;
-        String switchOnThis = "೦ჿჿ๐оⲟℴⲟዐ૦〇౦ℴዐℴჿ೦〇ዐ੦೦ⲟｏዐℴ〇〇౦ჿ௦౦ⲟ໐ℴ੦౦";
+        String switchOnThis = "ⲟօ੦૦০੦ℴჿዐо౦೦ｏዐℴ೦օ੦ዐօ૦๐૦ዐ০ⲟ๐౦၀੦о੦໐ｏⲟ௦";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 26, 173, 663, 159, 397, 418, 642, 348, 313, 621, 586, 264, 579, 642, 670, 677, 243, 495, 593, 201, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 635, 131, 509, 201, 481, 432, 292, 411, 250, 117, 208, 124, 117, 68, 369, 502, 292, 103, 509, 250, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "೦ჿჿ๐оⲟℴⲟዐ૦〇౦ℴዐℴჿ೦〇ዐ੦೦ⲟｏዐℴ〇〇౦ჿ௦౦ⲟ໐ℴ੦౦":
-                    if (OPAQUES[7] % OPAQUES[22] != OPAQUES[20]) {
-                        places = Arrays.asList("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine");
-                        switchOnThis = "௦௦๐〇〇੦ⲟ૦ዐ০૦〇০ዐℴ၀০ⲟዐ০ｏჿօዐჿ০о૦૦〇௦оℴჿ౦ჿ";
-                    } else {
-                        places = Arrays.asList("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine");
-                        switchOnThis = "ⲟ೦၀ⲟ০օօｏዐ၀о૦օዐℴоℴｏዐ০০০੦ዐ੦о೦ℴ০〇౦〇੦ჿ੦о";
-                    }
-                    break;
-                case "〇օ๐ℴօℴ੦〇ዐჿ౦ℴ໐ዐℴ੦໐০ዐ০оℴ౦ዐо೦૦ℴ০๐օჿｏ၀૦օ":
-                    places = Arrays.asList("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine");
-                    switchOnThis = "ⲟоⲟо০໐〇໐ዐ௦ｏｏ೦ዐℴ໐၀౦ዐ০೦о౦ዐ੦ℴ೦੦๐௦ｏ೦օ〇၀૦";
-                    break;
-                case "௦௦๐〇〇੦ⲟ૦ዐ০૦〇০ዐℴ၀০ⲟዐ০ｏჿօዐჿ০о૦૦〇௦оℴჿ౦ჿ":
-                    if (OPAQUES[14] % OPAQUES[20] != OPAQUES[21]) {
-                        places = Arrays.asList("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine");
-                        switchOnThis = "๐౦〇ｏჿ੦૦〇ዐօօჿ௦ዐℴჿ๐໐ዐ੦๐ⲟⲟዐⲟ౦ⲟｏჿ၀೦໐၀ჿ૦օ";
+                case "օ০೦໐੦о໐ჿዐჿℴ੦оዐℴჿ০ℴዐ০о૦оዐ૦〇੦੦ℴ౦๐૦೦օ੦о":
+                    return places;
+                case "ⲟ೦ℴ૦౦ჿｏ੦ዐ〇০〇ｏዐℴｏℴ၀ዐ੦о০௦ዐ௦૦ⲟｏ௦০௦੦၀ჿօ๐":
+                    if (OPAQUES[8] % OPAQUES[20] == OPAQUES[21]) {
+                        return places;
                     } else {
                         return places;
-                        switchOnThis = "о੦օⲟჿ౦೦௦ዐｏჿⲟоዐℴჿ〇૦ዐ০ჿ௦оዐ໐օ০ℴ၀о໐໐೦ⲟ೦ℴ";
                     }
+                case "ⲟօ੦૦০੦ℴჿዐо౦೦ｏዐℴ೦օ੦ዐօ૦๐૦ዐ০ⲟ๐౦၀੦о੦໐ｏⲟ௦":
+                    if (OPAQUES[9] % OPAQUES[22] == OPAQUES[20]) {
+                        return places;
+                    } else {
+                        places = Arrays.asList("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine");
+                        switchOnThis = "ⲟ೦ℴ૦౦ჿｏ੦ዐ〇০〇ｏዐℴｏℴ၀ዐ੦о০௦ዐ௦૦ⲟｏ௦০௦੦၀ჿօ๐";
+                    }
+                    break;
                 default:
                     infiniteLoop = false;
             }
@@ -187,26 +169,63 @@ public class Decrypt {
     public static String dec01(String encryptedText, final String key) {
         String decryptedText = null;
         List<String> numberList = null;
-        String switchOnThis = "௦ⲟ౦၀၀೦ℴ૦ዐ૦ჿ೦౦ዐℴ၀๐ｏዐ০၀〇〇ዐ੦௦о໐૦໐ℴ૦ℴ໐〇೦";
+        String switchOnThis = "೦૦ⲟ〇ჿ০၀௦ዐ০௦၀ｏዐℴ૦໐০ዐ০၀ℴ౦ዐо੦௦໐ℴ௦૦၀ｏօ໐၀";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 432, 593, 537, 19, 446, 320, 131, 495, 677, 96, 593, 278, 537, 75, 124, 243, 250, 663, 418, 96, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 68, 558, 47, 635, 355, 663, 180, 537, 593, 397, 61, 110, 110, 82, 523, 670, 117, 390, 264, 586, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "௦ⲟ౦၀၀೦ℴ૦ዐ૦ჿ೦౦ዐℴ၀๐ｏዐ০၀〇〇ዐ੦௦о໐૦໐ℴ૦ℴ໐〇೦":
-                    if (OPAQUES[15] % OPAQUES[22] == OPAQUES[20]) {
-                        decryptedText = "";
-                        switchOnThis = "ჿ੦〇ჿօо౦၀ዐ၀ℴ໐〇ዐℴ೦ℴ੦ዐ૦೦௦оዐ૦၀ჿ౦օ໐ｏ௦੦೦౦օ";
+                case "௦ⲟჿⲟ၀〇૦๐ዐჿｏℴ௦ዐℴ০໐০ዐ੦೦౦੦ዐ੦๐ｏ〇օⲟ〇၀ℴоօօ":
+                    if (OPAQUES[19] % OPAQUES[22] != OPAQUES[20]) {
+                        return decryptedText;
                     } else {
-                        decryptedText = "";
-                        switchOnThis = "〇๐০૦ⲟօｏჿዐо૦оⲟዐℴ၀օｏዐ০ჿｏⲟዐℴо೦੦໐ჿჿօ௦૦০о";
+                        for (int i = 0, j = 0; i < encryptedText.length(); i++) {
+                            char c = encryptedText.charAt(i);
+                            if (Character.isLowerCase(c)) {
+                                decryptedText += (char) ((c - key.charAt(j) + 26) % 26 + 'a');
+                                j = ++j % key.length();
+                            } else if (Character.isUpperCase(c)) {
+                                decryptedText += (char) ((c - Character.toUpperCase(key.charAt(j)) + 26) % 26 + 'A');
+                                j = ++j % key.length();
+                            } else if (Character.isDigit(c)) {
+                                decryptedText += decryptDigit(numberList, c);
+                            } else {
+                                decryptedText += (char) c;
+                            }
+                        }
+                        switchOnThis = "օ૦૦೦ｏ௦໐ℴዐ௦๐௦೦ዐℴⲟ〇၀ዐօჿⲟჿዐ๐ℴ๐૦ჿ০๐ჿ๐੦໐о";
                     }
-                    break;
-                case "օ૦໐ｏℴ૦০ჿዐｏоⲟℴዐℴ౦оｏዐ૦օｏоዐ〇০௦ℴℴ〇ჿ੦ⲟℴℴ໐":
+                case "о૦๐ｏ௦ｏ〇੦ዐℴ๐౦оዐℴ໐๐ℴዐ০၀ｏоዐ૦ⲟⲟ၀૦௦೦૦૦௦௦০":
                     decryptedText = "";
-                    switchOnThis = "օⲟօ〇౦໐౦օዐჿჿօ೦ዐℴⲟｏℴዐ੦๐૦౦ዐ၀໐೦૦〇〇੦০ⲟ๐ⲟ০";
+                    switchOnThis = "ჿ໐օ০౦оℴ੦ዐ၀೦ჿ၀ዐℴ໐ⲟ〇ዐօჿ૦০ዐ੦০૦೦〇〇ჿ੦ⲟ೦օ૦";
                     break;
-                case "〇๐০૦ⲟօｏჿዐо૦оⲟዐℴ၀օｏዐ০ჿｏⲟዐℴо೦੦໐ჿჿօ௦૦০о":
-                    if (OPAQUES[18] % OPAQUES[20] != OPAQUES[21]) {
+                case "೦૦ⲟ〇ჿ০၀௦ዐ০௦၀ｏዐℴ૦໐০ዐ০၀ℴ౦ዐо੦௦໐ℴ௦૦၀ｏօ໐၀":
+                    if (OPAQUES[14] % OPAQUES[20] == OPAQUES[21]) {
+                        decryptedText = "";
+                        switchOnThis = "੦ｏ০ჿоℴⲟ௦ዐ০০೦ჿዐℴｏ૦੦ዐ૦૦೦〇ዐ၀၀ⲟ〇௦౦ℴჿ໐੦໐ℴ";
+                    } else {
+                        numberList = generateNumberList();
+                        switchOnThis = "০оჿｏჿჿ০০ዐօ੦ჿ၀ዐℴ೦၀০ዐ০೦օօዐⲟℴ੦೦૦௦૦௦〇০໐о";
+                    }
+                    break;
+                case "о೦೦೦၀੦௦оዐ၀օℴⲟዐℴ૦໐оዐօჿ〇օዐ੦০օ၀ℴℴⲟ੦௦〇օ၀":
+                    for (int i = 0, j = 0; i < encryptedText.length(); i++) {
+                        char c = encryptedText.charAt(i);
+                        if (Character.isLowerCase(c)) {
+                            decryptedText += (char) ((c - key.charAt(j) + 26) % 26 + 'a');
+                            j = ++j % key.length();
+                        } else if (Character.isUpperCase(c)) {
+                            decryptedText += (char) ((c - Character.toUpperCase(key.charAt(j)) + 26) % 26 + 'A');
+                            j = ++j % key.length();
+                        } else if (Character.isDigit(c)) {
+                            decryptedText += decryptDigit(numberList, c);
+                        } else {
+                            decryptedText += (char) c;
+                        }
+                    }
+                    switchOnThis = "೦੦໐օ〇ℴ၀օዐ௦೦ჿ૦ዐℴჿ೦၀ዐ০০੦૦ዐ〇օ੦〇੦೦օ౦૦ⲟօ౦";
+                    break;
+                case "၀೦օ೦੦౦〇ⲟዐоℴ〇օዐℴ౦ჿ〇ዐ੦๐௦੦ዐｏ੦௦ｏⲟℴ๐೦ⲟ๐о೦":
+                    if (OPAQUES[13] % OPAQUES[22] != OPAQUES[20]) {
                         for (int i = 0, j = 0; i < encryptedText.length(); i++) {
                             char c = encryptedText.charAt(i);
                             if (Character.isLowerCase(c)) {
@@ -221,18 +240,7 @@ public class Decrypt {
                                 decryptedText += (char) c;
                             }
                         }
-                        switchOnThis = "๐ℴ੦૦௦၀ｏｏዐ๐〇๐૦ዐℴ౦ℴჿዐօℴ౦ℴዐ੦௦௦౦೦௦૦૦ჿℴ੦о";
-                    } else {
-                        numberList = generateNumberList();
-                        switchOnThis = "ⲟ〇ｏօ၀ℴ௦౦ዐ၀౦০օዐℴ௦ℴｏዐ০௦௦၀ዐо௦૦௦๐〇〇௦ｏօ૦೦";
-                    }
-                    break;
-                case "ⲟ૦໐௦၀ⲟօ௦ዐ౦੦௦၀ዐℴⲟ೦〇ዐ০೦੦੦ዐ౦౦ｏ೦օ၀〇၀০ℴⲟ০":
-                    return decryptedText;
-                case "ⲟ〇ｏօ၀ℴ௦౦ዐ၀౦০օዐℴ௦ℴｏዐ০௦௦၀ዐо௦૦௦๐〇〇௦ｏօ૦೦":
-                    if (OPAQUES[17] % OPAQUES[22] == OPAQUES[20]) {
-                        return decryptedText;
-                        switchOnThis = "੦໐౦૦౦๐о೦ዐ੦ｏ๐੦ዐℴ੦੦оዐ૦೦ｏℴዐ໐૦օ੦௦๐ｏօჿоⲟо";
+                        switchOnThis = "௦ⲟჿⲟ၀〇૦๐ዐჿｏℴ௦ዐℴ০໐০ዐ੦೦౦੦ዐ੦๐ｏ〇օⲟ〇၀ℴоօօ";
                     } else {
                         for (int i = 0, j = 0; i < encryptedText.length(); i++) {
                             char c = encryptedText.charAt(i);
@@ -248,17 +256,17 @@ public class Decrypt {
                                 decryptedText += (char) c;
                             }
                         }
-                        switchOnThis = "օ〇๐ⲟℴ೦օ੦ዐ೦ჿｏ௦ዐℴ௦ⲟ〇ዐօℴ〇໐ዐℴ০ｏ০〇০ⲟо૦೦೦೦";
+                        switchOnThis = "০ｏօ૦о๐ჿ၀ዐ௦০೦੦ዐℴ੦೦೦ዐօⲟ೦၀ዐℴⲟ〇၀〇〇๐૦၀০০〇";
                     }
                     break;
-                case "օ〇๐ⲟℴ೦օ੦ዐ೦ჿｏ௦ዐℴ௦ⲟ〇ዐօℴ〇໐ዐℴ০ｏ০〇০ⲟо૦೦೦೦":
-                    if (OPAQUES[11] % OPAQUES[22] == OPAQUES[20]) {
-                        numberList = generateNumberList();
-                        switchOnThis = "о໐оⲟо〇௦ⲟዐօ০๐ⲟዐℴℴ〇໐ዐ੦օ၀੦ዐ๐౦ｏჿоо၀ჿ౦օ೦၀";
-                    } else {
+                case "੦ｏ০ჿоℴⲟ௦ዐ০০೦ჿዐℴｏ૦੦ዐ૦૦೦〇ዐ၀၀ⲟ〇௦౦ℴჿ໐੦໐ℴ":
+                    if (OPAQUES[10] % OPAQUES[20] != OPAQUES[21]) {
                         return decryptedText;
-                        switchOnThis = "၀౦௦੦ℴ০〇੦ዐ೦օⲟ౦ዐℴ௦௦ⲟዐ০ⲟⲟ೦ዐⲟо૦ℴ໐օօℴօ૦〇ჿ";
+                    } else {
+                        numberList = generateNumberList();
+                        switchOnThis = "၀೦օ೦੦౦〇ⲟዐоℴ〇օዐℴ౦ჿ〇ዐ੦๐௦੦ዐｏ੦௦ｏⲟℴ๐೦ⲟ๐о೦";
                     }
+                    break;
                 default:
                     infiniteLoop = false;
             }
@@ -268,13 +276,15 @@ public class Decrypt {
 
     public static String dec02(String encryptedText, String key) {
         String decryptedString = null;
-        String switchOnThis = "௦ჿ໐০օо၀০ዐ੦о੦ჿዐℴ၀໐๐ዐ૦๐ⲟоዐ೦օ౦໐ⲟⲟօⲟℴ౦ℴ૦";
+        String switchOnThis = "௦ჿ০о౦ℴ০໐ዐｏօօօዐℴ௦ⲟ০ዐ૦оｏ੦ዐо০০໐ჿ๐օⲟ০໐০၀";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 509, 502, 411, 607, 481, 96, 439, 642, 131, 544, 306, 320, 621, 40, 117, 103, 278, 271, 481, 460, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 572, 96, 75, 565, 320, 61, 257, 47, 565, 103, 523, 229, 110, 509, 446, 362, 215, 271, 572, 523, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "౦ⲟоｏℴ〇௦೦ዐ〇ჿ০օዐℴ๐౦௦ዐօ௦ℴ০ዐ০၀๐௦ჿｏｏ೦໐оｏ੦":
-                    if (OPAQUES[7] % OPAQUES[22] == OPAQUES[20]) {
+                case "૦၀௦໐ჿｏｏℴዐ੦оօ౦ዐℴ၀၀оዐ০ჿ੦೦ዐ০໐ⲟоｏ૦〇〇০օ〇о":
+                    if (OPAQUES[10] % OPAQUES[20] != OPAQUES[21]) {
+                        return decryptedString;
+                    } else {
                         for (char c : encryptedText.toCharArray()) {
                             int newIntegerValue = (int) c - 69;
                             if (newIntegerValue < 32) {
@@ -283,38 +293,28 @@ public class Decrypt {
                             }
                             decryptedString += (char) newIntegerValue;
                         }
-                        switchOnThis = "੦໐໐〇੦૦૦၀ዐ๐օℴ๐ዐℴ௦੦๐ዐ૦๐ჿ೦ዐ೦ჿ০ჿ೦૦ჿ੦ⲟօⲟ၀";
-                    } else {
-                        for (char c : encryptedText.toCharArray()) {
-                            int newIntegerValue = (int) c - 69;
-                            if (newIntegerValue < 32) {
-                                int offset = 32 - (newIntegerValue + 1);
-                                newIntegerValue = 126 - offset;
-                            }
-                            decryptedString += (char) newIntegerValue;
-                        }
-                        switchOnThis = "օ၀၀੦ｏⲟ૦੦ዐ౦๐၀ⲟዐℴօ੦౦ዐ੦౦ჿｏዐჿ〇ⲟჿ๐௦ჿ౦օ౦ｏ੦";
+                        switchOnThis = "০೦〇օ౦〇ⲟⲟዐ೦০ℴჿዐℴ০๐ｏዐ૦௦౦௦ዐ໐〇〇੦೦౦౦੦օ໐оⲟ";
                     }
                     break;
-                case "օ၀၀੦ｏⲟ૦੦ዐ౦๐၀ⲟዐℴօ੦౦ዐ੦౦ჿｏዐჿ〇ⲟჿ๐௦ჿ౦օ౦ｏ੦":
-                    if (OPAQUES[5] % OPAQUES[22] != OPAQUES[20]) {
-                        return decryptedString;
-                        switchOnThis = "ჿｏ௦ℴℴჿօ০ዐоо௦০ዐℴօօ੦ዐ০օ໐ｏዐ೦〇օ০౦ჿ০໐೦০০০";
+                case "੦০о໐੦ℴ௦০ዐ〇ℴℴ০ዐℴ౦໐〇ዐ૦௦ⲟ౦ዐ೦ℴ૦ℴⲟօ੦о੦๐ℴ೦":
+                    decryptedString = "";
+                    switchOnThis = "๐ჿ๐૦০૦օჿዐ੦૦〇০ዐℴ੦ჿ੦ዐ૦о၀೦ዐ੦੦օ౦౦о০੦ｏ੦ⲟ௦";
+                    break;
+                case "௦ჿ০о౦ℴ০໐ዐｏօօօዐℴ௦ⲟ০ዐ૦оｏ੦ዐо০০໐ჿ๐օⲟ০໐০၀":
+                    if (OPAQUES[12] % OPAQUES[20] == OPAQUES[21]) {
+                        decryptedString = "";
+                        switchOnThis = "૦၀௦໐ჿｏｏℴዐ੦оօ౦ዐℴ၀၀оዐ০ჿ੦೦ዐ০໐ⲟоｏ૦〇〇০օ〇о";
                     } else {
                         return decryptedString;
-                        switchOnThis = "೦೦௦౦๐օ૦ჿዐ૦೦о໐ዐℴ೦૦ⲟዐօ໐໐〇ዐⲟ೦໐೦о໐ჿ೦ℴ௦〇೦";
-                    }
-                case "〇〇০օ๐໐օℴዐ૦ჿ೦೦ዐℴօｏ௦ዐ০૦о੦ዐ๐о૦օ౦о〇〇၀௦о০":
-                    return decryptedString;
-                case "௦ჿ໐০օо၀০ዐ੦о੦ჿዐℴ၀໐๐ዐ૦๐ⲟоዐ೦օ౦໐ⲟⲟօⲟℴ౦ℴ૦":
-                    if (OPAQUES[4] % OPAQUES[20] != OPAQUES[21]) {
-                        decryptedString = "";
-                        switchOnThis = "૦ｏ໐ⲟｏ૦૦ｏዐо〇〇ჿዐℴօ௦օዐ૦০໐ℴዐо০ⲟ౦оჿ০օ೦๐о૦";
-                    } else {
-                        decryptedString = "";
-                        switchOnThis = "౦ⲟоｏℴ〇௦೦ዐ〇ჿ০օዐℴ๐౦௦ዐօ௦ℴ০ዐ০၀๐௦ჿｏｏ೦໐оｏ੦";
                     }
                     break;
+                case "০೦〇օ౦〇ⲟⲟዐ೦০ℴჿዐℴ০๐ｏዐ૦௦౦௦ዐ໐〇〇੦೦౦౦੦օ໐оⲟ":
+                    if (OPAQUES[12] % OPAQUES[20] != OPAQUES[21]) {
+                        decryptedString = "";
+                        switchOnThis = "ℴჿ௦ｏ၀ℴ໐౦ዐ๐၀௦ⲟዐℴ๐о๐ዐ੦ｏ౦ℴዐ໐০೦౦ⲟ໐০၀೦೦ⲟℴ";
+                    } else {
+                        return decryptedString;
+                    }
                 default:
                     infiniteLoop = false;
             }
@@ -327,82 +327,79 @@ public class Decrypt {
         StringBuffer buffer = null;
         String reverse = null;
         String decryptedString = null;
-        String switchOnThis = "੦੦๐໐๐໐ⲟ੦ዐ౦೦ჿ၀ዐℴⲟ๐ℴዐ૦૦০ჿዐⲟｏ೦ｏоｏ๐௦౦౦ჿօ";
+        String switchOnThis = "౦〇ჿｏｏ๐၀၀ዐօ௦၀оዐℴჿｏ໐ዐ૦ｏ໐၀ዐ௦ⲟ๐௦о〇௦૦ｏ౦໐ｏ";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 250, 390, 341, 208, 145, 250, 124, 572, 551, 334, 334, 390, 544, 250, 159, 166, 460, 628, 271, 19, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 551, 439, 649, 236, 124, 614, 229, 551, 432, 257, 264, 355, 271, 614, 383, 320, 551, 467, 75, 383, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "๐ჿ੦оⲟ〇௦օዐℴօ๐ⲟዐℴ૦౦ჿዐ੦ℴ੦௦ዐ௦〇໐๐௦੦ℴ০੦০၀๐":
-                    if (OPAQUES[9] % OPAQUES[22] == OPAQUES[20]) {
+                case "ℴ০၀օ๐০૦০ዐ੦੦ℴоዐℴⲟ੦౦ዐ૦໐о௦ዐ๐ჿ૦౦ℴჿ๐ｏ〇০০๐":
+                    decryptedString = "";
+                    switchOnThis = "ℴ௦၀ⲟ૦೦๐০ዐ੦ℴ๐໐ዐℴօ੦૦ዐ০๐օ০ዐⲟ〇ｏ౦੦౦௦ｏ௦ｏ໐໐";
+                    break;
+                case "ｏⲟ০੦ⲟ੦ℴⲟዐ೦໐ℴℴዐℴ೦௦০ዐ੦ｏℴ〇ዐօ๐ⲟ๐௦ჿ〇၀౦๐၀০":
+                    if (OPAQUES[14] % OPAQUES[20] == OPAQUES[21]) {
                         decryptedString = "";
-                        switchOnThis = "оⲟℴ০၀๐ⲟ໐ዐ၀๐၀ჿዐℴ૦০օዐօⲟ૦օዐℴ໐〇໐੦о๐০໐〇೦օ";
+                        switchOnThis = "ჿჿ௦〇௦ჿ௦౦ዐօ၀၀ｏዐℴｏ၀〇ዐ০ჿ૦໐ዐ௦ℴ૦၀೦౦௦〇೦೦օ೦";
                     } else {
-                        reverse = buffer.reverse().toString();
-                        switchOnThis = "〇௦০〇ｏ੦〇၀ዐ๐০о๐ዐℴ〇๐૦ዐ੦੦๐ჿዐ௦໐౦ｏჿ〇૦૦๐〇ჿ〇";
+                        for (int i = 0; i < encryptedText.length(); i++) {
+                            char currentCharacter = encryptedText.charAt(i);
+                            int indexOfCurrentCharacter = reverse.indexOf(currentCharacter);
+                            decryptedString += ordered.charAt(indexOfCurrentCharacter);
+                        }
+                        switchOnThis = "〇〇௦ℴ၀ჿⲟ೦ዐօჿ௦౦ዐℴ૦օ၀ዐօჿⲟ〇ዐℴ๐౦ჿ౦ჿ૦௦૦໐๐๐";
                     }
                     break;
-                case "๐〇ჿоⲟⲟｏℴዐⲟⲟ๐੦ዐℴℴ๐๐ዐ০ჿⲟ๐ዐ౦ⲟ〇০০ｏ໐ℴ૦၀໐ｏ":
-                    if (OPAQUES[1] % OPAQUES[22] != OPAQUES[20]) {
-                        return decryptedString;
-                        switchOnThis = "ⲟჿօօ๐౦ⲟ০ዐ૦੦օ೦ዐℴⲟ੦௦ዐ੦੦၀૦ዐⲟჿоℴ೦੦ⲟ౦〇〇০ⲟ";
+                case "੦೦၀౦ｏ੦૦௦ዐ໐௦〇ჿዐℴ໐౦௦ዐ૦ℴ૦〇ዐ໐০၀໐оｏоօ〇๐оｏ":
+                    buffer = new StringBuffer(ordered);
+                    switchOnThis = "০੦૦੦ჿ০௦оዐ၀ℴ০ⲟዐℴⲟჿჿዐօ௦о০ዐ০о౦೦ℴ๐ჿｏ〇೦೦૦";
+                    break;
+                case "၀০૦૦૦о੦оዐℴჿｏ๐ዐℴⲟоℴዐօ੦໐օዐ૦๐౦ჿ၀০၀о〇௦ｏо":
+                    if (OPAQUES[14] % OPAQUES[20] == OPAQUES[21]) {
+                        reverse = buffer.reverse().toString();
+                        switchOnThis = "ｏⲟ০੦ⲟ੦ℴⲟዐ೦໐ℴℴዐℴ೦௦০ዐ੦ｏℴ〇ዐօ๐ⲟ๐௦ჿ〇၀౦๐၀০";
                     } else {
-                        decryptedString = "";
-                        switchOnThis = "ⲟօ၀૦০೦〇০ዐ௦੦ⲟ೦ዐℴօⲟ૦ዐ੦੦оｏዐ၀০০ჿℴ໐໐੦๐๐೦௦";
+                        reverse = buffer.reverse().toString();
+                        switchOnThis = "〇ⲟｏ૦ⲟ౦๐૦ዐօ০೦౦ዐℴ೦ℴ০ዐ੦੦౦оዐℴ௦௦೦০〇ｏ໐о௦о௦";
                     }
-                case "੦੦๐໐๐໐ⲟ੦ዐ౦೦ჿ၀ዐℴⲟ๐ℴዐ૦૦০ჿዐⲟｏ೦ｏоｏ๐௦౦౦ჿօ":
+                    break;
+                case "౦〇ჿｏｏ๐၀၀ዐօ௦၀оዐℴჿｏ໐ዐ૦ｏ໐၀ዐ௦ⲟ๐௦о〇௦૦ｏ౦໐ｏ":
                     if (OPAQUES[18] % OPAQUES[20] != OPAQUES[21]) {
                         decryptedString = "";
-                        switchOnThis = "о໐ｏჿоⲟо੦ዐჿℴℴⲟዐℴ౦ⲟ௦ዐ੦ℴჿℴዐ೦૦໐๐〇ｏ๐ｏ০໐оჿ";
+                        switchOnThis = "૦೦੦౦〇੦০оዐ၀๐੦〇ዐℴ၀๐оዐօо၀оዐо೦օօℴ໐໐౦၀ჿ၀੦";
                     } else {
                         ordered = generateAtbashOrderedString();
-                        switchOnThis = "၀оօ૦೦౦௦ⲟዐ০௦૦๐ዐℴ૦೦౦ዐ૦૦౦ｏዐｏ০૦ｏ೦ℴℴℴо੦૦๐";
+                        switchOnThis = "ｏ౦௦໐〇ჿ೦০ዐｏ૦ｏ໐ዐℴ〇೦໐ዐ੦ｏ০ჿዐ〇೦੦௦௦〇၀௦௦ჿօ੦";
                     }
                     break;
-                case "၀оօ૦೦౦௦ⲟዐ০௦૦๐ዐℴ૦೦౦ዐ૦૦౦ｏዐｏ০૦ｏ೦ℴℴℴо੦૦๐":
-                    if (OPAQUES[4] % OPAQUES[20] == OPAQUES[21]) {
+                case "೦օｏօ੦ⲟ೦၀ዐօ໐օ૦ዐℴ౦௦оዐ੦ⲟ໐ⲟዐ૦໐૦ｏ૦০೦೦ჿօ০〇":
+                    if (OPAQUES[3] % OPAQUES[22] != OPAQUES[20]) {
+                        return decryptedString;
+                    } else {
+                        ordered = generateAtbashOrderedString();
+                        switchOnThis = "〇০ℴ໐ⲟоо๐ዐ〇ℴ〇౦ዐℴｏჿ০ዐ੦ℴ๐໐ዐ೦о౦೦೦੦೦๐၀౦〇〇";
+                    }
+                case "੦ℴჿℴჿｏօｏዐ౦০౦౦ዐℴⲟ〇๐ዐ૦о೦ⲟዐօ௦ｏ౦〇೦ⲟⲟо௦౦૦":
+                    return decryptedString;
+                case "ｏ౦௦໐〇ჿ೦০ዐｏ૦ｏ໐ዐℴ〇೦໐ዐ੦ｏ০ჿዐ〇೦੦௦௦〇၀௦௦ჿօ੦":
+                    if (OPAQUES[18] % OPAQUES[20] == OPAQUES[21]) {
                         buffer = new StringBuffer(ordered);
-                        switchOnThis = "๐ჿ੦оⲟ〇௦օዐℴօ๐ⲟዐℴ૦౦ჿዐ੦ℴ੦௦ዐ௦〇໐๐௦੦ℴ০੦০၀๐";
+                        switchOnThis = "၀০૦૦૦о੦оዐℴჿｏ๐ዐℴⲟоℴዐօ੦໐օዐ૦๐౦ჿ၀০၀о〇௦ｏо";
                     } else {
+                        reverse = buffer.reverse().toString();
+                        switchOnThis = "〇౦૦০〇๐੦০ዐ૦೦ⲟ૦ዐℴ〇੦੦ዐ૦૦๐ჿዐℴ০ⲟ੦ｏℴօооჿ௦၀";
+                    }
+                    break;
+                case "ჿჿ௦〇௦ჿ௦౦ዐօ၀၀ｏዐℴｏ၀〇ዐ০ჿ૦໐ዐ௦ℴ૦၀೦౦௦〇೦೦օ೦":
+                    if (OPAQUES[14] % OPAQUES[20] == OPAQUES[21]) {
                         for (int i = 0; i < encryptedText.length(); i++) {
                             char currentCharacter = encryptedText.charAt(i);
                             int indexOfCurrentCharacter = reverse.indexOf(currentCharacter);
                             decryptedString += ordered.charAt(indexOfCurrentCharacter);
                         }
-                        switchOnThis = "〇௦ｏ၀ჿооⲟዐ໐о၀ⲟዐℴ໐ｏ૦ዐօჿ໐౦ዐ໐૦๐〇௦ჿ೦๐օｏоօ";
-                    }
-                    break;
-                case "օօ੦௦໐ｏ૦๐ዐооօ໐ዐℴⲟ০၀ዐ০੦೦૦ዐо๐օ੦੦ⲟℴ೦໐೦೦၀":
-                    ordered = generateAtbashOrderedString();
-                    switchOnThis = "о၀оℴ০၀๐օዐ೦๐೦օዐℴｏ౦๐ዐ૦๐၀໐ዐ၀౦০၀০໐೦০໐ｏ੦ⲟ";
-                    break;
-                case "ჿℴ໐੦౦ℴооዐⲟ೦օ੦ዐℴჿჿ〇ዐ০০〇ჿዐ০〇০௦ჿⲟｏо೦оｏｏ":
-                    decryptedString = "";
-                    switchOnThis = "০૦〇၀௦੦〇๐ዐ໐օ๐೦ዐℴჿჿჿዐ০ჿℴօዐօ૦੦๐၀ჿ೦౦ჿ〇ⲟօ";
-                    break;
-                case "๐օｏ၀ℴ০〇૦ዐｏℴ௦౦ዐℴ౦໐০ዐ੦௦၀ჿዐ໐ℴ〇ｏ౦ჿ০၀ⲟℴ౦օ":
-                    if (OPAQUES[0] % OPAQUES[20] != OPAQUES[21]) {
-                        reverse = buffer.reverse().toString();
-                        switchOnThis = "ჿℴ૦〇๐о೦ჿዐоｏⲟօዐℴⲟⲟｏዐ০੦օ໐ዐｏо๐໐૦೦੦૦೦ჿ੦о";
+                        switchOnThis = "೦օｏօ੦ⲟ೦၀ዐօ໐օ૦ዐℴ౦௦оዐ੦ⲟ໐ⲟዐ૦໐૦ｏ૦০೦೦ჿօ০〇";
                     } else {
-                        for (int i = 0; i < encryptedText.length(); i++) {
-                            char currentCharacter = encryptedText.charAt(i);
-                            int indexOfCurrentCharacter = reverse.indexOf(currentCharacter);
-                            decryptedString += ordered.charAt(indexOfCurrentCharacter);
-                        }
-                        switchOnThis = "๐〇ჿоⲟⲟｏℴዐⲟⲟ๐੦ዐℴℴ๐๐ዐ০ჿⲟ๐ዐ౦ⲟ〇০০ｏ໐ℴ૦၀໐ｏ";
-                    }
-                    break;
-                case "૦০оօ০௦ⲟ০ዐо௦ｏоዐℴ੦০੦ዐ০ჿ〇೦ዐ੦ⲟ౦ⲟჿჿօ૦၀০๐੦":
-                    decryptedString = "";
-                    switchOnThis = "၀௦၀໐၀੦ⲟ૦ዐჿ〇౦ℴዐℴℴჿ౦ዐօ౦೦ჿዐℴ૦௦о੦๐૦๐ⲟ೦௦೦";
-                    break;
-                case "〇௦০〇ｏ੦〇၀ዐ๐০о๐ዐℴ〇๐૦ዐ੦੦๐ჿዐ௦໐౦ｏჿ〇૦૦๐〇ჿ〇":
-                    if (OPAQUES[10] % OPAQUES[20] != OPAQUES[21]) {
-                        reverse = buffer.reverse().toString();
-                        switchOnThis = "〇օ੦о௦၀௦੦ዐჿ೦௦օዐℴｏ໐໐ዐ০໐੦ჿዐ૦౦૦௦০၀๐օ၀ⲟჿ๐";
-                    } else {
-                        decryptedString = "";
-                        switchOnThis = "๐օｏ၀ℴ০〇૦ዐｏℴ௦౦ዐℴ౦໐০ዐ੦௦၀ჿዐ໐ℴ〇ｏ౦ჿ০၀ⲟℴ౦օ";
+                        ordered = generateAtbashOrderedString();
+                        switchOnThis = "౦૦೦໐ჿօⲟ૦ዐ〇ⲟჿ০ዐℴჿօ໐ዐ০๐૦ℴዐℴჿ೦оჿჿ౦๐ჿ໐〇ℴ";
                     }
                     break;
                 default:
@@ -414,43 +411,45 @@ public class Decrypt {
 
     public static String generateAtbashOrderedString() {
         String ordered = null;
-        String switchOnThis = "௦၀૦ⲟℴℴ౦ⲟዐⲟ০ⲟ೦ዐℴ௦໐૦ዐ૦૦໐๐ዐ໐〇၀໐〇ℴ০௦໐ⲟ૦௦";
+        String switchOnThis = "૦о໐૦௦૦ℴ௦ዐჿ๐օ๐ዐℴ౦о໐ዐօჿჿоዐ௦ｏⲟ௦ⲟ૦оｏ๐ⲟօօ";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 607, 649, 425, 180, 460, 236, 264, 411, 187, 257, 194, 75, 614, 516, 327, 586, 677, 313, 432, 509, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 376, 537, 642, 460, 474, 404, 432, 166, 243, 306, 348, 159, 208, 348, 271, 565, 453, 89, 201, 201, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "૦૦ჿℴ০ⲟ၀ჿዐ௦๐〇ｏዐℴ၀ℴℴዐ০၀૦໐ዐ০օ੦੦๐〇ℴℴ੦၀ჿ〇":
-                    if (OPAQUES[5] % OPAQUES[22] == OPAQUES[20]) {
-                        return ordered;
-                        switchOnThis = "૦๐໐၀౦౦౦оዐ੦〇〇๐ዐℴо૦ⲟዐ੦૦၀๐ዐ০௦ℴ௦၀о໐๐оօℴ๐";
-                    } else {
-                        return ordered;
-                        switchOnThis = "ჿ੦ჿｏ੦ｏ௦૦ዐ၀၀ჿჿዐℴ၀ⲟ๐ዐ০౦໐০ዐჿჿ໐ℴ੦օ〇๐ｏ౦๐૦";
-                    }
-                case "௦၀૦ⲟℴℴ౦ⲟዐⲟ০ⲟ೦ዐℴ௦໐૦ዐ૦૦໐๐ዐ໐〇၀໐〇ℴ০௦໐ⲟ૦௦":
-                    if (OPAQUES[0] % OPAQUES[20] == OPAQUES[21]) {
+                case "૦о໐૦௦૦ℴ௦ዐჿ๐օ๐ዐℴ౦о໐ዐօჿჿоዐ௦ｏⲟ௦ⲟ૦оｏ๐ⲟօօ":
+                    if (OPAQUES[18] % OPAQUES[20] == OPAQUES[21]) {
                         ordered = "";
-                        switchOnThis = "о〇੦౦〇੦௦ⲟዐ௦ℴ௦০ዐℴ໐૦ჿዐ০〇௦ｏዐ໐〇о௦๐օ౦ｏℴօ๐ｏ";
+                        switchOnThis = "օ౦ℴⲟ၀๐๐〇ዐℴჿ၀௦ዐℴ૦੦оዐ੦оჿ໐ዐ〇໐〇о໐໐ჿ〇ℴⲟ೦๐";
+                    } else {
+                        ordered = "";
+                        switchOnThis = "௦оⲟ૦૦౦၀ℴዐ௦о〇օዐℴ౦ℴоዐ০௦੦০ዐ੦০૦๐೦௦০౦໐໐૦੦";
+                    }
+                    break;
+                case "օ౦ℴⲟ၀๐๐〇ዐℴჿ၀௦ዐℴ૦੦оዐ੦оჿ໐ዐ〇໐〇о໐໐ჿ〇ℴⲟ೦๐":
+                    if (OPAQUES[14] % OPAQUES[20] != OPAQUES[21]) {
+                        for (int i = 32; i <= 126; i++) {
+                            ordered += (char) i;
+                        }
+                        switchOnThis = "໐ｏⲟ၀оⲟ๐օዐ૦〇ⲟ౦ዐℴ౦੦ⲟዐ૦૦০০ዐ০໐၀၀૦ჿ೦௦ⲟⲟ೦〇";
                     } else {
                         for (int i = 32; i <= 126; i++) {
                             ordered += (char) i;
                         }
-                        switchOnThis = "০૦ｏ໐ｏℴ๐ⲟዐ౦ⲟｏօዐℴｏ૦௦ዐօ౦ℴоዐ๐੦౦ⲟ০ℴ౦၀ⲟ೦೦௦";
+                        switchOnThis = "๐೦০〇о೦օօዐ੦໐ℴօዐℴ೦օ૦ዐ੦໐੦౦ዐ〇օⲟօⲟ௦о၀ჿ௦০೦";
                     }
                     break;
-                case "օ০௦੦о૦૦ჿዐ๐၀օօዐℴ๐০၀ዐօ๐ⲟ໐ዐ೦ჿ০౦ｏ၀၀ℴ໐০ℴ੦":
-                    return ordered;
-                case "о〇੦౦〇੦௦ⲟዐ௦ℴ௦০ዐℴ໐૦ჿዐ০〇௦ｏዐ໐〇о௦๐օ౦ｏℴօ๐ｏ":
+                case "૦၀ｏ੦ⲟ๐ℴօዐ੦၀〇௦ዐℴ০௦ჿዐ૦ｏⲟｏዐⲟ೦ｏ૦ⲟ௦౦о〇ℴ೦௦":
+                    for (int i = 32; i <= 126; i++) {
+                        ordered += (char) i;
+                    }
+                    switchOnThis = "๐ⲟⲟ০౦〇ℴ၀ዐօо〇၀ዐℴჿ໐օዐ੦๐၀০ዐ௦օ〇ჿⲟℴօ〇ｏ೦੦ℴ";
+                    break;
+                case "๐೦০〇о೦օօዐ੦໐ℴօዐℴ೦օ૦ዐ੦໐੦౦ዐ〇օⲟօⲟ௦о၀ჿ௦০೦":
                     if (OPAQUES[0] % OPAQUES[20] == OPAQUES[21]) {
-                        for (int i = 32; i <= 126; i++) {
-                            ordered += (char) i;
-                        }
-                        switchOnThis = "૦૦ჿℴ০ⲟ၀ჿዐ௦๐〇ｏዐℴ၀ℴℴዐ০၀૦໐ዐ০օ੦੦๐〇ℴℴ੦၀ჿ〇";
+                        return ordered;
                     } else {
                         return ordered;
-                        switchOnThis = "〇૦ჿჿ໐ℴჿ૦ዐօℴ၀၀ዐℴ੦໐၀ዐօо၀ჿዐ೦๐ℴⲟ০оℴ〇ℴⲟ೦օ";
                     }
-                    break;
                 default:
                     infiniteLoop = false;
             }
@@ -461,53 +460,54 @@ public class Decrypt {
     public static String decryptDigitString(String encryptedNumbers) {
         List<String> numberList = null;
         String decryptedNumbers = null;
-        String switchOnThis = "౦໐о๐૦๐о๐ዐⲟо೦௦ዐℴℴჿｏዐ০ℴ౦໐ዐჿ၀〇೦ⲟⲟ໐ჿｏჿօჿ";
+        String switchOnThis = "၀ｏ〇౦օⲟ၀оዐ೦০੦౦ዐℴ੦оℴዐ০૦੦௦ዐо๐໐ჿⲟо੦໐〇ⲟჿ၀";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 460, 292, 138, 551, 544, 82, 103, 47, 586, 537, 551, 397, 131, 236, 75, 544, 642, 523, 411, 229, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 600, 334, 502, 285, 439, 530, 26, 397, 152, 481, 152, 145, 362, 89, 614, 271, 425, 327, 348, 418, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "ℴ০૦օｏ೦๐၀ዐ੦໐〇௦ዐℴ૦௦౦ዐ૦ⲟⲟｏዐℴ౦ｏⲟ၀ｏо௦օ໐ჿо":
-                    if (OPAQUES[9] % OPAQUES[22] == OPAQUES[20]) {
-                        return decryptedNumbers;
-                        switchOnThis = "ｏℴ০〇ჿⲟ၀ⲟዐⲟ௦ｏ၀ዐℴ๐೦〇ዐօℴ੦໐ዐℴ೦ჿჿ๐〇૦о໐оჿ௦";
-                    } else {
+                case "๐๐о૦ჿｏ๐оዐ૦๐〇ｏዐℴоჿоዐ০〇ჿ໐ዐ໐૦੦ｏ〇௦೦૦၀௦໐੦":
+                    if (OPAQUES[2] % OPAQUES[20] == OPAQUES[21]) {
                         for (char i : encryptedNumbers.toCharArray()) {
                             decryptedNumbers += Character.toString(decryptDigit(numberList, i));
                         }
-                        switchOnThis = "૦০০০੦ჿооዐ૦оо೦ዐℴℴ௦оዐ૦〇๐օዐ౦੦〇ℴⲟօ೦၀ℴ௦ｏ૦";
-                    }
-                    break;
-                case "૦০০০੦ჿооዐ૦оо೦ዐℴℴ௦оዐ૦〇๐օዐ౦੦〇ℴⲟօ೦၀ℴ௦ｏ૦":
-                    if (OPAQUES[17] % OPAQUES[22] != OPAQUES[20]) {
-                        return decryptedNumbers;
-                        switchOnThis = "໐๐ℴｏ๐০૦૦ዐоჿ๐૦ዐℴჿℴ๐ዐ০ｏｏⲟዐօ০ⲟօ໐๐௦၀၀ℴ๐໐";
+                        switchOnThis = "ｏｏ౦૦௦ℴ੦ｏዐⲟ๐௦૦ዐℴ၀၀оዐ੦੦০оዐ੦〇၀ℴℴℴ๐ⲟ੦૦০੦";
                     } else {
                         return decryptedNumbers;
-                        switchOnThis = "౦ჿｏ〇ℴ০ℴ૦ዐ౦ⲟօ೦ዐℴⲟо০ዐ૦੦ⲟ০ዐ০೦௦໐๐໐ｏ၀๐ⲟ௦૦";
                     }
-                case "໐૦〇੦ｏℴℴ၀ዐօⲟ໐ⲟዐℴ০ℴℴዐ০௦ｏ๐ዐ೦ჿ၀௦০๐၀ⲟ၀૦ჿ〇":
-                    if (OPAQUES[13] % OPAQUES[22] != OPAQUES[20]) {
+                    break;
+                case "о〇ჿｏｏ၀၀೦ዐ೦౦ⲟ૦ዐℴ౦၀၀ዐօჿ૦૦ዐо๐੦ⲟｏо၀௦໐೦০೦":
+                    if (OPAQUES[8] % OPAQUES[20] == OPAQUES[21]) {
                         decryptedNumbers = "";
-                        switchOnThis = "ℴ০૦օｏ೦๐၀ዐ੦໐〇௦ዐℴ૦௦౦ዐ૦ⲟⲟｏዐℴ౦ｏⲟ၀ｏо௦օ໐ჿо";
+                        switchOnThis = "๐๐о૦ჿｏ๐оዐ૦๐〇ｏዐℴоჿоዐ০〇ჿ໐ዐ໐૦੦ｏ〇௦೦૦၀௦໐੦";
                     } else {
-                        return decryptedNumbers;
-                        switchOnThis = "໐ℴ੦ჿօ〇೦૦ዐ๐০ℴ໐ዐℴ০о੦ዐ੦〇೦օዐо〇๐೦૦๐о੦໐ⲟ໐௦";
+                        decryptedNumbers = "";
+                        switchOnThis = "૦໐၀ⲟℴ௦੦০ዐ〇੦ℴ૦ዐℴⲟ೦૦ዐ૦၀ⲟ೦ዐ૦၀օ౦〇໐〇ჿօｏｏ๐";
                     }
                     break;
-                case "౦໐о๐૦๐о๐ዐⲟо೦௦ዐℴℴჿｏዐ০ℴ౦໐ዐჿ၀〇೦ⲟⲟ໐ჿｏჿօჿ":
-                    if (OPAQUES[18] % OPAQUES[20] != OPAQUES[21]) {
-                        return decryptedNumbers;
-                        switchOnThis = "ჿ໐௦๐ｏо૦౦ዐ໐〇໐੦ዐℴ০ｏ੦ዐօⲟｏℴዐℴℴⲟ๐օо০о౦ⲟ௦օ";
+                case "ｏｏ౦૦௦ℴ੦ｏዐⲟ๐௦૦ዐℴ၀၀оዐ੦੦০оዐ੦〇၀ℴℴℴ๐ⲟ੦૦০੦":
+                    if (OPAQUES[10] % OPAQUES[20] != OPAQUES[21]) {
+                        for (char i : encryptedNumbers.toCharArray()) {
+                            decryptedNumbers += Character.toString(decryptDigit(numberList, i));
+                        }
+                        switchOnThis = "၀๐໐〇ℴ੦೦ℴዐ೦၀ⲟ๐ዐℴоℴ౦ዐօ੦оჿዐℴ๐໐೦೦ｏ૦ჿ੦օ〇օ";
                     } else {
+                        return decryptedNumbers;
+                    }
+                case "၀ｏ〇౦օⲟ၀оዐ೦০੦౦ዐℴ੦оℴዐ০૦੦௦ዐо๐໐ჿⲟо੦໐〇ⲟჿ၀":
+                    if (OPAQUES[15] % OPAQUES[22] != OPAQUES[20]) {
                         numberList = generateNumberList();
-                        switchOnThis = "໐૦〇੦ｏℴℴ၀ዐօⲟ໐ⲟዐℴ০ℴℴዐ০௦ｏ๐ዐ೦ჿ၀௦০๐၀ⲟ၀૦ჿ〇";
+                        switchOnThis = "о〇ჿｏｏ၀၀೦ዐ೦౦ⲟ૦ዐℴ౦၀၀ዐօჿ૦૦ዐо๐੦ⲟｏо၀௦໐೦০೦";
+                    } else {
+                        return decryptedNumbers;
                     }
                     break;
-                case "〇ℴօ〇ჿ๐〇ⲟዐ໐໐ⲟⲟዐℴ〇০௦ዐ૦૦০၀ዐ௦օⲟ૦၀ჿ໐೦〇੦௦ⲟ":
+                case "௦ჿ০౦၀ℴ๐໐ዐ૦ｏℴ੦ዐℴ၀໐௦ዐ੦ℴоⲟዐ၀໐๐ⲟ๐೦౦೦ℴ০၀о":
                     return decryptedNumbers;
-                case "ｏ೦ⲟ၀౦ℴ๐೦ዐօ〇๐૦ዐℴ〇০ჿዐ০၀૦௦ዐ၀ⲟ໐၀౦ⲟо౦оⲟ০౦":
-                    decryptedNumbers = "";
-                    switchOnThis = "օ੦౦௦০〇ⲟℴዐ౦໐ｏ૦ዐℴⲟ၀০ዐօ૦๐ℴዐ௦๐౦၀оℴօⲟ০ⲟ০ჿ";
+                case "੦౦০০ｏℴ૦ⲟዐоⲟ๐০ዐℴ૦၀౦ዐ০ჿｏ೦ዐ໐૦೦໐๐〇௦၀૦๐௦ℴ":
+                    for (char i : encryptedNumbers.toCharArray()) {
+                        decryptedNumbers += Character.toString(decryptDigit(numberList, i));
+                    }
+                    switchOnThis = "໐ℴჿ೦ｏ๐၀೦ዐօ౦໐ⲟዐℴ௦০੦ዐ০੦೦๐ዐ௦০੦๐ჿоჿ〇о໐௦ⲟ";
                     break;
                 default:
                     infiniteLoop = false;
@@ -519,39 +519,13 @@ public class Decrypt {
     public static String dec03(String encrypted, int offset) {
         String decrypted = null;
         List<String> numberList = null;
-        String switchOnThis = "೦ｏ၀੦о၀ｏ໐ዐ૦о〇၀ዐℴ౦০০ዐ০๐೦ჿዐ౦ｏℴ੦օ೦௦ｏ೦օｏ૦";
+        String switchOnThis = "о೦๐၀օ૦о০ዐ౦೦೦๐ዐℴ૦೦ｏዐօ૦໐оዐо೦໐ⲟｏ௦о౦օ૦૦௦";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 467, 208, 488, 369, 649, 628, 607, 124, 649, 180, 292, 600, 89, 355, 180, 376, 453, 152, 635, 68, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 656, 61, 607, 138, 215, 180, 250, 159, 348, 89, 96, 565, 257, 579, 194, 348, 663, 117, 460, 334, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "௦੦௦੦ⲟჿჿ੦ዐ০০ⲟⲟዐℴ૦௦૦ዐօｏⲟ೦ዐ௦ჿⲟ௦০оｏ০௦૦о໐":
-                    if (OPAQUES[17] % OPAQUES[22] == OPAQUES[20]) {
-                        numberList = generateNumberList();
-                        switchOnThis = "০ჿ೦๐๐೦оｏዐ০օ০၀ዐℴ੦০૦ዐօℴо೦ዐ௦օⲟⲟ೦ჿ௦о௦੦೦๐";
-                    } else {
-                        offset = offset % 26 + 26;
-                        switchOnThis = "〇о௦০၀০০੦ዐⲟℴ〇ｏዐℴ౦௦оዐ੦໐๐օዐ೦ჿоჿ௦ℴ০౦๐೦〇օ";
-                    }
-                    break;
-                case "〇௦໐૦੦ｏ੦ⲟዐ〇〇௦ℴዐℴ੦ｏｏዐ૦оｏｏዐ໐၀ℴ๐੦౦ℴ௦ჿℴⲟ௦":
-                    decrypted = "";
-                    switchOnThis = "〇௦ⲟ๐ｏჿ੦ℴዐ〇〇〇೦ዐℴ〇૦໐ዐ੦〇〇૦ዐ௦օ၀၀〇၀০๐ℴо౦૦";
-                    break;
-                case "೦ｏ၀੦о၀ｏ໐ዐ૦о〇၀ዐℴ౦০০ዐ০๐೦ჿዐ౦ｏℴ੦օ೦௦ｏ೦օｏ૦":
-                    if (OPAQUES[11] % OPAQUES[22] != OPAQUES[20]) {
-                        offset = 26 - offset;
-                        switchOnThis = "௦੦௦੦ⲟჿჿ੦ዐ০০ⲟⲟዐℴ૦௦૦ዐօｏⲟ೦ዐ௦ჿⲟ௦০оｏ০௦૦о໐";
-                    } else {
-                        numberList = generateNumberList();
-                        switchOnThis = "૦૦ｏ೦оℴⲟⲟዐｏо০оዐℴ০๐оዐ੦ｏо໐ዐ௦〇ℴ০໐೦ⲟჿ০੦၀ℴ";
-                    }
-                    break;
-                case "౦օℴօоｏооዐ০౦౦০ዐℴ੦໐ｏዐօ〇〇оዐ೦๐ⲟ၀০ｏℴօｏⲟօ౦":
-                    decrypted = "";
-                    switchOnThis = "ჿ๐〇ჿｏⲟ૦௦ዐ੦ⲟ໐૦ዐℴჿ೦ჿዐ০௦〇ჿዐ〇೦౦໐ჿ০ჿоℴ૦೦๐";
-                    break;
-                case "〇ｏ૦౦ჿ๐ｏ၀ዐо೦௦ｏዐℴｏ๐օዐ૦໐ჿօዐ০૦ჿ௦ｏ০೦ℴ௦ⲟօⲟ":
-                    if (OPAQUES[2] % OPAQUES[20] == OPAQUES[21]) {
+                case "೦օ໐ｏ௦〇੦૦ዐℴ੦౦ჿዐℴ၀௦၀ዐօօ૦૦ዐｏօჿ૦૦ⲟℴ೦ℴ໐ჿ௦":
+                    if (OPAQUES[12] % OPAQUES[20] != OPAQUES[21]) {
                         for (char i : encrypted.toCharArray()) {
                             if (Character.isLetter(i)) {
                                 if (Character.isUpperCase(i)) {
@@ -565,41 +539,89 @@ public class Decrypt {
                                 decrypted += i;
                             }
                         }
-                        switchOnThis = "ℴ೦օ૦௦၀௦௦ዐ૦๐ｏⲟዐℴօ೦೦ዐ০ჿ௦၀ዐ၀੦௦ჿօ౦০ჿ০໐ℴ௦";
+                        switchOnThis = "ⲟⲟⲟ໐оⲟ૦੦ዐ૦ჿℴ੦ዐℴ૦੦০ዐ੦๐оｏዐℴ၀ⲟ໐〇ｏ০о౦〇੦օ";
+                    } else {
+                        numberList = generateNumberList();
+                        switchOnThis = "౦օ໐૦ჿჿჿ০ዐｏｏ௦оዐℴ၀ℴ೦ዐ૦౦ჿоዐℴჿℴჿℴօ੦ჿ๐о০о";
+                    }
+                    break;
+                case "౦օ໐૦ჿჿჿ০ዐｏｏ௦оዐℴ၀ℴ೦ዐ૦౦ჿоዐℴჿℴჿℴօ੦ჿ๐о০о":
+                    if (OPAQUES[19] % OPAQUES[22] == OPAQUES[20]) {
+                        numberList = generateNumberList();
+                        switchOnThis = "০௦օ౦〇௦ℴ〇ዐօ௦ჿօዐℴ၀ჿｏዐ૦০௦૦ዐ〇০о௦໐օ০〇੦ⲟჿ೦";
+                    } else {
+                        for (char i : encrypted.toCharArray()) {
+                            if (Character.isLetter(i)) {
+                                if (Character.isUpperCase(i)) {
+                                    decrypted += ((char) ('A' + (i - 'A' + offset) % 26));
+                                } else {
+                                    decrypted += ((char) ('a' + (i - 'a' + offset) % 26));
+                                }
+                            } else if (Character.isDigit(i)) {
+                                decrypted += Character.toString(decryptDigit(numberList, i));
+                            } else {
+                                decrypted += i;
+                            }
+                        }
+                        switchOnThis = "໐ℴ౦๐၀ｏ೦૦ዐჿ௦օ௦ዐℴⲟ૦໐ዐ੦оｏ౦ዐⲟ౦๐০၀੦ⲟо〇௦ⲟ௦";
+                    }
+                    break;
+                case "௦૦၀ｏоօⲟ౦ዐ၀၀๐೦ዐℴ೦௦໐ዐ੦օ၀໐ዐ೦૦໐౦໐օ௦੦ℴ〇૦๐":
+                    if (OPAQUES[12] % OPAQUES[20] != OPAQUES[21]) {
+                        offset = 26 - offset;
+                        switchOnThis = "૦໐оℴ〇〇ჿ೦ዐ๐〇၀੦ዐℴｏ૦ℴዐ੦૦ℴｏዐｏ੦౦၀〇ｏ੦౦၀ｏ౦ℴ";
                     } else {
                         offset = offset % 26 + 26;
-                        switchOnThis = "օ০〇օ໐ⲟჿ૦ዐ〇ｏ০๐ዐℴ௦໐੦ዐ੦օ೦০ዐ໐૦ჿ௦໐〇૦໐ⲟ০օ౦";
+                        switchOnThis = "〇ℴ੦о๐০ℴ০ዐօⲟ໐੦ዐℴ૦૦੦ዐօჿ૦૦ዐｏ௦ｏⲟօօ૦০০੦௦ⲟ";
                     }
                     break;
-                case "๐ℴℴｏ໐〇ℴ〇ዐ௦ℴ೦੦ዐℴ೦ჿ၀ዐ੦০೦ჿዐ๐௦〇ჿ௦০౦о০၀௦๐":
-                    if (OPAQUES[2] % OPAQUES[20] != OPAQUES[21]) {
-                        numberList = generateNumberList();
-                        switchOnThis = "੦೦ℴօⲟ੦ｏｏዐ๐ⲟ໐၀ዐℴ੦੦〇ዐ૦౦૦ｏዐჿ௦ｏ౦๐૦౦ｏ૦౦ⲟ๐";
-                    } else {
-                        numberList = generateNumberList();
-                        switchOnThis = "〇ｏ૦౦ჿ๐ｏ၀ዐо೦௦ｏዐℴｏ๐օዐ૦໐ჿօዐ০૦ჿ௦ｏ০೦ℴ௦ⲟօⲟ";
-                    }
+                case "০০〇оჿⲟօ௦ዐⲟ೦౦೦ዐℴⲟⲟℴዐօօ๐оዐ໐౦օ૦౦၀೦௦౦〇ｏ໐":
+                    numberList = generateNumberList();
+                    switchOnThis = "௦ｏ੦௦օ೦օჿዐ௦૦௦〇ዐℴ೦૦০ዐօ๐๐౦ዐ౦๐૦〇௦০о০௦૦ｏჿ";
                     break;
-                case "໐০౦௦๐ℴⲟ၀ዐ০ℴℴｏዐℴ೦ｏｏዐ০〇౦০ዐ౦೦ℴօｏ੦๐೦๐๐о〇":
-                    decrypted = "";
-                    switchOnThis = "ჿ௦๐ｏ၀໐ℴჿዐօ૦০໐ዐℴօჿ၀ዐ০໐ჿ๐ዐჿｏ೦ⲟօ໐੦૦ｏ〇၀૦";
-                    break;
-                case "ℴ೦օ૦௦၀௦௦ዐ૦๐ｏⲟዐℴօ೦೦ዐ০ჿ௦၀ዐ၀੦௦ჿօ౦০ჿ০໐ℴ௦":
-                    if (OPAQUES[19] % OPAQUES[22] == OPAQUES[20]) {
-                        offset = 26 - offset;
-                        switchOnThis = "о০໐ⲟ໐౦໐၀ዐჿ၀๐໐ዐℴℴℴჿዐ০೦ჿ૦ዐⲟჿоօ੦ჿ၀੦ｏ೦ⲟ০";
+                case "໐ℴ౦๐၀ｏ೦૦ዐჿ௦օ௦ዐℴⲟ૦໐ዐ੦оｏ౦ዐⲟ౦๐০၀੦ⲟо〇௦ⲟ௦":
+                    if (OPAQUES[11] % OPAQUES[22] == OPAQUES[20]) {
+                        for (char i : encrypted.toCharArray()) {
+                            if (Character.isLetter(i)) {
+                                if (Character.isUpperCase(i)) {
+                                    decrypted += ((char) ('A' + (i - 'A' + offset) % 26));
+                                } else {
+                                    decrypted += ((char) ('a' + (i - 'a' + offset) % 26));
+                                }
+                            } else if (Character.isDigit(i)) {
+                                decrypted += Character.toString(decryptDigit(numberList, i));
+                            } else {
+                                decrypted += i;
+                            }
+                        }
+                        switchOnThis = "౦௦ｏ০၀ჿ੦օዐჿ౦໐〇ዐℴ๐౦໐ዐ૦ℴ૦၀ዐ૦੦০ｏ௦ⲟ০๐ⲟօ〇೦";
                     } else {
                         return decrypted;
-                        switchOnThis = "௦૦௦о೦ⲟ໐೦ዐ๐೦ჿ౦ዐℴօоℴዐ০໐၀оዐ௦၀ⲟⲟ೦၀೦ჿ૦օ௦૦";
                     }
-                case "〇о௦০၀০০੦ዐⲟℴ〇ｏዐℴ౦௦оዐ੦໐๐օዐ೦ჿоჿ௦ℴ০౦๐೦〇օ":
-                    if (OPAQUES[18] % OPAQUES[20] == OPAQUES[21]) {
+                case "໐၀ჿ౦૦ⲟ০օዐо໐ｏ೦ዐℴ౦օｏዐ૦ⲟооዐ〇૦০օ૦၀ℴ೦๐౦௦০":
+                    numberList = generateNumberList();
+                    switchOnThis = "ℴ၀ℴ၀ჿ〇〇౦ዐо〇ⲟ೦ዐℴ๐০૦ዐ০၀੦ℴዐჿо౦ჿ౦૦ჿｏ০๐๐૦";
+                    break;
+                case "〇ℴ੦о๐০ℴ০ዐօⲟ໐੦ዐℴ૦૦੦ዐօჿ૦૦ዐｏ௦ｏⲟօօ૦০০੦௦ⲟ":
+                    if (OPAQUES[15] % OPAQUES[22] != OPAQUES[20]) {
                         decrypted = "";
-                        switchOnThis = "๐ℴℴｏ໐〇ℴ〇ዐ௦ℴ೦੦ዐℴ೦ჿ၀ዐ੦০೦ჿዐ๐௦〇ჿ௦০౦о০၀௦๐";
+                        switchOnThis = "೦օ໐ｏ௦〇੦૦ዐℴ੦౦ჿዐℴ၀௦၀ዐօօ૦૦ዐｏօჿ૦૦ⲟℴ೦ℴ໐ჿ௦";
                     } else {
-                        decrypted = "";
-                        switchOnThis = "օⲟ౦ｏｏ໐ℴ੦ዐｏｏ০໐ዐℴⲟ௦ⲟዐ০ⲟоℴዐℴ০〇ⲟⲟ〇໐๐૦౦〇੦";
+                        return decrypted;
                     }
+                    break;
+                case "о೦๐၀օ૦о০ዐ౦೦೦๐ዐℴ૦೦ｏዐօ૦໐оዐо೦໐ⲟｏ௦о౦օ૦૦௦":
+                    if (OPAQUES[19] % OPAQUES[22] == OPAQUES[20]) {
+                        numberList = generateNumberList();
+                        switchOnThis = "၀௦๐օ〇ჿჿ೦ዐоℴｏⲟዐℴⲟ〇౦ዐօ౦о૦ዐ၀௦૦௦оｏ੦૦၀ⲟօ௦";
+                    } else {
+                        offset = 26 - offset;
+                        switchOnThis = "௦૦၀ｏоօⲟ౦ዐ၀၀๐೦ዐℴ೦௦໐ዐ੦օ၀໐ዐ೦૦໐౦໐օ௦੦ℴ〇૦๐";
+                    }
+                    break;
+                case "ℴօ໐о૦ჿჿ০ዐ੦〇ℴ೦ዐℴ০૦๐ዐ੦௦ჿ૦ዐ੦ჿ੦ჿℴ੦໐௦௦౦૦ⲟ":
+                    offset = 26 - offset;
+                    switchOnThis = "௦၀೦၀๐০ℴ০ዐ๐ｏ〇〇ዐℴ೦ჿоዐ૦ⲟ௦ℴዐ੦๐ℴ౦೦о໐၀о〇၀ℴ";
                     break;
                 default:
                     infiniteLoop = false;
@@ -611,85 +633,95 @@ public class Decrypt {
     public static int[] convertToAlphabetIntegerArray(String text) {
         int[] alphabetArray = null;
         int i = 0;
-        String switchOnThis = "๐၀ℴ੦၀ℴჿօዐ૦〇੦ჿዐℴօ๐оዐ੦೦૦〇ዐ੦౦੦ⲟօ〇੦૦ჿ๐૦੦";
+        String switchOnThis = "ｏ௦ｏｏℴ০౦၀ዐо๐౦০ዐℴ๐၀০ዐ০оｏ੦ዐℴ੦ⲟჿ੦ℴ〇೦೦௦๐၀";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 488, 614, 173, 299, 558, 82, 579, 229, 208, 460, 236, 348, 96, 89, 166, 47, 19, 194, 26, 586, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 621, 82, 180, 117, 180, 523, 40, 467, 460, 642, 558, 299, 369, 271, 138, 544, 677, 551, 236, 509, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "๐၀ℴ੦၀ℴჿօዐ૦〇੦ჿዐℴօ๐оዐ੦೦૦〇ዐ੦౦੦ⲟօ〇੦૦ჿ๐૦੦":
-                    if (OPAQUES[14] % OPAQUES[20] != OPAQUES[21]) {
-                        for (char c : text.toCharArray()) {
-                            if (!Character.isLetter(c)) {
-                                alphabetArray[i] = (int) c;
-                            } else {
-                                if (Character.isUpperCase(c)) {
-                                    alphabetArray[i] = ((int) c - 'A') * -1 - 1;
-                                } else {
-                                    alphabetArray[i] = (int) c - 'a' + 1;
-                                }
-                            }
-                            i++;
-                        }
-                        switchOnThis = "০օｏ〇оⲟ౦௦ዐ〇ჿ০ⲟዐℴ੦оჿዐ০૦௦օዐ〇ჿ೦〇ჿｏℴ๐๐օ౦๐";
-                    } else {
-                        alphabetArray = new int[text.length()];
-                        switchOnThis = "၀೦౦໐੦ｏ၀၀ዐօ〇ℴჿዐℴ০૦૦ዐօօо౦ዐ૦о๐౦૦ჿоⲟ௦೦〇օ";
-                    }
-                    break;
-                case "੦௦೦оⲟ๐၀০ዐ০೦ⲟⲟዐℴℴ০ჿዐօℴ௦௦ዐօ௦໐૦ℴ〇ⲟ౦ｏ০০о":
-                    i = 0;
-                    switchOnThis = "໐ℴ〇౦ჿ၀ｏ〇ዐ၀੦ⲟ๐ዐℴ௦೦๐ዐ੦ⲟ૦၀ዐ೦օ০〇໐ℴ๐๐о௦օо";
-                    break;
-                case "օ೦၀੦໐๐౦૦ዐｏ੦ჿ౦ዐℴ๐ℴⲟዐ૦оо၀ዐჿ੦ჿ၀ⲟ၀ｏօ〇ｏ၀〇":
-                    if (OPAQUES[11] % OPAQUES[22] != OPAQUES[20]) {
-                        for (char c : text.toCharArray()) {
-                            if (!Character.isLetter(c)) {
-                                alphabetArray[i] = (int) c;
-                            } else {
-                                if (Character.isUpperCase(c)) {
-                                    alphabetArray[i] = ((int) c - 'A') * -1 - 1;
-                                } else {
-                                    alphabetArray[i] = (int) c - 'a' + 1;
-                                }
-                            }
-                            i++;
-                        }
-                        switchOnThis = "೦໐௦০૦ⲟჿჿዐ၀০ооዐℴօ௦๐ዐ੦ჿ૦໐ዐ௦၀ℴℴ໐೦໐၀໐໐ⲟ〇";
-                    } else {
-                        return alphabetArray;
-                        switchOnThis = "੦০၀၀၀০௦օዐ၀ჿ০໐ዐℴ〇০၀ዐօ૦౦೦ዐｏⲟо౦၀೦૦໐௦૦০௦";
-                    }
-                    break;
-                case "೦໐௦০૦ⲟჿჿዐ၀০ооዐℴօ௦๐ዐ੦ჿ૦໐ዐ௦၀ℴℴ໐೦໐၀໐໐ⲟ〇":
-                    if (OPAQUES[16] % OPAQUES[20] != OPAQUES[21]) {
-                        for (char c : text.toCharArray()) {
-                            if (!Character.isLetter(c)) {
-                                alphabetArray[i] = (int) c;
-                            } else {
-                                if (Character.isUpperCase(c)) {
-                                    alphabetArray[i] = ((int) c - 'A') * -1 - 1;
-                                } else {
-                                    alphabetArray[i] = (int) c - 'a' + 1;
-                                }
-                            }
-                            i++;
-                        }
-                        switchOnThis = "໐၀௦૦ⲟ০೦౦ዐ౦০೦௦ዐℴ໐੦౦ዐօ૦〇၀ዐⲟⲟ૦੦ⲟо๐೦੦໐օо";
-                    } else {
-                        return alphabetArray;
-                        switchOnThis = "ⲟ౦օօ໐〇೦໐ዐ໐௦௦ⲟዐℴｏ๐๐ዐ০໐০໐ዐ০ⲟ౦໐௦౦౦๐ℴℴჿℴ";
-                    }
-                case "၀օ০০೦〇௦〇ዐⲟ౦ⲟ೦ዐℴ๐օ௦ዐ০ℴｏⲟዐ૦၀௦ｏℴоｏ౦ⲟ၀๐〇":
-                    i = 0;
-                    switchOnThis = "௦〇〇ℴ௦ｏｏｏዐ೦೦օℴዐℴ౦๐ｏዐ০૦ℴჿዐօо૦౦๐ჿ〇օ೦ჿо০";
-                    break;
-                case "၀೦౦໐੦ｏ၀၀ዐօ〇ℴჿዐℴ০૦૦ዐօօо౦ዐ૦о๐౦૦ჿоⲟ௦೦〇օ":
-                    if (OPAQUES[7] % OPAQUES[22] != OPAQUES[20]) {
+                case "೦оჿⲟ໐〇๐૦ዐ໐〇օօዐℴоо〇ዐ০೦೦օዐⲟ໐ｏ၀ჿо〇ჿ໐੦๐໐":
+                    if (OPAQUES[11] % OPAQUES[22] == OPAQUES[20]) {
                         i = 0;
-                        switchOnThis = "օ೦၀੦໐๐౦૦ዐｏ੦ჿ౦ዐℴ๐ℴⲟዐ૦оо၀ዐჿ੦ჿ၀ⲟ၀ｏօ〇ｏ၀〇";
+                        switchOnThis = "໐၀๐ჿ೦੦௦೦ዐℴ೦౦๐ዐℴ౦০೦ዐ૦௦о௦ዐ〇௦໐о০оⲟｏ೦૦໐૦";
                     } else {
+                        i = 0;
+                        switchOnThis = "੦ℴ০੦ჿ〇௦օዐ௦ｏ๐ℴዐℴ౦๐੦ዐ૦௦੦೦ዐօ〇ｏ০௦௦๐೦ⲟⲟℴ໐";
+                    }
+                    break;
+                case "೦೦ℴჿℴ౦ჿⲟዐ၀੦੦௦ዐℴ໐ⲟ໐ዐ০๐၀๐ዐｏ০೦੦௦ⲟ๐оℴ੦౦օ":
+                    for (char c : text.toCharArray()) {
+                        if (!Character.isLetter(c)) {
+                            alphabetArray[i] = (int) c;
+                        } else {
+                            if (Character.isUpperCase(c)) {
+                                alphabetArray[i] = ((int) c - 'A') * -1 - 1;
+                            } else {
+                                alphabetArray[i] = (int) c - 'a' + 1;
+                            }
+                        }
+                        i++;
+                    }
+                    switchOnThis = "౦〇о੦ℴ੦௦੦ዐ੦၀ℴⲟዐℴｏ၀ℴዐ૦੦〇০ዐ௦ⲟ௦௦ｏ〇০౦၀๐օ๐";
+                    break;
+                case "૦ⲟ໐೦ℴ੦оｏዐ੦օ๐օዐℴ౦օоዐ੦੦ｏ๐ዐ০௦օ০౦օ౦〇၀૦၀੦":
+                    alphabetArray = new int[text.length()];
+                    switchOnThis = "၀օ౦ჿｏℴⲟ০ዐ၀ჿօ૦ዐℴｏ໐ⲟዐօ๐੦೦ዐⲟ௦০૦ⲟ๐૦〇௦о೦ⲟ";
+                    break;
+                case "ｏ௦ｏｏℴ০౦၀ዐо๐౦০ዐℴ๐၀০ዐ০оｏ੦ዐℴ੦ⲟჿ੦ℴ〇೦೦௦๐၀":
+                    if (OPAQUES[4] % OPAQUES[20] == OPAQUES[21]) {
                         alphabetArray = new int[text.length()];
-                        switchOnThis = "౦օ๐〇၀оჿ০ዐ໐ჿօ੦ዐℴ౦๐ｏዐ০૦౦ჿዐⲟჿ੦〇〇೦௦၀๐೦ｏｏ";
+                        switchOnThis = "೦оჿⲟ໐〇๐૦ዐ໐〇օօዐℴоо〇ዐ০೦೦օዐⲟ໐ｏ၀ჿо〇ჿ໐੦๐໐";
+                    } else {
+                        for (char c : text.toCharArray()) {
+                            if (!Character.isLetter(c)) {
+                                alphabetArray[i] = (int) c;
+                            } else {
+                                if (Character.isUpperCase(c)) {
+                                    alphabetArray[i] = ((int) c - 'A') * -1 - 1;
+                                } else {
+                                    alphabetArray[i] = (int) c - 'a' + 1;
+                                }
+                            }
+                            i++;
+                        }
+                        switchOnThis = "੦〇၀၀೦оℴ၀ዐ๐оｏⲟዐℴⲟℴ໐ዐ੦оჿ๐ዐℴ૦оօо௦๐о໐௦೦౦";
+                    }
+                    break;
+                case "๐๐௦๐ⲟ໐౦〇ዐⲟ೦ჿ〇ዐℴჿ౦ℴዐ০ⲟ૦ｏዐ၀оჿ௦౦૦౦оｏ੦౦೦":
+                    if (OPAQUES[6] % OPAQUES[20] != OPAQUES[21]) {
+                        for (char c : text.toCharArray()) {
+                            if (!Character.isLetter(c)) {
+                                alphabetArray[i] = (int) c;
+                            } else {
+                                if (Character.isUpperCase(c)) {
+                                    alphabetArray[i] = ((int) c - 'A') * -1 - 1;
+                                } else {
+                                    alphabetArray[i] = (int) c - 'a' + 1;
+                                }
+                            }
+                            i++;
+                        }
+                        switchOnThis = "০ℴ౦০၀๐౦੦ዐⲟ௦ℴ〇ዐℴｏ੦ｏዐօ၀ჿ০ዐ౦௦ჿ๐ჿ০๐о๐၀ℴ๐";
+                    } else {
+                        return alphabetArray;
+                    }
+                case "੦ℴ০੦ჿ〇௦օዐ௦ｏ๐ℴዐℴ౦๐੦ዐ૦௦੦೦ዐօ〇ｏ০௦௦๐೦ⲟⲟℴ໐":
+                    if (OPAQUES[4] % OPAQUES[20] != OPAQUES[21]) {
+                        i = 0;
+                        switchOnThis = "ℴℴօｏ೦૦০๐ዐ੦օ௦оዐℴℴоｏዐ૦੦ⲟ၀ዐℴჿ೦౦૦օ೦၀၀ｏჿ೦";
+                    } else {
+                        for (char c : text.toCharArray()) {
+                            if (!Character.isLetter(c)) {
+                                alphabetArray[i] = (int) c;
+                            } else {
+                                if (Character.isUpperCase(c)) {
+                                    alphabetArray[i] = ((int) c - 'A') * -1 - 1;
+                                } else {
+                                    alphabetArray[i] = (int) c - 'a' + 1;
+                                }
+                            }
+                            i++;
+                        }
+                        switchOnThis = "๐๐௦๐ⲟ໐౦〇ዐⲟ೦ჿ〇ዐℴჿ౦ℴዐ০ⲟ૦ｏዐ၀оჿ௦౦૦౦оｏ੦౦೦";
                     }
                     break;
                 default:
@@ -703,23 +735,18 @@ public class Decrypt {
         int numericalValue = 0;
         String numberAsString = null;
         boolean needToGetDigit = false;
-        char returnDigit = a;
+        char returnDigit = 'a';
         int iterationNumber = 0;
-        String switchOnThis = "౦օ০օ໐੦ｏօዐ੦໐੦ｏዐℴ〇о੦ዐ੦೦〇〇ዐℴ০ჿ〇૦๐೦ℴჿⲟჿ๐";
+        String switchOnThis = "၀о૦ⲟｏｏ౦〇ዐ௦〇೦೦ዐℴ੦ｏⲟዐ૦૦੦оዐ〇ｏ೦ｏ໐૦ℴ௦о੦ℴჿ";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 229, 600, 222, 460, 397, 579, 145, 82, 362, 110, 628, 509, 320, 446, 509, 558, 117, 236, 460, 138, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 488, 138, 593, 523, 75, 586, 124, 159, 138, 390, 26, 453, 383, 656, 61, 404, 131, 495, 229, 502, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "օо໐օօօ〇໐ዐ၀೦၀၀ዐℴⲟⲟ੦ዐ૦๐о௦ዐ၀ჿⲟ௦੦〇၀օｏ௦૦ⲟ":
-                    needToGetDigit = true;
-                    switchOnThis = "੦੦၀၀ℴ੦০೦ዐ০੦၀૦ዐℴ౦౦〇ዐ০੦໐໐ዐ੦౦၀௦ℴо౦ｏⲟ௦ｏ௦";
-                    break;
-                case "ｏ๐౦ⲟ௦౦೦օዐօℴо໐ዐℴ໐০০ዐ੦о〇೦ዐ〇௦օօⲟℴ௦၀ℴჿ০੦":
-                    needToGetDigit = true;
-                    switchOnThis = "ⲟｏ〇ℴⲟ੦໐੦ዐⲟｏ০ჿዐℴⲟо౦ዐ০೦ооዐ〇૦๐౦૦૦օо〇օⲟ௦";
-                    break;
-                case "೦ჿ੦ℴ௦೦၀ⲟዐ໐ｏ૦ⲟዐℴ૦౦ⲟዐ੦০௦օዐ౦๐௦ℴ၀೦ჿ০੦օ၀ჿ":
-                    if (OPAQUES[7] % OPAQUES[22] != OPAQUES[20]) {
+                case "೦೦૦੦੦о௦๐ዐ੦౦〇օዐℴ੦ჿ౦ዐօ౦૦ჿዐｏ๐ⲟ౦ⲟօ౦๐၀ｏჿ௦":
+                    if (OPAQUES[9] % OPAQUES[22] == OPAQUES[20]) {
+                        iterationNumber = 0;
+                        switchOnThis = "૦০০ჿｏ౦౦ｏዐ๐໐໐೦ዐℴｏ௦੦ዐ০оо౦ዐ〇ჿоჿჿ০〇০೦ⲟ০০";
+                    } else {
                         for (int i = numberList.size() - 1, j = numberList.size() - 1; needToGetDigit; i--) {
                             if (j < 0) {
                                 j = numberList.size() - 1;
@@ -734,104 +761,116 @@ public class Decrypt {
                             iterationNumber++;
                             j--;
                         }
-                        switchOnThis = "૦၀ⲟ၀օ၀௦օዐ໐ℴօ௦ዐℴ೦๐օዐ૦օօօዐ೦၀၀ჿ๐ⲟℴ০օ౦๐೦";
-                    } else {
-                        numberAsString = (String) numberList.get(numericalValue);
-                        switchOnThis = "੦၀ჿ〇ｏо໐૦ዐ໐၀໐օዐℴ੦౦੦ዐ০௦〇੦ዐ೦౦၀೦၀௦౦૦౦ℴоℴ";
+                        switchOnThis = "оｏ০๐〇౦ｏ௦ዐ੦ჿⲟ০ዐℴ〇〇੦ዐօ၀๐໐ዐℴоо০ｏჿօჿ๐೦૦ჿ";
                     }
                     break;
-                case "૦၀ⲟ၀օ၀௦օዐ໐ℴօ௦ዐℴ೦๐օዐ૦օօօዐ೦၀၀ჿ๐ⲟℴ০օ౦๐೦":
-                    if (OPAQUES[3] % OPAQUES[22] == OPAQUES[20]) {
+                case "ჿ੦๐௦০௦оჿዐ೦๐оჿዐℴ၀০ℴዐ੦೦০౦ዐ౦ჿ၀ჿ၀೦๐ⲟ໐௦၀໐":
+                    returnDigit = ' ';
+                    switchOnThis = "૦ℴ౦౦০օჿჿዐ੦০౦౦ዐℴ০০০ዐ০০੦੦ዐ௦૦౦໐ℴ๐௦օ૦੦௦ℴ";
+                    break;
+                case "௦๐౦ｏоօօ੦ዐⲟ੦০ℴዐℴ౦ｏ౦ዐ૦၀ჿ౦ዐ၀ჿჿ౦ⲟ〇௦ⲟ೦ℴоⲟ":
+                    if (OPAQUES[18] % OPAQUES[20] == OPAQUES[21]) {
+                        needToGetDigit = true;
+                        switchOnThis = "ℴ๐၀о၀໐ⲟ๐ዐ೦໐๐೦ዐℴ๐໐௦ዐ੦ჿ೦૦ዐ೦ｏｏⲟｏ౦০ｏ০ⲟⲟ〇";
+                    } else {
+                        if (!Character.isDigit(c)) {
+                            return c;
+                        }
+                        switchOnThis = "оｏჿ๐໐૦ⲟоዐ੦ｏօ๐ዐℴჿ๐оዐօօｏ౦ዐоⲟ౦ℴ૦၀၀ჿჿℴ੦օ";
+                    }
+                    break;
+                case "௦ｏ௦၀օо೦૦ዐ০০౦ჿዐℴ၀〇ｏዐ૦௦оⲟዐо๐о〇၀૦၀ℴօ౦০๐":
+                    numericalValue = Character.getNumericValue(c);
+                    switchOnThis = "ｏ〇ჿ૦ｏօ໐০ዐ၀ⲟ০౦ዐℴ੦ⲟ〇ዐ০ⲟ໐௦ዐ၀௦੦੦໐оℴ〇ⲟ௦૦ⲟ";
+                    break;
+                case "౦๐〇௦ℴ੦ⲟ໐ዐჿ〇ⲟｏዐℴ੦๐౦ዐ০૦օоዐ೦ⲟ၀௦௦ⲟ๐օⲟჿℴօ":
+                    if (OPAQUES[3] % OPAQUES[22] != OPAQUES[20]) {
+                        iterationNumber = 0;
+                        switchOnThis = "೦೦૦੦੦о௦๐ዐ੦౦〇օዐℴ੦ჿ౦ዐօ౦૦ჿዐｏ๐ⲟ౦ⲟօ౦๐၀ｏჿ௦";
+                    } else {
+                        if (!Character.isDigit(c)) {
+                            return c;
+                        }
+                        switchOnThis = "ჿჿօ౦੦౦௦๐ዐℴ๐оⲟዐℴ೦๐ℴዐ૦ⲟ೦ⲟዐⲟ๐ℴ੦౦૦၀੦૦၀〇૦";
+                    }
+                    break;
+                case "о০о૦ⲟ௦੦ჿዐ〇੦๐০ዐℴｏ০০ዐ০ｏ૦๐ዐ೦၀ჿｏჿ๐ⲟ໐໐о၀೦":
+                    if (OPAQUES[4] % OPAQUES[20] == OPAQUES[21]) {
                         numberAsString = (String) numberList.get(numericalValue);
-                        switchOnThis = "০੦ℴ௦੦ｏ૦ｏዐօ০о๐ዐℴ๐օ๐ዐօ૦〇૦ዐ૦ⲟ၀ჿ໐໐໐օ௦੦໐௦";
+                        switchOnThis = "௦๐౦ｏоօօ੦ዐⲟ੦০ℴዐℴ౦ｏ౦ዐ૦၀ჿ౦ዐ၀ჿჿ౦ⲟ〇௦ⲟ೦ℴоⲟ";
+                    } else {
+                        returnDigit = ' ';
+                        switchOnThis = "օ၀০ჿⲟｏｏоዐ০〇о௦ዐℴჿⲟ௦ዐօⲟｏⲟዐ౦ｏօℴⲟℴ๐૦੦ⲟ੦〇";
+                    }
+                    break;
+                case "ℴ๐၀о၀໐ⲟ๐ዐ೦໐๐೦ዐℴ๐໐௦ዐ੦ჿ೦૦ዐ೦ｏｏⲟｏ౦০ｏ০ⲟⲟ〇":
+                    if (OPAQUES[8] % OPAQUES[20] != OPAQUES[21]) {
+                        for (int i = numberList.size() - 1, j = numberList.size() - 1; needToGetDigit; i--) {
+                            if (j < 0) {
+                                j = numberList.size() - 1;
+                            }
+                            String value = (String) numberList.get(j);
+                            if ((j < numericalValue && numberAsString.length() == value.length()) || (value.length() == numberAsString.length() && iterationNumber >= numberList.size())) {
+                                int encryptedDigit = j;
+                                returnDigit = (char) (encryptedDigit + '0');
+                                needToGetDigit = false;
+                                break;
+                            }
+                            iterationNumber++;
+                            j--;
+                        }
+                        switchOnThis = "๐໐০ｏⲟ০೦〇ዐօ௦ჿ๐ዐℴ๐໐௦ዐօｏ౦၀ዐ೦೦௦੦〇௦૦օ౦໐૦၀";
+                    } else {
+                        returnDigit = ' ';
+                        switchOnThis = "౦๐〇௦ℴ੦ⲟ໐ዐჿ〇ⲟｏዐℴ੦๐౦ዐ০૦օоዐ೦ⲟ၀௦௦ⲟ๐օⲟჿℴօ";
+                    }
+                    break;
+                case "೦〇௦૦ⲟ੦ｏօዐ〇೦〇੦ዐℴ๐၀ｏዐ੦০օℴዐｏ౦೦੦օ〇௦௦၀௦оօ":
+                    if (OPAQUES[14] % OPAQUES[20] != OPAQUES[21]) {
+                        if (!Character.isDigit(c)) {
+                            return c;
+                        }
+                        switchOnThis = "௦౦০೦๐〇໐ℴዐ੦০੦০ዐℴⲟｏⲟዐ০੦౦օዐ၀〇ჿ௦оｏ௦໐օ౦օℴ";
+                    } else {
+                        numericalValue = Character.getNumericValue(c);
+                        switchOnThis = "о০о૦ⲟ௦੦ჿዐ〇੦๐০ዐℴｏ০০ዐ০ｏ૦๐ዐ೦၀ჿｏჿ๐ⲟ໐໐о၀೦";
+                    }
+                    break;
+                case "оｏ০๐〇౦ｏ௦ዐ੦ჿⲟ০ዐℴ〇〇੦ዐօ၀๐໐ዐℴоо০ｏჿօჿ๐೦૦ჿ":
+                    if (OPAQUES[3] % OPAQUES[22] == OPAQUES[20]) {
+                        if (!Character.isDigit(c)) {
+                            return c;
+                        }
+                        switchOnThis = "ⲟⲟо〇૦০๐০ዐｏ௦໐௦ዐℴ೦ჿ੦ዐօօ〇ჿዐ૦ｏ૦໐੦ｏ੦ⲟ೦๐ჿо";
                     } else {
                         return returnDigit;
-                        switchOnThis = "০օ੦၀၀௦ჿ০ዐоⲟ๐ℴዐℴ၀〇౦ዐ੦ⲟ௦૦ዐօ೦೦๐〇੦੦ｏ௦о೦〇";
                     }
-                case "౦೦ჿｏ๐໐〇оዐ০౦ℴ೦ዐℴჿℴօዐ੦೦ℴ၀ዐօ໐౦ℴо૦〇੦օ০૦০":
-                    if (OPAQUES[5] % OPAQUES[22] == OPAQUES[20]) {
-                        numberAsString = (String) numberList.get(numericalValue);
-                        switchOnThis = "ℴ౦౦০౦௦๐໐ዐ๐ｏ౦௦ዐℴ૦০оዐ০〇оօዐ೦о০ⲟ໐ℴ੦о໐օ੦೦";
-                    } else {
-                        iterationNumber = 0;
-                        switchOnThis = "೦ჿ੦ℴ௦೦၀ⲟዐ໐ｏ૦ⲟዐℴ૦౦ⲟዐ੦০௦օዐ౦๐௦ℴ၀೦ჿ০੦օ၀ჿ";
-                    }
-                    break;
-                case "০੦໐ℴｏ௦০ჿዐ໐〇໐๐ዐℴ౦๐ℴዐ૦ⲟ੦ⲟዐჿ๐ⲟჿ౦๐౦ⲟ໐о০૦":
-                    if (OPAQUES[4] % OPAQUES[20] == OPAQUES[21]) {
-                        needToGetDigit = true;
-                        switchOnThis = "౦ℴⲟჿｏჿ௦೦ዐ௦೦๐օዐℴ೦оօዐ੦၀օ၀ዐ੦໐௦੦ჿ၀੦౦௦੦໐о";
-                    } else {
-                        numberAsString = (String) numberList.get(numericalValue);
-                        switchOnThis = "օｏ၀೦౦೦о〇ዐℴ၀੦೦ዐℴℴ೦оዐ੦၀ℴ০ዐ౦၀〇০૦ჿօ၀ℴ၀ⲟ๐";
-                    }
-                    break;
-                case "০ｏօ௦ℴｏ০၀ዐ০〇૦໐ዐℴ౦ｏℴዐ০օℴоዐ〇ჿｏⲟօ௦օօ๐ｏ၀๐":
-                    if (OPAQUES[0] % OPAQUES[20] == OPAQUES[21]) {
-                        numberAsString = (String) numberList.get(numericalValue);
-                        switchOnThis = "০੦໐ℴｏ௦০ჿዐ໐〇໐๐ዐℴ౦๐ℴዐ૦ⲟ੦ⲟዐჿ๐ⲟჿ౦๐౦ⲟ໐о০૦";
-                    } else {
+                case "၀о૦ⲟｏｏ౦〇ዐ௦〇೦೦ዐℴ੦ｏⲟዐ૦૦੦оዐ〇ｏ೦ｏ໐૦ℴ௦о੦ℴჿ":
+                    if (OPAQUES[6] % OPAQUES[20] == OPAQUES[21]) {
                         if (!Character.isDigit(c)) {
                             return c;
                         }
-                        switchOnThis = "೦օ੦০๐ℴ௦ჿዐօ೦๐ℴዐℴ০ჿ૦ዐ੦〇௦০ዐ೦০о੦๐๐ｏ੦ｏ೦౦๐";
-                    }
-                    break;
-                case "౦օ০օ໐੦ｏօዐ੦໐੦ｏዐℴ〇о੦ዐ੦೦〇〇ዐℴ০ჿ〇૦๐೦ℴჿⲟჿ๐":
-                    if (OPAQUES[6] % OPAQUES[20] != OPAQUES[21]) {
-                        for (int i = numberList.size() - 1, j = numberList.size() - 1; needToGetDigit; i--) {
-                            if (j < 0) {
-                                j = numberList.size() - 1;
-                            }
-                            String value = (String) numberList.get(j);
-                            if ((j < numericalValue && numberAsString.length() == value.length()) || (value.length() == numberAsString.length() && iterationNumber >= numberList.size())) {
-                                int encryptedDigit = j;
-                                returnDigit = (char) (encryptedDigit + '0');
-                                needToGetDigit = false;
-                                break;
-                            }
-                            iterationNumber++;
-                            j--;
-                        }
-                        switchOnThis = "ｏ၀೦ｏ೦౦օ૦ዐ০౦ｏ૦ዐℴｏ੦օዐ૦ｏℴ੦ዐ௦ｏ〇〇о౦ℴ〇о೦о〇";
+                        switchOnThis = "೦〇௦૦ⲟ੦ｏօዐ〇೦〇੦ዐℴ๐၀ｏዐ੦০օℴዐｏ౦೦੦օ〇௦௦၀௦оօ";
                     } else {
-                        if (!Character.isDigit(c)) {
-                            return c;
-                        }
-                        switchOnThis = "၀௦੦ｏо໐၀ჿዐ௦໐௦оዐℴｏ౦౦ዐ੦ⲟ೦ჿዐ໐௦૦૦〇ⲟօօ೦૦੦ჿ";
+                        numberAsString = (String) numberList.get(numericalValue);
+                        switchOnThis = "ｏ໐ⲟ၀౦೦о๐ዐ૦௦〇૦ዐℴо੦օዐ০੦օ੦ዐ໐೦ჿօ੦о੦၀০০ⲟｏ";
                     }
                     break;
-                case "〇໐๐၀ჿｏ๐௦ዐ౦০๐၀ዐℴ၀೦๐ዐ০০೦໐ዐо౦օօоჿ૦оо০ℴ૦":
-                    return returnDigit;
-                case "၀௦੦ｏо໐၀ჿዐ௦໐௦оዐℴｏ౦౦ዐ੦ⲟ೦ჿዐ໐௦૦૦〇ⲟօօ೦૦੦ჿ":
-                    if (OPAQUES[13] % OPAQUES[22] != OPAQUES[20]) {
-                        numericalValue = Character.getNumericValue(c);
-                        switchOnThis = "০ｏօ௦ℴｏ০၀ዐ০〇૦໐ዐℴ౦ｏℴዐ০օℴоዐ〇ჿｏⲟօ௦օօ๐ｏ၀๐";
-                    } else {
-                        iterationNumber = 0;
-                        switchOnThis = "૦ｏ໐໐০೦ℴჿዐ๐๐੦ⲟዐℴ০௦ℴዐօ໐૦၀ዐ〇૦ⲟ໐ჿℴ〇౦໐੦օ๐";
-                    }
+                case "೦〇о੦০໐೦〇ዐ౦૦௦੦ዐℴ〇૦໐ዐ૦ℴ〇೦ዐჿჿℴ૦೦ℴ০〇ℴ௦օ੦":
+                    returnDigit = ' ';
+                    switchOnThis = "ｏооⲟ౦೦ჿ௦ዐ໐০օ০ዐℴ੦੦оዐ૦օ๐੦ዐ০೦၀௦〇〇օоℴ౦၀ⲟ";
                     break;
-                case "౦ℴⲟჿｏჿ௦೦ዐ௦೦๐օዐℴ೦оօዐ੦၀օ၀ዐ੦໐௦੦ჿ၀੦౦௦੦໐о":
-                    if (OPAQUES[0] % OPAQUES[20] == OPAQUES[21]) {
-                        returnDigit = ' ';
-                        switchOnThis = "౦೦ჿｏ๐໐〇оዐ০౦ℴ೦ዐℴჿℴօዐ੦೦ℴ၀ዐօ໐౦ℴо૦〇੦օ০૦০";
-                    } else {
-                        needToGetDigit = true;
-                        switchOnThis = "〇໐౦〇օℴჿ০ዐ໐໐௦০ዐℴ౦၀ჿዐ০௦๐၀ዐｏⲟℴ໐੦ჿ〇೦೦оⲟ၀";
-                    }
-                    break;
-                case "০০о౦૦օо၀ዐ〇ⲟ০০ዐℴｏооዐ૦၀ჿ০ዐჿ೦౦০о໐௦ℴ૦૦о೦":
+                case "೦၀၀〇о౦೦๐ዐо௦০০ዐℴ೦௦оዐօ໐ｏ၀ዐ໐ℴჿօ၀ℴ໐ⲟ౦ჿօⲟ":
                     if (!Character.isDigit(c)) {
                         return c;
                     }
-                    switchOnThis = "ℴ〇〇၀ჿ໐೦ჿዐჿ๐ⲟჿዐℴｏо੦ዐ০੦೦ｏዐⲟℴ〇оℴ〇০о੦о೦ｏ";
+                    switchOnThis = "о၀౦〇໐๐ｏ၀ዐ੦૦ℴ๐ዐℴ๐օ০ዐ૦ⲟ໐ℴዐℴⲟ๐ⲟｏ૦ℴ๐૦ჿоｏ";
                     break;
                 default:
                     infiniteLoop = false;
             }
         }
-        return a;
+        return 'a';
     }
 
     public static String dec05(String encryptedText, String key) {
@@ -840,32 +879,51 @@ public class Decrypt {
         List<String> numberList = null;
         int[] decryptedIntArray = null;
         String decrypted = null;
-        String switchOnThis = "ℴо๐௦〇০০ⲟዐｏ໐௦оዐℴ౦օℴዐ০੦〇౦ዐⲟ૦օ૦ⲟℴ০૦ｏо၀о";
+        String switchOnThis = "၀ℴо૦ჿ౦௦౦ዐ০ℴ૦૦ዐℴ௦೦০ዐ૦౦૦૦ዐჿ๐০௦ｏ౦၀೦౦೦೦໐";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 68, 68, 397, 663, 75, 292, 446, 432, 509, 677, 663, 663, 145, 558, 145, 117, 474, 481, 236, 299, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 145, 369, 397, 376, 222, 509, 509, 432, 586, 362, 495, 201, 495, 635, 411, 390, 614, 607, 26, 152, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "၀০౦௦๐ｏ೦০ዐ໐၀౦օዐℴ೦০ჿዐ০օ౦〇ዐℴ໐০ⲟ〇օоℴ૦໐〇օ":
-                    if (OPAQUES[14] % OPAQUES[20] == OPAQUES[21]) {
+                case "௦о〇๐ℴ၀օｏዐ০օ૦০ዐℴօ௦௦ዐ০ჿ๐၀ዐ๐ｏℴ໐๐ℴ૦౦໐০၀๐":
+                    if (OPAQUES[12] % OPAQUES[20] != OPAQUES[21]) {
                         numberList = generateNumberList();
-                        switchOnThis = "௦ｏ౦օ௦ჿ๐〇ዐ໐੦၀օዐℴ〇૦ჿዐ੦੦૦੦ዐ๐о๐ⲟ໐ℴℴ௦〇ｏ௦ⲟ";
+                        switchOnThis = "о੦၀〇ⲟ໐০੦ዐℴ௦օоዐℴ໐оℴዐ০〇ⲟ〇ዐ੦ｏ೦௦๐০ｏо૦օ໐օ";
                     } else {
-                        decryptedIntArray = new int[stringAlphabetArray.length];
-                        switchOnThis = "ℴօⲟ੦ⲟ๐੦၀ዐⲟ๐ℴ〇ዐℴ੦ｏ๐ዐ০၀〇੦ዐ০ｏ௦໐௦૦੦૦ჿ౦౦ℴ";
+                        numberList = generateNumberList();
+                        switchOnThis = "૦๐౦௦〇ｏо၀ዐｏℴ౦၀ዐℴჿ૦ｏዐ੦၀໐օዐօｏо೦૦ℴ০օ০ℴ੦੦";
                     }
                     break;
-                case "ℴｏⲟｏ౦၀੦ｏዐℴ౦๐੦ዐℴо௦ℴዐօ೦੦ℴዐ૦ℴ೦оо๐๐〇০੦੦๐":
-                    keyAlphabetArray = convertToAlphabetIntegerArray(key);
-                    switchOnThis = "օ௦૦੦໐௦օ౦ዐ౦ⲟо૦ዐℴ૦ჿ೦ዐ੦ｏ০௦ዐⲟⲟ੦〇๐ℴⲟℴ౦ⲟ౦ｏ";
+                case "૦๐౦௦〇ｏо၀ዐｏℴ౦၀ዐℴჿ૦ｏዐ੦၀໐օዐօｏо೦૦ℴ০օ০ℴ੦੦":
+                    if (OPAQUES[0] % OPAQUES[20] != OPAQUES[21]) {
+                        for (int i = 0, j = 0; i < stringAlphabetArray.length; i++) {
+                            if (stringAlphabetArray[i] > 27) {
+                                decrypted += decryptDigit(numberList, (char) stringAlphabetArray[i]);
+                            } else if (stringAlphabetArray[i] < 0) {
+                                decryptedIntArray[i] = (stringAlphabetArray[i] * -1 - keyAlphabetArray[j]) % 26 - 1;
+                                if (decryptedIntArray[i] <= 0) {
+                                    decryptedIntArray[i] += 26;
+                                }
+                                decrypted += (char) (decryptedIntArray[i] + 64);
+                                j = ++j % key.length();
+                            } else {
+                                decryptedIntArray[i] = (stringAlphabetArray[i] - keyAlphabetArray[j]) % 26 - 1;
+                                if (decryptedIntArray[i] <= 0) {
+                                    decryptedIntArray[i] += 26;
+                                }
+                                decrypted += (char) (decryptedIntArray[i] + 96);
+                                j = ++j % key.length();
+                            }
+                        }
+                        switchOnThis = "০௦ｏо౦၀оℴዐⲟ௦૦ⲟዐℴ〇௦೦ዐօჿ૦оዐ၀օօℴօо௦ｏ০ℴ੦ⲟ";
+                    } else {
+                        decryptedIntArray = new int[stringAlphabetArray.length];
+                        switchOnThis = "〇੦੦ℴ၀о૦ⲟዐ௦၀о૦ዐℴ০๐ｏዐօ௦੦౦ዐ০๐о౦੦ℴ௦๐໐௦੦૦";
+                    }
                     break;
-                case "〇ℴⲟｏ০о〇ჿዐⲟ০০௦ዐℴ၀ｏ๐ዐօоｏⲟዐ૦๐০ｏօⲟ೦ℴ੦౦ｏ౦":
-                    keyAlphabetArray = convertToAlphabetIntegerArray(key);
-                    switchOnThis = "ⲟ੦ⲟ౦ⲟ๐၀೦ዐ੦๐๐օዐℴ၀౦౦ዐ૦〇၀૦ዐ〇၀০๐ჿⲟ〇০๐ჿ০౦";
-                    break;
-                case "၀໐〇੦੦ⲟ೦ｏዐ௦ჿ໐੦ዐℴ၀๐໐ዐ০ｏ೦૦ዐ໐೦၀૦ჿօ೦ჿℴ੦ℴ૦":
-                    if (OPAQUES[0] % OPAQUES[20] == OPAQUES[21]) {
-                        decrypted = "";
-                        switchOnThis = "ⲟоℴⲟ๐ⲟ౦〇ዐօ๐๐૦ዐℴ೦၀૦ዐ০໐օ〇ዐ౦օ௦౦ⲟ૦๐օ໐๐౦ℴ";
+                case "௦๐ⲟо૦౦ℴ౦ዐｏ౦о૦ዐℴℴооዐօоⲟ๐ዐℴℴ၀੦௦໐๐ჿо໐օ੦":
+                    if (OPAQUES[11] % OPAQUES[22] != OPAQUES[20]) {
+                        keyAlphabetArray = convertToAlphabetIntegerArray(key);
+                        switchOnThis = "௦о〇๐ℴ၀օｏዐ০օ૦০ዐℴօ௦௦ዐ০ჿ๐၀ዐ๐ｏℴ໐๐ℴ૦౦໐০၀๐";
                     } else {
                         for (int i = 0, j = 0; i < stringAlphabetArray.length; i++) {
                             if (stringAlphabetArray[i] > 27) {
@@ -886,52 +944,53 @@ public class Decrypt {
                                 j = ++j % key.length();
                             }
                         }
-                        switchOnThis = "ჿ੦੦૦օо๐〇ዐ〇೦০೦ዐℴჿⲟоዐօ໐ჿ౦ዐ໐၀ｏ೦ⲟ〇૦౦೦๐౦໐";
+                        switchOnThis = "૦০௦০౦૦௦〇ዐ〇օ০оዐℴ〇၀౦ዐ૦ⲟօℴዐ૦ℴჿ૦ჿ౦оｏ౦ჿо೦";
                     }
                     break;
-                case "ℴо๐௦〇০০ⲟዐｏ໐௦оዐℴ౦օℴዐ০੦〇౦ዐⲟ૦օ૦ⲟℴ০૦ｏо၀о":
-                    if (OPAQUES[11] % OPAQUES[22] != OPAQUES[20]) {
-                        stringAlphabetArray = convertToAlphabetIntegerArray(encryptedText);
-                        switchOnThis = "੦೦ℴჿℴ੦ჿоዐ০ｏ〇੦ዐℴ၀ⲟ௦ዐ০оօჿዐ〇ⲟ੦౦о၀೦০၀ｏⲟ০";
-                    } else {
-                        stringAlphabetArray = convertToAlphabetIntegerArray(encryptedText);
-                        switchOnThis = "๐օ૦ℴｏ০ⲟ౦ዐ〇੦օ೦ዐℴჿо໐ዐ੦〇໐ⲟዐℴ౦〇০၀ℴ๐೦ｏ〇০๐";
-                    }
-                    break;
-                case "੦೦ℴჿℴ੦ჿоዐ০ｏ〇੦ዐℴ၀ⲟ௦ዐ০оօჿዐ〇ⲟ੦౦о၀೦০၀ｏⲟ০":
+                case "օ੦੦ⲟℴ〇๐〇ዐо౦၀ℴዐℴｏ౦੦ዐ੦၀օօዐⲟℴⲟ੦ⲟⲟ௦௦૦๐〇ℴ":
                     if (OPAQUES[8] % OPAQUES[20] != OPAQUES[21]) {
-                        decrypted = "";
-                        switchOnThis = "၀০੦ⲟჿоℴ০ዐⲟ౦օоዐℴ੦๐૦ዐ০ჿ௦૦ዐⲟⲟ೦໐໐૦оⲟօ૦〇๐";
-                    } else {
-                        keyAlphabetArray = convertToAlphabetIntegerArray(key);
-                        switchOnThis = "၀০౦௦๐ｏ೦০ዐ໐၀౦օዐℴ೦০ჿዐ০օ౦〇ዐℴ໐০ⲟ〇օоℴ૦໐〇օ";
-                    }
-                    break;
-                case "೦౦ჿ૦০ｏ๐૦ዐ〇ℴ௦૦ዐℴ౦ⲟℴዐ੦ℴⲟоዐჿ౦೦೦၀௦၀ⲟ၀๐၀ჿ":
-                    stringAlphabetArray = convertToAlphabetIntegerArray(encryptedText);
-                    switchOnThis = "օℴ੦౦০౦๐๐ዐⲟо〇௦ዐℴⲟⲟ੦ዐ૦௦໐౦ዐⲟｏ૦௦о၀੦੦〇о੦၀";
-                    break;
-                case "௦ｏ౦օ௦ჿ๐〇ዐ໐੦၀օዐℴ〇૦ჿዐ੦੦૦੦ዐ๐о๐ⲟ໐ℴℴ௦〇ｏ௦ⲟ":
-                    if (OPAQUES[0] % OPAQUES[20] != OPAQUES[21]) {
-                        decryptedIntArray = new int[stringAlphabetArray.length];
-                        switchOnThis = "ⲟ౦о০০౦ჿ౦ዐ௦ℴօ〇ዐℴ૦〇ჿዐ੦〇౦૦ዐｏо๐ჿℴⲟ೦೦০໐০০";
-                    } else {
-                        decryptedIntArray = new int[stringAlphabetArray.length];
-                        switchOnThis = "၀໐〇੦੦ⲟ೦ｏዐ௦ჿ໐੦ዐℴ၀๐໐ዐ০ｏ೦૦ዐ໐೦၀૦ჿօ೦ჿℴ੦ℴ૦";
-                    }
-                    break;
-                case "໐〇ℴⲟ੦੦ｏ౦ዐｏ௦ооዐℴ০ｏ〇ዐ૦૦০၀ዐｏ၀၀ⲟо౦ｏ૦௦੦ℴ〇":
-                    if (OPAQUES[1] % OPAQUES[22] == OPAQUES[20]) {
                         numberList = generateNumberList();
-                        switchOnThis = "ⲟ௦০૦౦໐০০ዐჿ௦၀೦ዐℴ೦ⲟⲟዐ૦੦౦੦ዐⲟ౦ჿ૦〇໐օ੦০ｏⲟ౦";
+                        switchOnThis = "ⲟ੦о〇௦ℴ೦ჿዐ೦ჿⲟｏዐℴ๐ⲟｏዐ૦౦௦ｏዐ໐౦௦๐၀໐௦օჿⲟ໐০";
                     } else {
                         return decrypted;
-                        switchOnThis = "੦၀௦ｏ໐ჿ๐ⲟዐჿ੦ჿｏዐℴ੦૦օዐ૦೦০ჿዐⲟ๐〇೦о๐೦оｏℴօ๐";
                     }
-                case "ⲟоℴⲟ๐ⲟ౦〇ዐօ๐๐૦ዐℴ೦၀૦ዐ০໐օ〇ዐ౦օ௦౦ⲟ૦๐օ໐๐౦ℴ":
-                    if (OPAQUES[5] % OPAQUES[22] == OPAQUES[20]) {
-                        numberList = generateNumberList();
-                        switchOnThis = "о౦০ｏ૦೦੦၀ዐⲟ௦оօዐℴｏ၀ჿዐ০ჿоօዐⲟ੦௦ℴоჿ၀૦оⲟｏ໐";
+                case "၀ℴ૦૦௦ｏ〇၀ዐ০ℴ౦௦ዐℴ໐၀〇ዐ૦০օ๐ዐ੦໐೦ℴ೦০੦૦ｏ০໐૦":
+                    keyAlphabetArray = convertToAlphabetIntegerArray(key);
+                    switchOnThis = "໐〇ⲟ၀໐о০౦ዐ೦໐௦໐ዐℴ૦၀၀ዐ੦ℴⲟ੦ዐჿ໐௦໐ｏℴｏჿჿⲟ੦੦";
+                    break;
+                case "౦૦౦၀ｏ໐໐ⲟዐℴ੦೦ℴዐℴⲟօ੦ዐ૦੦๐੦ዐ〇০о೦ⲟօ౦੦੦௦௦ჿ":
+                    return decrypted;
+                case "〇੦੦ℴ၀о૦ⲟዐ௦၀о૦ዐℴ০๐ｏዐօ௦੦౦ዐ০๐о౦੦ℴ௦๐໐௦੦૦":
+                    if (OPAQUES[7] % OPAQUES[22] == OPAQUES[20]) {
+                        stringAlphabetArray = convertToAlphabetIntegerArray(encryptedText);
+                        switchOnThis = "੦೦০๐໐၀၀ℴዐ০੦օℴዐℴ೦໐೦ዐօ๐౦໐ዐ౦〇օ૦о೦໐〇ჿℴ০օ";
+                    } else {
+                        decrypted = "";
+                        switchOnThis = "૦೦૦૦ჿ౦၀೦ዐо౦о௦ዐℴ೦ⲟоዐօ০௦〇ዐ೦၀໐౦ⲟ౦ჿ౦о೦௦ℴ";
+                    }
+                    break;
+                case "૦೦૦૦ჿ౦၀೦ዐо౦о௦ዐℴ೦ⲟоዐօ০௦〇ዐ೦၀໐౦ⲟ౦ჿ౦о೦௦ℴ":
+                    if (OPAQUES[14] % OPAQUES[20] != OPAQUES[21]) {
+                        for (int i = 0, j = 0; i < stringAlphabetArray.length; i++) {
+                            if (stringAlphabetArray[i] > 27) {
+                                decrypted += decryptDigit(numberList, (char) stringAlphabetArray[i]);
+                            } else if (stringAlphabetArray[i] < 0) {
+                                decryptedIntArray[i] = (stringAlphabetArray[i] * -1 - keyAlphabetArray[j]) % 26 - 1;
+                                if (decryptedIntArray[i] <= 0) {
+                                    decryptedIntArray[i] += 26;
+                                }
+                                decrypted += (char) (decryptedIntArray[i] + 64);
+                                j = ++j % key.length();
+                            } else {
+                                decryptedIntArray[i] = (stringAlphabetArray[i] - keyAlphabetArray[j]) % 26 - 1;
+                                if (decryptedIntArray[i] <= 0) {
+                                    decryptedIntArray[i] += 26;
+                                }
+                                decrypted += (char) (decryptedIntArray[i] + 96);
+                                j = ++j % key.length();
+                            }
+                        }
+                        switchOnThis = "〇੦੦၀౦ⲟ၀ｏዐ๐০੦๐ዐℴ௦ჿℴዐ੦੦ჿօዐ౦๐০ｏჿօ〇ჿ၀੦೦ⲟ";
                     } else {
                         for (int i = 0, j = 0; i < stringAlphabetArray.length; i++) {
                             if (stringAlphabetArray[i] > 27) {
@@ -952,7 +1011,20 @@ public class Decrypt {
                                 j = ++j % key.length();
                             }
                         }
-                        switchOnThis = "໐〇ℴⲟ੦੦ｏ౦ዐｏ௦ооዐℴ০ｏ〇ዐ૦૦০၀ዐｏ၀၀ⲟо౦ｏ૦௦੦ℴ〇";
+                        switchOnThis = "օ੦੦ⲟℴ〇๐〇ዐо౦၀ℴዐℴｏ౦੦ዐ੦၀օօዐⲟℴⲟ੦ⲟⲟ௦௦૦๐〇ℴ";
+                    }
+                    break;
+                case "௦ℴ၀〇౦օօჿዐ੦ℴ௦੦ዐℴ௦੦ℴዐ০౦໐০ዐоℴ௦౦〇૦оｏჿℴⲟ๐":
+                    stringAlphabetArray = convertToAlphabetIntegerArray(encryptedText);
+                    switchOnThis = "੦๐౦ⲟօ၀੦੦ዐ໐〇໐೦ዐℴ๐ｏｏዐօ૦০০ዐ੦օｏօ໐০ｏ〇ℴ၀೦ℴ";
+                    break;
+                case "၀ℴо૦ჿ౦௦౦ዐ০ℴ૦૦ዐℴ௦೦০ዐ૦౦૦૦ዐჿ๐০௦ｏ౦၀೦౦೦೦໐":
+                    if (OPAQUES[1] % OPAQUES[22] == OPAQUES[20]) {
+                        decrypted = "";
+                        switchOnThis = "੦ⲟⲟ౦ℴ๐૦〇ዐჿо੦ｏዐℴℴჿｏዐ૦౦〇၀ዐℴо໐௦೦ჿ๐௦ჿｏ೦೦";
+                    } else {
+                        stringAlphabetArray = convertToAlphabetIntegerArray(encryptedText);
+                        switchOnThis = "௦๐ⲟо૦౦ℴ౦ዐｏ౦о૦ዐℴℴооዐօоⲟ๐ዐℴℴ၀੦௦໐๐ჿо໐օ੦";
                     }
                     break;
                 default:

@@ -26,36 +26,35 @@ public class RestaurantListViewModel extends AndroidViewModel {
 
     public Single<List<Restaurant>> getRestaurants() {
         String apiKey = null;
-        String switchOnThis = "ｏ〇ჿ౦օ၀ℴ๐ዐⲟ໐૦౦ዐℴ೦ჿ೦ዐ૦о০ℴዐ੦ℴⲟℴ໐૦০౦๐೦ｏ೦";
+        String switchOnThis = "၀௦໐ჿ၀ჿ〇૦ዐⲟ〇ℴ০ዐℴоჿ〇ዐ০ｏ੦౦ዐ၀০о౦ℴｏօо၀၀೦૦";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 180, 621, 439, 75, 222, 61, 145, 19, 222, 243, 663, 670, 215, 313, 355, 635, 411, 572, 180, 621, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 593, 250, 208, 12, 663, 236, 656, 201, 201, 187, 306, 453, 670, 474, 586, 131, 621, 173, 474, 131, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "০๐〇၀౦๐೦౦ዐⲟ〇੦໐ዐℴⲟ০০ዐ੦ｏооዐ၀〇௦০〇౦၀໐০௦о౦":
-                    if (OPAQUES[19] % OPAQUES[22] != OPAQUES[20]) {
+                case "๐๐၀၀๐ჿ๐໐ዐ௦໐೦౦ዐℴօ၀০ዐ੦〇௦օዐ০ⲟ໐ℴჿ၀૦ჿℴ໐๐੦":
+                    if (OPAQUES[10] % OPAQUES[20] != OPAQUES[21]) {
+                        apiKey = BuildConfig.GOOGLE_API_KEY;
+                        switchOnThis = "০๐೦౦౦ｏо௦ዐ૦〇၀оዐℴ௦೦๐ዐօⲟⲟ〇ዐ〇౦๐௦๐০೦๐၀၀ჿ೦";
+                    } else {
+                        String finalApiKey = apiKey;
                         return locationRepository.getLocation().subscribeOn(AndroidSchedulers.mainThread()).observeOn(Schedulers.io()).flatMap(location -> {
                             this.currentLocation = location;
-                            return placesService.getRestaurants(location, apiKey);
+                            return placesService.getRestaurants(location, finalApiKey);
                         });
-                        switchOnThis = "௦ｏⲟℴ౦౦օｏዐ၀ⲟ૦〇ዐℴ౦౦೦ዐօо๐০ዐｏ౦૦ｏჿ০ｏ๐౦೦ｏ໐";
-                    } else {
-                        apiKey = BuildConfig.GOOGLE_API_KEY;
-                        switchOnThis = "໐౦౦о೦௦๐๐ዐо໐ℴｏዐℴ০੦౦ዐ০౦ჿ〇ዐ౦օ೦௦૦〇〇ℴჿ〇ℴо";
                     }
-                case "ｏ〇ჿ౦օ၀ℴ๐ዐⲟ໐૦౦ዐℴ೦ჿ೦ዐ૦о০ℴዐ੦ℴⲟℴ໐૦০౦๐೦ｏ೦":
-                    if (OPAQUES[7] % OPAQUES[22] != OPAQUES[20]) {
+                case "௦о๐〇೦ჿ๐ⲟዐℴ௦၀௦ዐℴ๐օօዐ০〇օ౦ዐ〇၀ｏℴօⲟ໐໐၀০ჿо":
+                    apiKey = BuildConfig.GOOGLE_API_KEY;
+                    switchOnThis = "ｏ௦૦ｏ၀๐ⲟ໐ዐ੦૦੦০ዐℴօ〇೦ዐ০о௦૦ዐ௦໐੦ℴ૦〇ｏｏо೦๐о";
+                    break;
+                case "၀௦໐ჿ၀ჿ〇૦ዐⲟ〇ℴ০ዐℴоჿ〇ዐ০ｏ੦౦ዐ၀০о౦ℴｏօо၀၀೦૦":
+                    if (OPAQUES[6] % OPAQUES[20] == OPAQUES[21]) {
                         apiKey = BuildConfig.GOOGLE_API_KEY;
-                        switchOnThis = "০๐〇၀౦๐೦౦ዐⲟ〇੦໐ዐℴⲟ০০ዐ੦ｏооዐ၀〇௦০〇౦၀໐০௦о౦";
+                        switchOnThis = "๐๐၀၀๐ჿ๐໐ዐ௦໐೦౦ዐℴօ၀০ዐ੦〇௦օዐ০ⲟ໐ℴჿ၀૦ჿℴ໐๐੦";
                     } else {
                         apiKey = BuildConfig.GOOGLE_API_KEY;
-                        switchOnThis = "০ｏ૦੦ℴ໐〇ℴዐ〇੦໐ｏዐℴ૦о၀ዐ૦ℴօ౦ዐоо〇၀๐ｏ೦〇օ๐੦০";
+                        switchOnThis = "ｏ၀〇၀૦၀૦౦ዐ੦ℴ〇օዐℴօℴⲟዐօ೦ｏоዐ໐໐౦ⲟ௦օ০੦০௦๐ⲟ";
                     }
                     break;
-                case "০ჿо〇օⲟⲟ๐ዐօ૦օℴዐℴჿ〇ჿዐ੦੦ⲟ০ዐ౦օ೦೦〇ჿ၀၀ⲟ૦೦೦":
-                    return locationRepository.getLocation().subscribeOn(AndroidSchedulers.mainThread()).observeOn(Schedulers.io()).flatMap(location -> {
-                        this.currentLocation = location;
-                        return placesService.getRestaurants(location, apiKey);
-                    });
                 default:
                     infiniteLoop = false;
             }
@@ -64,18 +63,16 @@ public class RestaurantListViewModel extends AndroidViewModel {
     }
 
     public Location getCurrentLocation() {
-        String switchOnThis = "૦੦౦౦໐๐௦౦ዐ๐૦໐ⲟዐℴ〇ⲟ〇ዐ০〇օ〇ዐ೦೦ｏℴ૦၀০๐੦〇੦օ";
+        String switchOnThis = "၀੦ⲟℴօ໐೦օዐ০૦ℴｏዐℴ೦〇૦ዐ૦੦໐๐ዐօ໐੦੦૦౦੦օ০໐௦૦";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 61, 362, 222, 117, 215, 404, 152, 306, 348, 390, 54, 453, 285, 75, 383, 376, 152, 131, 621, 145, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 89, 131, 110, 250, 103, 96, 586, 68, 656, 89, 628, 593, 537, 299, 26, 243, 537, 376, 593, 299, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "૦੦౦౦໐๐௦౦ዐ๐૦໐ⲟዐℴ〇ⲟ〇ዐ০〇օ〇ዐ೦೦ｏℴ૦၀০๐੦〇੦օ":
-                    if (OPAQUES[7] % OPAQUES[22] != OPAQUES[20]) {
+                case "၀੦ⲟℴօ໐೦օዐ০૦ℴｏዐℴ೦〇૦ዐ૦੦໐๐ዐօ໐੦੦૦౦੦օ০໐௦૦":
+                    if (OPAQUES[16] % OPAQUES[20] != OPAQUES[21]) {
                         return currentLocation;
-                        switchOnThis = "ｏ၀೦၀ⲟ〇૦๐ዐ੦๐೦০ዐℴ೦оⲟዐ૦૦၀๐ዐօℴ০௦၀〇օ੦о໐૦౦";
                     } else {
                         return currentLocation;
-                        switchOnThis = "օ௦ⲟⲟ๐௦໐੦ዐ੦๐ჿ௦ዐℴ੦ｏоዐ০౦ჿ੦ዐ૦೦ჿ౦౦၀௦о၀೦օ၀";
                     }
                 default:
                     infiniteLoop = false;

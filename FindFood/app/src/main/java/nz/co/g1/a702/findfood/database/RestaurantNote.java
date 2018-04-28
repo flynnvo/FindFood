@@ -26,18 +26,16 @@ public class RestaurantNote {
     }
 
     public int getRnId() {
-        String switchOnThis = "ℴ౦օ௦௦౦ჿ౦ዐ০౦௦๐ዐℴ௦૦〇ዐ੦૦ℴ໐ዐ໐০೦ჿｏ๐૦ｏ〇੦ℴ၀";
+        String switchOnThis = "ℴⲟჿ〇၀੦໐օዐ੦૦೦੦ዐℴⲟ๐ⲟዐ૦ⲟ〇ℴዐ௦૦ჿ೦௦၀ⲟჿо๐০օ";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 376, 607, 257, 523, 649, 306, 89, 26, 40, 621, 397, 523, 117, 327, 278, 257, 229, 348, 551, 362, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 607, 565, 180, 488, 306, 47, 348, 19, 558, 61, 383, 54, 621, 173, 537, 145, 383, 215, 481, 166, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "ℴ౦օ௦௦౦ჿ౦ዐ০౦௦๐ዐℴ௦૦〇ዐ੦૦ℴ໐ዐ໐০೦ჿｏ๐૦ｏ〇੦ℴ၀":
-                    if (OPAQUES[13] % OPAQUES[22] == OPAQUES[20]) {
+                case "ℴⲟჿ〇၀੦໐օዐ੦૦೦੦ዐℴⲟ๐ⲟዐ૦ⲟ〇ℴዐ௦૦ჿ೦௦၀ⲟჿо๐০օ":
+                    if (OPAQUES[6] % OPAQUES[20] != OPAQUES[21]) {
                         return rnId;
-                        switchOnThis = "೦ℴ๐၀оℴ੦ⲟዐ౦၀ჿ೦ዐℴ〇੦๐ዐ০௦౦ℴዐⲟօⲟ౦օ๐੦ｏօ໐௦〇";
                     } else {
                         return rnId;
-                        switchOnThis = "〇о೦〇оⲟ૦〇ዐⲟ๐೦ℴዐℴ౦੦๐ዐօ০૦ჿዐ੦੦ｏⲟ௦ⲟ௦౦੦〇౦௦";
                     }
                 default:
                     infiniteLoop = false;
@@ -47,18 +45,18 @@ public class RestaurantNote {
     }
 
     public void setRnId(int rnId) {
-        String switchOnThis = "〇ⲟⲟⲟ௦ჿ૦օዐօⲟ੦০ዐℴℴℴ૦ዐ০ⲟჿ೦ዐ໐੦ჿ౦௦օ໐〇ჿо૦օ";
+        String switchOnThis = "о໐〇௦〇оｏ૦ዐｏｏ೦๐ዐℴℴоｏዐ০оｏℴዐ๐ⲟ౦ℴჿ౦օо೦ჿｏо";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 355, 138, 474, 201, 649, 138, 446, 194, 390, 278, 201, 12, 96, 334, 82, 110, 635, 670, 572, 103, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 376, 649, 572, 607, 47, 614, 236, 439, 89, 593, 68, 656, 530, 334, 537, 488, 341, 292, 677, 677, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "〇ⲟⲟⲟ௦ჿ૦օዐօⲟ੦০ዐℴℴℴ૦ዐ০ⲟჿ೦ዐ໐੦ჿ౦௦օ໐〇ჿо૦օ":
-                    if (OPAQUES[9] % OPAQUES[22] != OPAQUES[20]) {
+                case "о໐〇௦〇оｏ૦ዐｏｏ೦๐ዐℴℴоｏዐ০оｏℴዐ๐ⲟ౦ℴჿ౦օо೦ჿｏо":
+                    if (OPAQUES[8] % OPAQUES[20] == OPAQUES[21]) {
                         this.rnId = rnId;
-                        switchOnThis = "௦೦օ੦ჿ௦໐๐ዐ௦ჿ੦௦ዐℴо໐੦ዐ০оｏ๐ዐо௦૦ｏℴ௦ℴჿჿо੦੦";
+                        switchOnThis = "೦໐၀໐౦ｏ௦೦ዐ໐〇௦ⲟዐℴ၀๐〇ዐ੦〇օ೦ዐ০೦օ໐ℴօｏ๐ℴ੦೦๐";
                     } else {
                         this.rnId = rnId;
-                        switchOnThis = "௦௦၀૦౦๐օｏዐ໐၀օ௦ዐℴ〇౦੦ዐ੦ⲟ௦оዐⲟ௦௦೦〇ჿ๐ｏ໐೦ℴｏ";
+                        switchOnThis = "оо૦೦௦၀০੦ዐоⲟ੦〇ዐℴｏ೦оዐօ૦౦๐ዐоℴ০ჿｏ௦੦о௦০০〇";
                     }
                     break;
                 default:
@@ -68,18 +66,16 @@ public class RestaurantNote {
     }
 
     public String getRestaurantId() {
-        String switchOnThis = "оℴ๐๐໐౦૦ⲟዐ〇о໐౦ዐℴჿ૦੦ዐօჿօⲟዐ০૦૦၀௦੦օ೦ｏჿоℴ";
+        String switchOnThis = "〇օℴ౦ⲟ੦ℴℴዐօօ໐၀ዐℴｏ௦໐ዐօ၀ℴ〇ዐ๐ჿ๐೦૦〇〇੦օℴ၀ⲟ";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 194, 26, 516, 194, 145, 306, 579, 145, 544, 110, 530, 495, 152, 425, 348, 656, 600, 572, 26, 194, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 348, 635, 33, 670, 117, 663, 194, 201, 628, 341, 614, 341, 131, 418, 124, 509, 516, 138, 229, 621, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "оℴ๐๐໐౦૦ⲟዐ〇о໐౦ዐℴჿ૦੦ዐօჿօⲟዐ০૦૦၀௦੦օ೦ｏჿоℴ":
-                    if (OPAQUES[12] % OPAQUES[20] == OPAQUES[21]) {
+                case "〇օℴ౦ⲟ੦ℴℴዐօօ໐၀ዐℴｏ௦໐ዐօ၀ℴ〇ዐ๐ჿ๐೦૦〇〇੦օℴ၀ⲟ":
+                    if (OPAQUES[16] % OPAQUES[20] != OPAQUES[21]) {
                         return restaurantId;
-                        switchOnThis = "๐ооｏ௦੦੦ჿዐ੦〇ჿ௦ዐℴ໐၀оዐօ໐ⲟ೦ዐ၀〇ჿ໐о೦௦೦ⲟ๐੦০";
                     } else {
                         return restaurantId;
-                        switchOnThis = "၀၀௦ｏⲟ၀ⲟⲟዐ౦ℴⲟ૦ዐℴ૦ჿоዐ০၀ჿ೦ዐ໐๐೦〇၀ℴ໐ｏ〇ჿ໐੦";
                     }
                 default:
                     infiniteLoop = false;
@@ -89,18 +85,18 @@ public class RestaurantNote {
     }
 
     public void setRestaurantId(String restaurantId) {
-        String switchOnThis = "੦๐೦၀ⲟ〇೦ჿዐℴ๐оօዐℴօ౦ｏዐ੦૦၀ｏዐօ௦၀০၀๐ℴ೦о೦૦੦";
+        String switchOnThis = "౦о੦ｏℴ০〇੦ዐ〇౦௦၀ዐℴ੦໐ⲟዐ૦੦૦ჿዐօ௦ჿ૦໐๐ჿ০੦০ℴ૦";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 523, 166, 348, 208, 19, 299, 404, 208, 383, 124, 418, 82, 40, 33, 530, 180, 320, 586, 537, 68, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 166, 390, 467, 635, 495, 117, 12, 320, 600, 166, 537, 495, 187, 208, 285, 425, 68, 607, 138, 278, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "੦๐೦၀ⲟ〇೦ჿዐℴ๐оօዐℴօ౦ｏዐ੦૦၀ｏዐօ௦၀০၀๐ℴ೦о೦૦੦":
-                    if (OPAQUES[19] % OPAQUES[22] == OPAQUES[20]) {
+                case "౦о੦ｏℴ০〇੦ዐ〇౦௦၀ዐℴ੦໐ⲟዐ૦੦૦ჿዐօ௦ჿ૦໐๐ჿ০੦০ℴ૦":
+                    if (OPAQUES[4] % OPAQUES[20] == OPAQUES[21]) {
                         this.restaurantId = restaurantId;
-                        switchOnThis = "ｏ౦೦ℴℴоօ೦ዐ〇ℴⲟｏዐℴ๐০௦ዐօｏ〇௦ዐ〇օ০оℴ၀੦౦ｏ๐౦ჿ";
+                        switchOnThis = "๐๐ｏ〇ჿ〇օօዐⲟ໐໐೦ዐℴ০ⲟ໐ዐ૦೦ооዐоჿ௦໐౦ჿ੦օｏ౦૦ჿ";
                     } else {
                         this.restaurantId = restaurantId;
-                        switchOnThis = "ⲟ၀๐૦০૦૦૦ዐⲟ੦໐ⲟዐℴ๐๐ｏዐ০о೦оዐ೦ⲟ૦ℴ૦ℴօ੦૦๐౦௦";
+                        switchOnThis = "੦〇૦ჿ〇ⲟօℴዐ೦౦໐оዐℴⲟօ໐ዐ૦ⲟ၀оዐｏｏⲟ౦໐ⲟ੦๐০〇೦〇";
                     }
                     break;
                 default:
@@ -110,18 +106,16 @@ public class RestaurantNote {
     }
 
     public String getNote() {
-        String switchOnThis = "ℴⲟჿⲟｏ౦၀оዐ௦๐০໐ዐℴ๐໐০ዐօ໐૦০ዐ໐օօ౦〇౦〇೦೦ℴ〇ｏ";
+        String switchOnThis = "೦ℴ໐ℴჿ໐໐ℴዐо໐ⲟ০ዐℴⲟⲟჿዐ੦ℴｏ੦ዐℴ໐૦໐೦ｏօօ૦၀๐о";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 33, 663, 313, 229, 516, 439, 229, 250, 460, 215, 341, 558, 397, 40, 12, 572, 40, 614, 145, 131, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 642, 355, 68, 628, 82, 12, 558, 418, 439, 488, 481, 236, 600, 12, 439, 278, 516, 369, 607, 656, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "ℴⲟჿⲟｏ౦၀оዐ௦๐০໐ዐℴ๐໐০ዐօ໐૦০ዐ໐օօ౦〇౦〇೦೦ℴ〇ｏ":
-                    if (OPAQUES[5] % OPAQUES[22] != OPAQUES[20]) {
+                case "೦ℴ໐ℴჿ໐໐ℴዐо໐ⲟ০ዐℴⲟⲟჿዐ੦ℴｏ੦ዐℴ໐૦໐೦ｏօօ૦၀๐о":
+                    if (OPAQUES[6] % OPAQUES[20] != OPAQUES[21]) {
                         return note;
-                        switchOnThis = "౦૦ｏ੦০๐ℴ೦ዐօｏ૦౦ዐℴ௦ⲟ೦ዐ੦໐օоዐ๐೦ℴօ૦೦૦০๐ⲟ〇০";
                     } else {
                         return note;
-                        switchOnThis = "০〇০օｏℴｏ০ዐ૦၀ℴоዐℴჿℴоዐ੦๐૦ჿዐоⲟ૦੦ⲟ၀০о੦〇๐౦";
                     }
                 default:
                     infiniteLoop = false;
@@ -131,18 +125,18 @@ public class RestaurantNote {
     }
 
     public void setNote(String note) {
-        String switchOnThis = "๐౦ⲟоｏ໐о૦ዐ๐௦〇ｏዐℴ০о૦ዐ੦ｏ੦ჿዐჿｏ૦੦০օⲟ௦ⲟ০ⲟｏ";
+        String switchOnThis = "௦о০೦೦о๐๐ዐօ૦೦໐ዐℴо೦೦ዐ০ℴ౦০ዐℴ೦ჿ໐ℴⲟｏ౦ⲟｏօ০";
         boolean infiniteLoop = true;
-        int[] OPAQUES = new int[] { 292, 677, 229, 502, 103, 243, 628, 152, 418, 341, 523, 411, 432, 593, 572, 222, 19, 306, 82, 397, 7, 5, 7, 5 };
+        int[] OPAQUES = new int[] { 404, 474, 446, 166, 75, 250, 621, 159, 124, 187, 40, 68, 194, 565, 586, 397, 54, 586, 488, 593, 7, 5, 7, 5 };
         while (infiniteLoop) {
             switch(switchOnThis) {
-                case "๐౦ⲟоｏ໐о૦ዐ๐௦〇ｏዐℴ০о૦ዐ੦ｏ੦ჿዐჿｏ૦੦০օⲟ௦ⲟ০ⲟｏ":
-                    if (OPAQUES[5] % OPAQUES[22] == OPAQUES[20]) {
+                case "௦о০೦೦о๐๐ዐօ૦೦໐ዐℴо೦೦ዐ০ℴ౦০ዐℴ೦ჿ໐ℴⲟｏ౦ⲟｏօ০":
+                    if (OPAQUES[11] % OPAQUES[22] == OPAQUES[20]) {
                         this.note = note;
-                        switchOnThis = "ｏ੦๐〇၀౦๐〇ዐ০ჿჿℴዐℴｏℴ੦ዐօ၀оⲟዐ〇০໐〇〇〇௦੦ℴօ૦௦";
+                        switchOnThis = "ｏоｏ೦๐ჿооዐ๐೦၀੦ዐℴⲟօ〇ዐ૦ⲟ๐օዐჿ૦ჿ౦〇๐оｏ໐০౦௦";
                     } else {
                         this.note = note;
-                        switchOnThis = "੦০౦ჿ੦〇၀၀ዐ੦০૦໐ዐℴ੦ℴℴዐօ〇၀ჿዐ௦๐〇ｏ๐೦௦૦օ๐ⲟ౦";
+                        switchOnThis = "௦౦૦ｏⲟჿｏ೦ዐ੦ჿ౦౦ዐℴ၀౦๐ዐ૦၀೦օዐօ〇০੦૦௦૦〇૦ⲟ໐၀";
                     }
                     break;
                 default:
